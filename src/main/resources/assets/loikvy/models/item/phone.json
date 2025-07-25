@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "loikvy:item/phone_off"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "loikvy:phone_turned_on": 1
+      },
+      "model": "loikvy:item/phone_0"
+    }
+  ]
+}

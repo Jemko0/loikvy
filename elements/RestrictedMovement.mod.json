@@ -1,0 +1,32 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Restricted Movement",
+    "icon": "restricted_movement",
+    "color": {
+      "value": -65536,
+      "falpha": 0.0
+    },
+    "particle": {
+      "value": "CRIT"
+    },
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "JUMP_STRENGTH"
+        },
+        "amount": -1.0,
+        "operation": "ADD_MULTIPLIED_TOTAL"
+      }
+    ]
+  }
+}

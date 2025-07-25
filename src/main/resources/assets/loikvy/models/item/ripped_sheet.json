@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "loikvy:item/rag"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "loikvy:ripped_sheet_dirty": 50
+      },
+      "model": "loikvy:item/ripped_sheet_0"
+    }
+  ]
+}

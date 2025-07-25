@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/freezer"
+    },
+    "facing=east": {
+      "model": "loikvy:block/freezer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/freezer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/freezer",
+      "y": 270
+    }
+  }
+}

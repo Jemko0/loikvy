@@ -1,0 +1,93 @@
+{
+  "loikvy_death": {
+    "sounds": [
+      {
+        "name": "loikvy:ly_death",
+        "stream": false
+      }
+    ]
+  },
+  "ly_door_lock": {
+    "subtitle": "subtitles.ly_door_lock",
+    "sounds": [
+      {
+        "name": "loikvy:lock-door",
+        "stream": false
+      }
+    ]
+  },
+  "ly_door_unlock": {
+    "subtitle": "subtitles.ly_door_unlock",
+    "sounds": [
+      {
+        "name": "loikvy:unlock-door",
+        "stream": false
+      }
+    ]
+  },
+  "smoke_detector_chirp": {
+    "subtitle": "subtitles.smoke_detector_chirp",
+    "sounds": [
+      {
+        "name": "loikvy:smoke-detector-chirp",
+        "stream": false
+      }
+    ]
+  },
+  "fridge_hum": {
+    "sounds": [
+      {
+        "name": "loikvy:fridge_hum_17",
+        "stream": false
+      }
+    ]
+  },
+  "fridge_hum_short": {
+    "sounds": [
+      {
+        "name": "loikvy:fridge_hum_short",
+        "stream": false
+      }
+    ]
+  },
+  "fridge_hum_short2": {
+    "sounds": [
+      {
+        "name": "loikvy:fridge_hum_3s",
+        "stream": false
+      }
+    ]
+  },
+  "dream0": {
+    "sounds": [
+      {
+        "name": "loikvy:guitrew",
+        "stream": false
+      }
+    ]
+  },
+  "dream1": {
+    "sounds": [
+      {
+        "name": "loikvy:midst",
+        "stream": false
+      }
+    ]
+  },
+  "dream2": {
+    "sounds": [
+      {
+        "name": "loikvy:talk_to_me",
+        "stream": false
+      }
+    ]
+  },
+  "dream3": {
+    "sounds": [
+      {
+        "name": "loikvy:dream3",
+        "stream": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "loikvy:aa_battery",
+    "loikvy:tea_spoon",
+    "loikvy:kitchen_knife",
+    "loikvy:table_spoon",
+    "loikvy:sunflower_oil"
+  ]
+}

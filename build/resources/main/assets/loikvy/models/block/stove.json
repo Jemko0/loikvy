@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/stove",
+  "textures": {
+    "all": "loikvy:block/stovetexture_dirty1",
+    "particle": "loikvy:block/stovetexture_dirty1",
+    "0": "loikvy:block/stovetexture_dirty1"
+  },
+  "render_type": "solid"
+}

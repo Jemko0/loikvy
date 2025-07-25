@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "MinBet",
+    "description": "Minimum bet for gambling",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 50
+  }
+}

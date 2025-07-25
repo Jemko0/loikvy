@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/fridge"
+    },
+    "facing=east": {
+      "model": "loikvy:block/fridge",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/fridge",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/fridge",
+      "y": 270
+    }
+  }
+}

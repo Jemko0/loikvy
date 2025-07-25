@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "loikvy:bag"
+    },
+    {
+      "item": "loikvy:wheat_flour"
+    }
+  ],
+  "result": {
+    "id": "loikvy:flour",
+    "count": 1
+  }
+}

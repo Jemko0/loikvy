@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "command",
+  "definition": {
+    "commandName": "setplayerstat",
+    "type": "STANDARD",
+    "permissionLevel": "4",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"entity\"><field name=\"name\">target</field><field name=\"type\">player</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">stat</field><statement name=\"args\"><block type=\"number_min_max\"><field name=\"name\">value</field><field name=\"min\">0</field><field name=\"max\">100</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">SetPlayerStatProc</field></block></statement></block></statement></block></statement></block></next></block></xml>"
+  }
+}

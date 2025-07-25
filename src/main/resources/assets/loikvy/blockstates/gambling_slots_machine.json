@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/gambling_slots_machine"
+    },
+    "facing=east": {
+      "model": "loikvy:block/gambling_slots_machine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/gambling_slots_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/gambling_slots_machine",
+      "y": 270
+    }
+  }
+}

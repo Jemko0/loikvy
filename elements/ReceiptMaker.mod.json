@@ -1,0 +1,122 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 250,
+    "height": 90,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_receipt_maker",
+          "text": {
+            "fixedValue": "Receipt Making tool device object ok"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 94,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_make",
+          "text": "Create",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "MakeReceipt"
+          },
+          "width": 46,
+          "height": 20,
+          "x": 287,
+          "y": 139,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Content",
+          "name": "content",
+          "width": 120,
+          "height": 20,
+          "x": 125,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "StoreName",
+          "name": "store",
+          "width": 120,
+          "height": 20,
+          "x": 100,
+          "y": 92,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "C",
+          "name": "color",
+          "width": 23,
+          "height": 20,
+          "x": 100,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ss",
+          "text": {
+            "fixedValue": "§"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 94,
+          "y": 120,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "+",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ReceiptAddElement"
+          },
+          "width": 19,
+          "height": 20,
+          "x": 247,
+          "y": 116,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

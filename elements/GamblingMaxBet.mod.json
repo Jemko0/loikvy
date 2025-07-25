@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "MaxBet",
+    "description": "Maximum Bet for Gambling",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 5000
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dispenser",
+    "minecraft:dropper",
+    "minecraft:creeper_head",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:smoker",
+    "minecraft:tnt",
+    "minecraft:blast_furnace",
+    "minecraft:brewing_stand",
+    "minecraft:furnace",
+    "minecraft:observer",
+    "loikvy:aa_battery",
+    "minecraft:lightning_rod",
+    "minecraft:tnt_minecart",
+    "minecraft:crafter",
+    "minecraft:jukebox",
+    "minecraft:repeater",
+    "minecraft:daylight_detector",
+    "minecraft:repeating_command_block",
+    "minecraft:comparator",
+    "minecraft:piston",
+    "minecraft:lava_bucket",
+    "loikvy:phone"
+  ]
+}

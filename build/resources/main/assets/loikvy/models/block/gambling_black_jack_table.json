@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/blackjack_table",
+  "textures": {
+    "all": "minecraft:block/piston_top_sticky",
+    "particle": "minecraft:block/piston_top_sticky",
+    "0": "loikvy:block/blackjacktable_texture"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,77 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 96,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_phone_model_name",
+          "text": {
+            "fixedValue": "",
+            "name": "GetPhoneModelName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 172,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_phone_button_contacts",
+          "image": "phone_button_contacts.png",
+          "hoveredImage": "phone_button_contacts_hovered.png",
+          "x": 173,
+          "y": 67,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_clock_time_formatted",
+          "text": {
+            "fixedValue": "",
+            "name": "GetClockTimeFormatted"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 173,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "phone_background.png",
+          "use1Xscale": false,
+          "x": 171,
+          "y": 53,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

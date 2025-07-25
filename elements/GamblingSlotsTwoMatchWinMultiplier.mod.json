@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Slots Two Match Win Multiplier",
+    "description": "Determines how much of the bet to win back when matching 2 slots in a slot machine",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 2
+  }
+}

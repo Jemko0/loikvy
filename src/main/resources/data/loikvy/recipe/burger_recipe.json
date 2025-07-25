@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "fastfood",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "loikvy:lettuce_leaf"
+    },
+    {
+      "item": "minecraft:cooked_beef"
+    },
+    {
+      "item": "loikvy:tomato_slice"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "id": "loikvy:burger",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "stovetexture_dirty1"
+      },
+      "name": "default"
+    }
+  }
+}

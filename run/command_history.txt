@@ -1,0 +1,50 @@
+/scoreboard objectives setdisplay sidebar Currency
+/scoreboard players add Dev Currency 5000
+/gamerule doDaylightCycle false
+/time set 0
+/scoreboard objectives remove Currency
+/scoreboard objectives add Money dummy "Currency"
+/scoreboard objectives setdisplay sidebar Money
+/scoreboard players add Dev Currency 5000
+/scoreboard players add Dev Money 5000
+/data get block 365 -43 -913
+/give @s minecraft:command_block
+/gamerule commandBlockOutput true
+/data get block 365 -43 -913
+/give @s loikvy:gambling_slots_machine
+/scoreboard players set Dev Money 10000
+/give @s loikvy:ripped_sheet 25
+/effect clear
+/createcharacter
+/pauseplayerstats @s
+/setplayerstat Dev energy 100
+/setplayerstat Dev hygene 100
+/give @s loikvy:ripped_sheet
+/data get entity Dev neoforge:attachments.loikvy:player_variables
+/effect give Dev loikvy:bleeding 30 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables
+/effect give Dev loikvy:bleeding 30 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables
+/effect give Dev loikvy:bleeding 30 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/effect give Dev loikvy:bleeding 150 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/effect give Dev loikvy:bleeding 150 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/effect give Dev loikvy:bleeding 150 0 false
+/tick rate 1000
+/effect give Dev loikvy:bleeding 150 0 false
+/tick rate 20
+/time set 6000
+/setplayerstat @s happiness 100
+/effect give Dev loikvy:bleeding 150 0 false
+/tick rate 200
+/tick rate 20
+/tick rate 200
+/tick rate 20
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/effect give Dev loikvy:bleeding 150 0 false
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/give @s loikvy:ripped_sheet 7
+/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/gambling_black_jack_table"
+    },
+    "facing=east": {
+      "model": "loikvy:block/gambling_black_jack_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/gambling_black_jack_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/gambling_black_jack_table",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "weight_small_one_handed_texture"
+      },
+      "name": "default"
+    }
+  }
+}

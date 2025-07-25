@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Slots Three Match Multiplier",
+    "description": "Determines hoiw much to win back the bet when matching three slots in a slot machine",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 3
+  }
+}

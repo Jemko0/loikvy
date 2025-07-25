@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/smokedetector",
+  "textures": {
+    "all": "minecraft:block/bricks",
+    "particle": "minecraft:block/bricks",
+    "0": "loikvy:block/smokedetectortexture"
+  },
+  "render_type": "solid"
+}

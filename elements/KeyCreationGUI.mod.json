@@ -1,0 +1,66 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 135,
+    "height": 72,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_create_key",
+          "text": {
+            "fixedValue": "Create Key"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 189,
+          "y": 88,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_create",
+          "text": "Create",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "KeyCreateButtonPressed"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 218,
+          "y": 129,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Key ID",
+          "name": "key_id",
+          "width": 120,
+          "height": 20,
+          "x": 153,
+          "y": 102,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

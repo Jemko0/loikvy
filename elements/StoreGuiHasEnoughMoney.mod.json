@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field></block><block type=\"return_logic\" x=\"112\" y=\"146\"><value name=\"return\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"procedure_retval_logic\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"2\"></mutation><field name=\"procedure\">HasEnoughMoney</field><field name=\"name0\">entity</field><field name=\"name1\">dependency1</field><value name=\"arg0\"><block type=\"entity_from_deps\"></block></value></block></value></block></value></block><block type=\"entity_open_gui\" x=\"36\" y=\"228\"><field name=\"guiname\"></field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value><value name=\"x\"><block type=\"coord_x\"></block></value><value name=\"y\"><block type=\"coord_y\"></block></value><value name=\"z\"><block type=\"coord_z\"></block></value></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

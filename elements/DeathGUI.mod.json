@@ -1,0 +1,215 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 244,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_create",
+          "text": "Create",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CharCreatorOnCreatePressed"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 275,
+          "y": 178,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_character_editor",
+          "text": {
+            "fixedValue": "Character Editor"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 175,
+          "y": 42,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "First Name",
+          "name": "ply_first_name",
+          "width": 120,
+          "height": 20,
+          "x": 97,
+          "y": 56,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Last Name",
+          "name": "ply_last_name",
+          "width": 120,
+          "height": 20,
+          "x": 97,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_starting_age_18",
+          "text": {
+            "fixedValue": "Starting Age: 18"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 97,
+          "y": 103,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_birthday",
+          "text": {
+            "fixedValue": "Birthday:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 97,
+          "y": 115,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_calendar_days",
+          "text": {
+            "fixedValue": "",
+            "name": "GetCalendarDays"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 146,
+          "y": 115,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_you_can_respawn_in",
+          "text": {
+            "fixedValue": "You can Respawn in:"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CanNOTRespawn"
+          },
+          "x": 98,
+          "y": 181,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_99999999s",
+          "text": {
+            "fixedValue": "99999999s",
+            "name": "CharCreatorGetRespawnTimeString"
+          },
+          "color": {
+            "value": -39322,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CanNOTRespawn"
+          },
+          "x": 199,
+          "y": 181,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_you_have",
+          "text": {
+            "fixedValue": "You have"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 98,
+          "y": 163,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_lives",
+          "text": {
+            "fixedValue": "3",
+            "name": "GetLivesString"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 143,
+          "y": 163,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_lives_left",
+          "text": {
+            "fixedValue": "lives left"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 151,
+          "y": 163,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

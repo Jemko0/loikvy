@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"entity_send_chat\"><value name=\"text\"><block type=\"execute_command_result\"><value name=\"command\"><block type=\"text_join\"><mutation items=\"4\"></mutation><value name=\"ADD0\"><block type=\"text\"><field name=\"TEXT\">data modify storage minecraft:temp_receipt temp append value \"§</field></block></value><value name=\"ADD1\"><block type=\"gui_get_text_textfield\"><field name=\"textfield\">color</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"ADD2\"><block type=\"gui_get_text_textfield\"><field name=\"textfield\">content</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"ADD3\"><block type=\"text\"><field name=\"TEXT\">\"</field></block></value></block></value><value name=\"x\"><block type=\"coord_x\"></block></value><value name=\"y\"><block type=\"coord_y\"></block></value><value name=\"z\"><block type=\"coord_z\"></block></value></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value><value name=\"actbar\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

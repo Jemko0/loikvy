@@ -1,0 +1,41 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - C:\Program Files\Pylo\MCreator\jdk\bin\java.exe
+ - -jar
+ - C:\Users\User\.mcreator\gradle\caches\modules-2\files-2.1\net.neoforged\mergetool\2.0.3\85c096b0155715275f84922d41462484c9a0285c\mergetool-2.0.3-fatjar.jar
+ - --client
+ - C:\Users\User\.mcreator\gradle\caches\neoformruntime\intermediate_results\stripClient_aea2099b315263ee4294d67a2483e50b1dc439a3_output.jar
+ - --server
+ - C:\Users\User\.mcreator\gradle\caches\neoformruntime\intermediate_results\stripServer_33f21206460a57be41241be9d8f91ae3feb61048_output.jar
+ - --ann
+ - 1.21.1
+ - --output
+ - ./output.jar
+ - --inject
+ - false
+--------------------------------------------------------------------------------
+
+java.io.IOException: Es steht nicht genug Speicherplatz auf dem Datenträger zur Verfügung
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implWrite(BufferedOutputStream.java:222)
+	at java.base/java.io.BufferedOutputStream.write(BufferedOutputStream.java:200)
+	at java.base/java.util.zip.DeflaterOutputStream.deflate(DeflaterOutputStream.java:284)
+	at java.base/java.util.zip.ZipOutputStream.closeEntry(ZipOutputStream.java:283)
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:216)
+	at net.neoforged.mergetool.Merger.process(Merger.java:156)
+	at net.neoforged.mergetool.ConsoleMerger.merge(ConsoleMerger.java:127)
+	at net.neoforged.mergetool.ConsoleMerger.main(ConsoleMerger.java:87)
+	Suppressed: java.lang.NullPointerException: Deflater has been closed
+		at java.base/java.util.zip.Deflater.ensureOpen(Deflater.java:902)
+		at java.base/java.util.zip.Deflater.deflate(Deflater.java:564)
+		at java.base/java.util.zip.Deflater.deflate(Deflater.java:464)
+		at java.base/java.util.zip.DeflaterOutputStream.deflate(DeflaterOutputStream.java:282)
+		at java.base/java.util.zip.ZipOutputStream.closeEntry(ZipOutputStream.java:283)
+		at java.base/java.util.zip.ZipOutputStream.finish(ZipOutputStream.java:388)
+		at java.base/java.util.zip.DeflaterOutputStream.close(DeflaterOutputStream.java:267)
+		at java.base/java.util.zip.ZipOutputStream.close(ZipOutputStream.java:405)
+		at net.neoforged.mergetool.Merger.process(Merger.java:184)
+		... 2 more

@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "command",
+  "definition": {
+    "commandName": "takemoney",
+    "type": "STANDARD",
+    "permissionLevel": "4",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"entity\"><field name=\"name\">target</field><field name=\"type\">player</field><statement name=\"args\"><block type=\"number_default\"><field name=\"name\">amount</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">name</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">TakeMoneyProc</field></block></statement></block></statement></block></statement></block></next></block></xml>"
+  }
+}

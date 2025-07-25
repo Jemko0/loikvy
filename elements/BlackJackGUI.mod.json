@@ -1,0 +1,330 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_blackjack",
+          "text": {
+            "fixedValue": "BLACKJACK"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 191,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_bet",
+          "text": {
+            "fixedValue": "BET"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 146,
+          "y": 156,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_slots_get_bet_string",
+          "text": {
+            "fixedValue": "",
+            "name": "SlotsGetBetString"
+          },
+          "color": {
+            "value": -16751104,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 156,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_slots_error",
+          "text": {
+            "fixedValue": "",
+            "name": "GetSlotsError"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 54,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_hit",
+          "text": "Hit",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "BlackjackHit"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackStarted"
+          },
+          "width": 31,
+          "height": 20,
+          "x": 251,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_stand",
+          "text": "Stand",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "BlackjackStand"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackStarted"
+          },
+          "width": 31,
+          "height": 20,
+          "x": 146,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_you_have",
+          "text": {
+            "fixedValue": "You Have:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 162,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_the_dealer_has",
+          "text": {
+            "fixedValue": "The Dealer Has:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 131,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_dealer_card_number",
+          "text": {
+            "fixedValue": "",
+            "name": "GetDealerCardNumber"
+          },
+          "color": {
+            "value": -13408768,
+            "falpha": 0.0
+          },
+          "x": 214,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_start",
+          "text": "Start",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "StartBlackJack"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 189,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_black_jack_debug_values",
+          "text": {
+            "fixedValue": "",
+            "name": "GetBlackJackDebugValues"
+          },
+          "color": {
+            "value": -39424,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "x": 2,
+          "y": 2,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_player_card_number",
+          "text": {
+            "fixedValue": "",
+            "name": "GetPlayerCardNumber"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 214,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "/2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "HalveBet"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "width": 21,
+          "height": 20,
+          "x": 146,
+          "y": 172,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_50",
+          "text": "-50€",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SlotsDecreaseBet"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "width": 21,
+          "height": 20,
+          "x": 168,
+          "y": 172,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x2",
+          "text": "x2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DoubleBet"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "width": 21,
+          "height": 20,
+          "x": 261,
+          "y": 172,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_50eu",
+          "text": "+50€",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SlotsIncreaseBet"
+          },
+          "displayCondition": {
+            "name": "IsBlackjackNOTStarted"
+          },
+          "width": 21,
+          "height": 20,
+          "x": 239,
+          "y": 172,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_win_state",
+          "text": {
+            "fixedValue": "",
+            "name": "GetWinState"
+          },
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "x": 146,
+          "y": 100,
+          "locked": false
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "SetupBlackjack"
+    },
+    "onClosed": {
+      "name": "BlackJackCloseMenu"
+    },
+    "gridSettings": {
+      "sx": 11,
+      "sy": 16,
+      "ox": 4,
+      "oy": 6,
+      "snapOnGrid": false
+    }
+  }
+}

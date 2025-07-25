@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "fastfood",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.BREAD"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:LettuceLeaf"
+      },
+      {
+        "value": "Items.COOKED_BEEF"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:TomatoSlice"
+      },
+      {
+        "value": "Items.BREAD"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Burger"
+    },
+    "name": "burger_recipe",
+    "namespace": "mod"
+  }
+}
