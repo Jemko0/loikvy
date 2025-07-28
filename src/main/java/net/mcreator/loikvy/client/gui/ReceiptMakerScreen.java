@@ -67,7 +67,7 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -135,6 +135,8 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 		color.setHint(Component.translatable("gui.loikvy.receipt_maker.color"));
 		this.addWidget(this.color);
 		button_make = Button.builder(Component.translatable("gui.loikvy.receipt_maker.button_make"), e -> {
+			int x = ReceiptMakerScreen.this.x;
+			int y = ReceiptMakerScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new ReceiptMakerButtonMessage(0, x, y, z));
 				ReceiptMakerButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -142,6 +144,8 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 		}).bounds(this.leftPos + 198, this.topPos + 64, 46, 20).build();
 		this.addRenderableWidget(button_make);
 		button_empty1 = Button.builder(Component.translatable("gui.loikvy.receipt_maker.button_empty1"), e -> {
+			int x = ReceiptMakerScreen.this.x;
+			int y = ReceiptMakerScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new ReceiptMakerButtonMessage(1, x, y, z));
 				ReceiptMakerButtonMessage.handleButtonAction(entity, 1, x, y, z);

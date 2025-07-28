@@ -58,7 +58,7 @@ public class KeyCreationGUIScreen extends AbstractContainerScreen<KeyCreationGUI
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -101,6 +101,8 @@ public class KeyCreationGUIScreen extends AbstractContainerScreen<KeyCreationGUI
 		key_id.setHint(Component.translatable("gui.loikvy.key_creation_gui.key_id"));
 		this.addWidget(this.key_id);
 		button_create = Button.builder(Component.translatable("gui.loikvy.key_creation_gui.button_create"), e -> {
+			int x = KeyCreationGUIScreen.this.x;
+			int y = KeyCreationGUIScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new KeyCreationGUIButtonMessage(0, x, y, z));
 				KeyCreationGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

@@ -16,11 +16,11 @@
           "entityModel": {
             "name": "DisplayPlayerModelInDeath"
           },
-          "scale": 64,
+          "scale": 20,
           "rotationX": 0,
           "followMouseMovement": true,
           "x": 154,
-          "y": 74,
+          "y": 86,
           "locked": false
         }
       },
@@ -29,33 +29,73 @@
         "data": {
           "name": "label_health_menu",
           "text": {
-            "fixedValue": "Health Menu"
+            "fixedValue": "Health Menu",
+            "name": "GetPlayerFullNameString"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 186,
-          "y": 43,
+          "x": 133,
+          "y": 42,
           "locked": false
         }
       },
       {
-        "type": "inputslot",
+        "type": "imagebutton",
         "data": {
-          "inputLimit": {
-            "value": ""
+          "name": "imagebutton_button_take_bandage2",
+          "image": "button_take_bandage2.png",
+          "hoveredImage": "button_take_bandage_hover.png",
+          "onClick": {
+            "name": "HealthMenuBandageButtonClicked"
           },
-          "disablePlacement": {
-            "fixedValue": false
+          "displayCondition": {
+            "name": "HasBandage"
           },
-          "id": 0,
-          "disablePickup": {
-            "fixedValue": false
+          "x": 182,
+          "y": 73,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ss6bandage",
+          "text": {
+            "fixedValue": "§4Bandaged",
+            "name": "HealthMenuGetBandageString"
           },
-          "dropItemsWhenNotBound": true,
-          "x": 277,
-          "y": 57,
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 182,
+          "y": 61,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "health_menu_entity_32.png",
+          "use1Xscale": false,
+          "x": 148,
+          "y": 62,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_take_off",
+          "text": {
+            "fixedValue": "Take Off"
+          },
+          "width": 16,
+          "height": 16,
+          "x": 182,
+          "y": 73,
           "locked": false
         }
       }

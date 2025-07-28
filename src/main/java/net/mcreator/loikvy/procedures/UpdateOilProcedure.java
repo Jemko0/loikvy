@@ -26,7 +26,8 @@ public class UpdateOilProcedure {
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
-		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu ? _menu.getSlots().get(0).getItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("loikvy:cooking_oil")))) {
+		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu1 ? _menu1.getSlots().get(0).getItem() : ItemStack.EMPTY)
+				.is(ItemTags.create(ResourceLocation.parse("loikvy:cooking_oil")))) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = BlockPos.containing(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);

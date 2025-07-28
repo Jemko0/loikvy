@@ -29,8 +29,8 @@ public class CharCreatorOnCreatePressedProcedure {
 			}
 			{
 				LoikvyModVariables.PlayerVariables _vars = entity.getData(LoikvyModVariables.PLAYER_VARIABLES);
-				_vars.gPlayerFullName = ((entity instanceof Player _entity && _entity.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu) ? _menu.getMenuState(0, "ply_first_name", "") : "") + " "
-						+ ((entity instanceof Player _entity && _entity.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu) ? _menu.getMenuState(0, "ply_last_name", "") : "");
+				_vars.gPlayerFullName = ((entity instanceof Player _entity5 && _entity5.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu5) ? _menu5.getMenuState(0, "ply_first_name", "") : "") + " "
+						+ ((entity instanceof Player _entity6 && _entity6.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu6) ? _menu6.getMenuState(0, "ply_last_name", "") : "");
 				_vars.syncPlayerVariables(entity);
 			}
 			ResetPlayerStatProcProcedure.execute(entity, entity);

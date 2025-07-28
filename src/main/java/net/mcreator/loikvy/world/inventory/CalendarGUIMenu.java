@@ -93,11 +93,11 @@ public class CalendarGUIMenu extends AbstractContainerMenu implements LoikvyModM
 	@SubscribeEvent
 	public static void onPlayerTick(PlayerTickEvent.Post event) {
 		Player entity = event.getEntity();
-		if (entity.containerMenu instanceof CalendarGUIMenu) {
-			Level world = entity.level();
-			double x = entity.getX();
-			double y = entity.getY();
-			double z = entity.getZ();
+		if (entity.containerMenu instanceof CalendarGUIMenu menu) {
+			Level world = menu.world;
+			double x = menu.x;
+			double y = menu.y;
+			double z = menu.z;
 			CalendarGUIUpdateProcedure.execute();
 		}
 	}

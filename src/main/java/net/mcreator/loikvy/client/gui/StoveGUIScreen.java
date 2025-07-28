@@ -52,7 +52,7 @@ public class StoveGUIScreen extends AbstractContainerScreen<StoveGUIMenu> implem
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -80,6 +80,8 @@ public class StoveGUIScreen extends AbstractContainerScreen<StoveGUIMenu> implem
 	public void init() {
 		super.init();
 		button_io = Button.builder(Component.translatable("gui.loikvy.stove_gui.button_io"), e -> {
+			int x = StoveGUIScreen.this.x;
+			int y = StoveGUIScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new StoveGUIButtonMessage(0, x, y, z));
 				StoveGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

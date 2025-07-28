@@ -67,7 +67,7 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -99,6 +99,8 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 	public void init() {
 		super.init();
 		button_roll = Button.builder(Component.translatable("gui.loikvy.slots_gui.button_roll"), e -> {
+			int x = SlotsGUIScreen.this.x;
+			int y = SlotsGUIScreen.this.y;
 			if (IsRollingProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new SlotsGUIButtonMessage(0, x, y, z));
 				SlotsGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -106,6 +108,8 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 		}).bounds(this.leftPos + 59, this.topPos + 56, 56, 20).build();
 		this.addRenderableWidget(button_roll);
 		button_empty = Button.builder(Component.translatable("gui.loikvy.slots_gui.button_empty"), e -> {
+			int x = SlotsGUIScreen.this.x;
+			int y = SlotsGUIScreen.this.y;
 			if (IsRollingProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new SlotsGUIButtonMessage(1, x, y, z));
 				SlotsGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
@@ -113,6 +117,8 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 		}).bounds(this.leftPos + 32, this.topPos + 100, 35, 20).build();
 		this.addRenderableWidget(button_empty);
 		button_empty1 = Button.builder(Component.translatable("gui.loikvy.slots_gui.button_empty1"), e -> {
+			int x = SlotsGUIScreen.this.x;
+			int y = SlotsGUIScreen.this.y;
 			if (IsRollingProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new SlotsGUIButtonMessage(2, x, y, z));
 				SlotsGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
@@ -120,6 +126,8 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 		}).bounds(this.leftPos + 105, this.topPos + 100, 35, 20).build();
 		this.addRenderableWidget(button_empty1);
 		button_2 = Button.builder(Component.translatable("gui.loikvy.slots_gui.button_2"), e -> {
+			int x = SlotsGUIScreen.this.x;
+			int y = SlotsGUIScreen.this.y;
 			if (IsRollingProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new SlotsGUIButtonMessage(3, x, y, z));
 				SlotsGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
@@ -127,6 +135,8 @@ public class SlotsGUIScreen extends AbstractContainerScreen<SlotsGUIMenu> implem
 		}).bounds(this.leftPos + 141, this.topPos + 100, 20, 20).build();
 		this.addRenderableWidget(button_2);
 		button_21 = Button.builder(Component.translatable("gui.loikvy.slots_gui.button_21"), e -> {
+			int x = SlotsGUIScreen.this.x;
+			int y = SlotsGUIScreen.this.y;
 			if (IsRollingProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new SlotsGUIButtonMessage(4, x, y, z));
 				SlotsGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);

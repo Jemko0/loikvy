@@ -203,5 +203,12 @@
   "gui.loikvy.health_menu_gui.label_health_menu": "Health Menu",
   "item.loikvy.ripped_sheet": "Ripped Sheet",
   "entity.loikvy.wheelchair": "Wheelchair",
-  "item.loikvy.wheelchair_spawn_egg": "Wheelchair Spawn Egg"
+  "item.loikvy.wheelchair_spawn_egg": "Wheelchair Spawn Egg",
+  "gui.loikvy.health_menu_gui.label_ss6bandage": "§4Bandaged",
+  "key.loikvy.health_menu_key_bind": "Health Menu Key Bind",
+  "gui.loikvy.health_menu_gui.tooltip_take_off": "Take Off",
+  "gui.loikvy.phone_gui.label_empty": "________________",
+  "gui.loikvy.phone_gui.label_contacts": "Contacts",
+  "block.loikvy.wifi_router": "Wifi Router",
+  "effect.loikvy.mining_efficiency": "Mining Efficiency"
 }

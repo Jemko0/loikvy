@@ -15,7 +15,7 @@ import net.mcreator.loikvy.LoikvyMod;
 public class TiredMobEffect extends MobEffect {
 	public TiredMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -16616985);
-		this.addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.tired_0"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		this.addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.tired_0"), -0.15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 	}
 
 	@Override

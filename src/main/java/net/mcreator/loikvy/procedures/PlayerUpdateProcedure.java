@@ -17,6 +17,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -238,10 +239,14 @@ public class PlayerUpdateProcedure {
 					}
 				}
 			}
+			if ((BuiltInRegistries.ITEM.getKey((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem()).toString()).contains("hoe")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.MINING_EFFICIENCY, 2, 1, true, false));
+			}
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.LOIKVIAN, 5, 0));
 		}
-		if (entity instanceof LivingEntity _livEnt45 && _livEnt45.hasEffect(LoikvyModMobEffects.EXERTION) || entity instanceof LivingEntity _livEnt46 && _livEnt46.hasEffect(LoikvyModMobEffects.DEPRESSED)) {
+		if (entity instanceof LivingEntity _livEnt48 && _livEnt48.hasEffect(LoikvyModMobEffects.EXERTION) || entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(LoikvyModMobEffects.DEPRESSED)) {
 			if (entity.isSprinting()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.RESTRICTED_MOVEMENT, (int) shortEffectLength, 0));

@@ -3,6 +3,7 @@ package net.mcreator.loikvy.client.gui;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,6 +12,7 @@ import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.loikvy.world.inventory.PhoneGUIMenu;
+import net.mcreator.loikvy.procedures.GetWifiLevelProcedure;
 import net.mcreator.loikvy.procedures.GetPhoneModelNameProcedure;
 import net.mcreator.loikvy.procedures.GetClockTimeFormattedProcedure;
 import net.mcreator.loikvy.init.LoikvyModScreens;
@@ -31,8 +33,8 @@ public class PhoneGUIScreen extends AbstractContainerScreen<PhoneGUIMenu> implem
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 96;
-		this.imageHeight = 166;
+		this.imageWidth = 118;
+		this.imageHeight = 199;
 	}
 
 	@Override
@@ -50,12 +52,12 @@ public class PhoneGUIScreen extends AbstractContainerScreen<PhoneGUIMenu> implem
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-		guiGraphics.blit(ResourceLocation.parse("loikvy:textures/screens/phone_background.png"), this.leftPos + 5, this.topPos + 16, 0, 0, 86, 144, 86, 144);
+		guiGraphics.blit(ResourceLocation.parse("loikvy:textures/screens/wifi_sprite_24_bicubic.png"), this.leftPos + 90, this.topPos + 4, Mth.clamp((int) GetWifiLevelProcedure.execute(entity) * 24, 0, 96), 0, 24, 24, 120, 24);
 		RenderSystem.disableBlend();
 	}
 
@@ -70,14 +72,16 @@ public class PhoneGUIScreen extends AbstractContainerScreen<PhoneGUIMenu> implem
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, GetPhoneModelNameProcedure.execute(entity), 6, 4, -12829636, false);
-		guiGraphics.drawString(this.font, GetClockTimeFormattedProcedure.execute(), 7, 18, -12829636, false);
+		guiGraphics.drawString(this.font, GetPhoneModelNameProcedure.execute(entity), 5, 6, -12829636, false);
+		guiGraphics.drawString(this.font, GetClockTimeFormattedProcedure.execute(), 5, 19, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.phone_gui.label_contacts"), 6, 65, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.phone_gui.label_empty"), 5, 33, -12829636, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_phone_button_contacts = new ImageButton(this.leftPos + 7, this.topPos + 30, 16, 16,
+		imagebutton_phone_button_contacts = new ImageButton(this.leftPos + 18, this.topPos + 48, 16, 16,
 				new WidgetSprites(ResourceLocation.parse("loikvy:textures/screens/phone_button_contacts.png"), ResourceLocation.parse("loikvy:textures/screens/phone_button_contacts_hovered.png")), e -> {
 				}) {
 			@Override

@@ -1,7 +1,6 @@
 package net.mcreator.loikvy.world.inventory;
 
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
-import net.neoforged.neoforge.items.SlotItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -32,7 +31,7 @@ public class HealthMenuGUIMenu extends AbstractContainerMenu implements LoikvyMo
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 3)
+			if (!this.containsKey(key) && this.size() >= 6)
 				return null;
 			return super.put(key, value);
 		}
@@ -52,7 +51,7 @@ public class HealthMenuGUIMenu extends AbstractContainerMenu implements LoikvyMo
 		super(LoikvyModMenus.HEALTH_MENU_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(1);
+		this.internal = new ItemStackHandler(0);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -89,11 +88,6 @@ public class HealthMenuGUIMenu extends AbstractContainerMenu implements LoikvyMo
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 150, 21) {
-			private final int slot = 0;
-			private int x = HealthMenuGUIMenu.this.x;
-			private int y = HealthMenuGUIMenu.this.y;
-		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, -2 + 8 + sj * 18, 0 + 84 + si * 18));
@@ -121,16 +115,16 @@ public class HealthMenuGUIMenu extends AbstractContainerMenu implements LoikvyMo
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 1) {
-				if (!this.moveItemStackTo(itemstack1, 1, this.slots.size(), true))
+			if (index < 0) {
+				if (!this.moveItemStackTo(itemstack1, 0, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
-				if (index < 1 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 1 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
+				if (index < 0 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 1, 1 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

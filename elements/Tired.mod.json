@@ -24,7 +24,7 @@
         "attribute": {
           "value": "MOVEMENT_SPEED"
         },
-        "amount": -0.25,
+        "amount": -0.15,
         "operation": "ADD_MULTIPLIED_TOTAL"
       }
     ]

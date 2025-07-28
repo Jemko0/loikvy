@@ -66,7 +66,7 @@ public class DeathGUIScreen extends AbstractContainerScreen<DeathGUIMenu> implem
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -131,6 +131,8 @@ public class DeathGUIScreen extends AbstractContainerScreen<DeathGUIMenu> implem
 		ply_last_name.setHint(Component.translatable("gui.loikvy.death_gui.ply_last_name"));
 		this.addWidget(this.ply_last_name);
 		button_create = Button.builder(Component.translatable("gui.loikvy.death_gui.button_create"), e -> {
+			int x = DeathGUIScreen.this.x;
+			int y = DeathGUIScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new DeathGUIButtonMessage(0, x, y, z));
 				DeathGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

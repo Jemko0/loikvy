@@ -10,6 +10,6 @@ public class FoodPoisoningOnEffectActiveTickProcedure {
 		if (entity == null)
 			return;
 		double tick = 0;
-		entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.GENERIC_KILL)), 2);
+		entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.GENERIC)), (float) 0.5);
 	}
 }

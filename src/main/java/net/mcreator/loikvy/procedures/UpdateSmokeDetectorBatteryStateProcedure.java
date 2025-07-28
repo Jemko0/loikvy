@@ -23,9 +23,9 @@ public class UpdateSmokeDetectorBatteryStateProcedure {
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
 				_blockEntity.getPersistentData().putBoolean("powered",
-						((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu ? _menu.getSlots().get(0).getItem() : ItemStack.EMPTY)
+						((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu0 ? _menu0.getSlots().get(0).getItem() : ItemStack.EMPTY)
 								.is(ItemTags.create(ResourceLocation.parse("loikvy:energy_source")))
-								&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu ? _menu.getSlots().get(0).getItem() : ItemStack.EMPTY).getDamageValue() < 999));
+								&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu2 ? _menu2.getSlots().get(0).getItem() : ItemStack.EMPTY).getDamageValue() < 999));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

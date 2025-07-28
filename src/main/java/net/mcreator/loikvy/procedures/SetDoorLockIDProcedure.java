@@ -12,7 +12,7 @@ public class SetDoorLockIDProcedure {
 			return;
 		{
 			LoikvyModVariables.PlayerVariables _vars = entity.getData(LoikvyModVariables.PLAYER_VARIABLES);
-			_vars.gPlayerCurrentDoorID = (entity instanceof Player _entity && _entity.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu) ? _menu.getMenuState(0, "door_id", "") : "";
+			_vars.gPlayerCurrentDoorID = (entity instanceof Player _entity0 && _entity0.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "door_id", "") : "";
 			_vars.syncPlayerVariables(entity);
 		}
 		if (entity instanceof Player _player)

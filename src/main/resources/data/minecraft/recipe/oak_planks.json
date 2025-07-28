@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:stone_axe"
+    },
+    {
+      "tag": "minecraft:logs"
+    }
+  ],
+  "result": {
+    "id": "minecraft:oak_planks",
+    "count": 2
+  }
+}

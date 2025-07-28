@@ -9,6 +9,6 @@ public class OverdosingOnEffectActiveTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.GENERIC)), 2);
+		entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.GENERIC)), (float) 0.5);
 	}
 }

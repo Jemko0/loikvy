@@ -60,7 +60,7 @@ public class DoorLockIDGUIScreen extends AbstractContainerScreen<DoorLockIDGUIMe
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -105,6 +105,8 @@ public class DoorLockIDGUIScreen extends AbstractContainerScreen<DoorLockIDGUIMe
 		door_id.setHint(Component.translatable("gui.loikvy.door_lock_idgui.door_id"));
 		this.addWidget(this.door_id);
 		button_set = Button.builder(Component.translatable("gui.loikvy.door_lock_idgui.button_set"), e -> {
+			int x = DoorLockIDGUIScreen.this.x;
+			int y = DoorLockIDGUIScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new DoorLockIDGUIButtonMessage(0, x, y, z));
 				DoorLockIDGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

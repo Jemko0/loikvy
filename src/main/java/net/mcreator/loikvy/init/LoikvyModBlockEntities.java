@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.BuiltInRegistries;
 
+import net.mcreator.loikvy.block.entity.WifiRouterBlockEntity;
 import net.mcreator.loikvy.block.entity.StoveBlockEntity;
 import net.mcreator.loikvy.block.entity.SmokeDetectorBlockEntity;
 import net.mcreator.loikvy.block.entity.SinkBlockBlockEntity;
@@ -40,6 +41,7 @@ public class LoikvyModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GamblingSlotsMachineBlockEntity>> GAMBLING_SLOTS_MACHINE = register("gambling_slots_machine", LoikvyModBlocks.GAMBLING_SLOTS_MACHINE, GamblingSlotsMachineBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GamblingBlackJackTableBlockEntity>> GAMBLING_BLACK_JACK_TABLE = register("gambling_black_jack_table", LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE,
 			GamblingBlackJackTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WifiRouterBlockEntity>> WIFI_ROUTER = register("wifi_router", LoikvyModBlocks.WIFI_ROUTER, WifiRouterBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -59,5 +61,6 @@ public class LoikvyModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SINK_BLOCK.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GAMBLING_SLOTS_MACHINE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GAMBLING_BLACK_JACK_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WIFI_ROUTER.get(), SidedInvWrapper::new);
 	}
 }

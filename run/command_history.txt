@@ -1,50 +1,50 @@
-/scoreboard objectives setdisplay sidebar Currency
-/scoreboard players add Dev Currency 5000
-/gamerule doDaylightCycle false
-/time set 0
-/scoreboard objectives remove Currency
-/scoreboard objectives add Money dummy "Currency"
-/scoreboard objectives setdisplay sidebar Money
-/scoreboard players add Dev Currency 5000
-/scoreboard players add Dev Money 5000
-/data get block 365 -43 -913
-/give @s minecraft:command_block
-/gamerule commandBlockOutput true
-/data get block 365 -43 -913
-/give @s loikvy:gambling_slots_machine
-/scoreboard players set Dev Money 10000
-/give @s loikvy:ripped_sheet 25
-/effect clear
-/createcharacter
-/pauseplayerstats @s
-/setplayerstat Dev energy 100
-/setplayerstat Dev hygene 100
-/give @s loikvy:ripped_sheet
-/data get entity Dev neoforge:attachments.loikvy:player_variables
-/effect give Dev loikvy:bleeding 30 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables
-/effect give Dev loikvy:bleeding 30 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables
-/effect give Dev loikvy:bleeding 30 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
-/effect give Dev loikvy:bleeding 150 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
-/effect give Dev loikvy:bleeding 150 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
-/effect give Dev loikvy:bleeding 150 0 false
-/tick rate 1000
-/effect give Dev loikvy:bleeding 150 0 false
-/tick rate 20
 /time set 6000
-/setplayerstat @s happiness 100
-/effect give Dev loikvy:bleeding 150 0 false
-/tick rate 200
-/tick rate 20
-/tick rate 200
-/tick rate 20
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
-/effect give Dev loikvy:bleeding 150 0 false
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
-/give @s loikvy:ripped_sheet 7
-/data get entity Dev neoforge:attachments.loikvy:player_variables.gPlayerBandageDirty
+/time set 6000d
+/time set 60000d
+/time set 600000d
+/give @s loikvy:calendar
+/effect give @s loikvy:bleeding 0 0 true
+/effect give @s loikvy:bleeding 20 0 true
+/give @s cake[minecraft:max_stack_size=99]
+/give @s cake[minecraft:max_stack_size=99] 99
+/give @s loikvy:wifi_router
+/give @s loikvy:phone
+/rc
+/data get block
+/data get block 681 65 1728
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 15
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 5
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 10
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 8
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 7
+/neoforge data_components list
+/data modify block 681 65 1728 NeoForgeData.max_wifi set value 6
+/neoforge data_components list
+/pauseplayerstats @s
+/setplayerstat @s energy 100
+/setplayerstat @s hygene 100
+/settrait @s prone_to_injury false
+/settrait @s tough true
+/data get entity @s neoforge:attachments.loikvy:player_variables
+/effect give @s minecraft:instant_health
+/effect give @s minecraft:instant_health 5
+/data get entity @s neoforge:attachments.loikvy:player_variables
+/settrait @s tough false
+/settrait @s prone_to_injury true
+/effect give @s minecraft:instant_health 5
+/settrait @s prone_to_injury false
+/settrait @s tough false
+/effect give @s minecraft:instant_health 5
+/effect give @s loikvy:food_poisoning 15 0 true
+/settrait @s tough truw
+/effect give @s minecraft:instant_health 5
+/settrait @s tough true
+/settrait @s prone_to_injury false
+/effect give @s loikvy:food_poisoning 15 0 true
+/settrait @s tough false
+/settrait @s prone_to_injury true
+/effect give @s minecraft:instant_health 5
+/effect give @s loikvy:food_poisoning 15 0 true
+/pauseplayerstats @s
+/gamerule randomTickSpeed
+/gamerule randomTickSpeed 1

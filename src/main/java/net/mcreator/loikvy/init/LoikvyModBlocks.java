@@ -12,6 +12,7 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.loikvy.block.WifiRouterBlock;
 import net.mcreator.loikvy.block.StoveBlock;
 import net.mcreator.loikvy.block.SmokeDetectorBlock;
 import net.mcreator.loikvy.block.SinkBlockBlock;
@@ -42,6 +43,7 @@ public class LoikvyModBlocks {
 	public static final DeferredBlock<Block> GAMBLING_SLOTS_MACHINE = REGISTRY.register("gambling_slots_machine", GamblingSlotsMachineBlock::new);
 	public static final DeferredBlock<Block> BRIGHTER_TORCH = REGISTRY.register("brighter_torch", BrighterTorchBlock::new);
 	public static final DeferredBlock<Block> GAMBLING_BLACK_JACK_TABLE = REGISTRY.register("gambling_black_jack_table", GamblingBlackJackTableBlock::new);
+	public static final DeferredBlock<Block> WIFI_ROUTER = REGISTRY.register("wifi_router", WifiRouterBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

@@ -15,6 +15,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -101,8 +102,10 @@ public class LoikvyModVariables {
 			clone.gPlayerBandaged = original.gPlayerBandaged;
 			clone.gPlayerBandageDirty = original.gPlayerBandageDirty;
 			clone.gPlayerBandageTime = original.gPlayerBandageTime;
+			clone.gPlayerBandageItem = original.gPlayerBandageItem;
 			if (!event.isWasDeath()) {
 				clone.gPlayerCurrentDoorID = original.gPlayerCurrentDoorID;
+				clone.gPlayerCurrentBreakBlock = original.gPlayerCurrentBreakBlock;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -269,6 +272,8 @@ public class LoikvyModVariables {
 		public boolean gPlayerBandaged = false;
 		public double gPlayerBandageDirty = 0;
 		public double gPlayerBandageTime = 0;
+		public ItemStack gPlayerBandageItem = ItemStack.EMPTY;
+		public String gPlayerCurrentBreakBlock = "\"\"";
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -301,6 +306,8 @@ public class LoikvyModVariables {
 			nbt.putBoolean("gPlayerBandaged", gPlayerBandaged);
 			nbt.putDouble("gPlayerBandageDirty", gPlayerBandageDirty);
 			nbt.putDouble("gPlayerBandageTime", gPlayerBandageTime);
+			nbt.put("gPlayerBandageItem", gPlayerBandageItem.saveOptional(lookupProvider));
+			nbt.putString("gPlayerCurrentBreakBlock", gPlayerCurrentBreakBlock);
 			return nbt;
 		}
 
@@ -334,6 +341,8 @@ public class LoikvyModVariables {
 			gPlayerBandaged = nbt.getBoolean("gPlayerBandaged");
 			gPlayerBandageDirty = nbt.getDouble("gPlayerBandageDirty");
 			gPlayerBandageTime = nbt.getDouble("gPlayerBandageTime");
+			gPlayerBandageItem = ItemStack.parseOptional(lookupProvider, nbt.getCompound("gPlayerBandageItem"));
+			gPlayerCurrentBreakBlock = nbt.getString("gPlayerCurrentBreakBlock");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

@@ -102,11 +102,11 @@ public class SlotsGUIMenu extends AbstractContainerMenu implements LoikvyModMenu
 	@SubscribeEvent
 	public static void onPlayerTick(PlayerTickEvent.Post event) {
 		Player entity = event.getEntity();
-		if (entity.containerMenu instanceof SlotsGUIMenu) {
-			Level world = entity.level();
-			double x = entity.getX();
-			double y = entity.getY();
-			double z = entity.getZ();
+		if (entity.containerMenu instanceof SlotsGUIMenu menu) {
+			Level world = menu.world;
+			double x = menu.x;
+			double y = menu.y;
+			double z = menu.z;
 			SlotsGUIWhileThisGUIIsOpenTickProcedure.execute();
 		}
 	}

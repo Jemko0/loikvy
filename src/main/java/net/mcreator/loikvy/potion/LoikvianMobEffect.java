@@ -23,9 +23,11 @@ public class LoikvianMobEffect extends MobEffect {
 	public LoikvianMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);
 		this.addAttributeModifier(Attributes.BLOCK_BREAK_SPEED, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_0"), -0.925, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
-		this.addAttributeModifier(Attributes.BLOCK_INTERACTION_RANGE, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_1"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
-		this.addAttributeModifier(Attributes.MINING_EFFICIENCY, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_2"), 4.5, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		this.addAttributeModifier(Attributes.BLOCK_INTERACTION_RANGE, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_1"), -0.15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		this.addAttributeModifier(Attributes.MINING_EFFICIENCY, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_2"), 6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 		this.addAttributeModifier(Attributes.ATTACK_KNOCKBACK, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_3"), -0.85, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		this.addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_4"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		this.addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(LoikvyMod.MODID, "effect.loikvian_5"), -0.1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 	}
 
 	@Override

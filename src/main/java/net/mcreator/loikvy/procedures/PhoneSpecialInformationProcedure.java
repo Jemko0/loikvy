@@ -6,6 +6,7 @@ import net.minecraft.core.component.DataComponents;
 
 public class PhoneSpecialInformationProcedure {
 	public static String execute(ItemStack itemstack) {
-		return "Model: " + itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("model_name");
+		return "Model: " + itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("model_name") + "\n" + "Wifi Strength: "
+				+ Math.round(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("wifi_strength") - 1);
 	}
 }

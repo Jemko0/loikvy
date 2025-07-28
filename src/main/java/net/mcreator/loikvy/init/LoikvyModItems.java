@@ -123,6 +123,7 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> GAMBLING_BLACK_JACK_TABLE = block(LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE);
 	public static final DeferredItem<Item> RIPPED_SHEET = REGISTRY.register("ripped_sheet", RippedSheetItem::new);
 	public static final DeferredItem<Item> WHEELCHAIR_SPAWN_EGG = REGISTRY.register("wheelchair_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.WHEELCHAIR, -16724788, -1, new Item.Properties()));
+	public static final DeferredItem<Item> WIFI_ROUTER = block(LoikvyModBlocks.WIFI_ROUTER);
 
 	// Start of user code block custom items
 	// End of user code block custom items

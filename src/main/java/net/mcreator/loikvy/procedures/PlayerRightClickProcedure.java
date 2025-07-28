@@ -82,5 +82,10 @@ public class PlayerRightClickProcedure {
 				}
 			}
 		}
+		if ((BuiltInRegistries.ITEM.getKey((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem()).toString()).contains("hoe")) {
+			if (event instanceof ICancellableEvent _cancellable) {
+				_cancellable.setCanceled(true);
+			}
+		}
 	}
 }

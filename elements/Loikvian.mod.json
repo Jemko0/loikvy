@@ -31,14 +31,14 @@
         "attribute": {
           "value": "BLOCK_REACH"
         },
-        "amount": -0.25,
+        "amount": -0.15000000000000002,
         "operation": "ADD_MULTIPLIED_TOTAL"
       },
       {
         "attribute": {
           "value": "MINING_EFFICIENCY"
         },
-        "amount": 4.5,
+        "amount": 6.0,
         "operation": "ADD_MULTIPLIED_TOTAL"
       },
       {
@@ -46,6 +46,20 @@
           "value": "ATTACK_KNOCKBACK"
         },
         "amount": -0.85,
+        "operation": "ADD_MULTIPLIED_TOTAL"
+      },
+      {
+        "attribute": {
+          "value": "ATTACK_DAMAGE"
+        },
+        "amount": -0.25,
+        "operation": "ADD_MULTIPLIED_TOTAL"
+      },
+      {
+        "attribute": {
+          "value": "ATTACK_SPEED"
+        },
+        "amount": -0.09999999999999999,
         "operation": "ADD_MULTIPLIED_TOTAL"
       }
     ]

@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "phone_off",
+    "texture": "phone_on",
     "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {
@@ -40,7 +40,7 @@
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 0,
+    "damageCount": 100,
     "recipeRemainder": {
       "value": ""
     },

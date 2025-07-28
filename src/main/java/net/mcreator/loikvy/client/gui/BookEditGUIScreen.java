@@ -63,7 +63,7 @@ public class BookEditGUIScreen extends AbstractContainerScreen<BookEditGUIMenu> 
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -118,6 +118,8 @@ public class BookEditGUIScreen extends AbstractContainerScreen<BookEditGUIMenu> 
 		title.setHint(Component.translatable("gui.loikvy.book_edit_gui.title"));
 		this.addWidget(this.title);
 		button_cancel = Button.builder(Component.translatable("gui.loikvy.book_edit_gui.button_cancel"), e -> {
+			int x = BookEditGUIScreen.this.x;
+			int y = BookEditGUIScreen.this.y;
 			if (true) {
 				PacketDistributor.sendToServer(new BookEditGUIButtonMessage(0, x, y, z));
 				BookEditGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

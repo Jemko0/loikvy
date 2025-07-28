@@ -22,6 +22,7 @@ import net.mcreator.loikvy.potion.PanicMobEffect;
 import net.mcreator.loikvy.potion.OverstimulatedMobEffect;
 import net.mcreator.loikvy.potion.OverdosingMobEffect;
 import net.mcreator.loikvy.potion.MinorInjuryMobEffect;
+import net.mcreator.loikvy.potion.MiningEfficiencyMobEffect;
 import net.mcreator.loikvy.potion.MajorInjuryMobEffect;
 import net.mcreator.loikvy.potion.LoikvianMobEffect;
 import net.mcreator.loikvy.potion.IckyMobEffect;
@@ -57,4 +58,5 @@ public class LoikvyModMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> OVERDOSING = REGISTRY.register("overdosing", () -> new OverdosingMobEffect());
 	public static final DeferredHolder<MobEffect, MobEffect> DEAD = REGISTRY.register("dead", () -> new DeadMobEffect());
 	public static final DeferredHolder<MobEffect, MobEffect> LOIKVIAN = REGISTRY.register("loikvian", () -> new LoikvianMobEffect());
+	public static final DeferredHolder<MobEffect, MobEffect> MINING_EFFICIENCY = REGISTRY.register("mining_efficiency", () -> new MiningEfficiencyMobEffect());
 }

@@ -64,7 +64,7 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -100,6 +100,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 	public void init() {
 		super.init();
 		button_hit = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_hit"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(0, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -107,6 +109,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 125, this.topPos + 79, 31, 20).build();
 		this.addRenderableWidget(button_hit);
 		button_stand = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_stand"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(1, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
@@ -114,6 +118,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 20, this.topPos + 79, 31, 20).build();
 		this.addRenderableWidget(button_stand);
 		button_start = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_start"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackNOTStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(2, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
@@ -121,6 +127,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 63, this.topPos + 79, 51, 20).build();
 		this.addRenderableWidget(button_start);
 		button_2 = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_2"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackNOTStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(3, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
@@ -128,6 +136,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 20, this.topPos + 135, 21, 20).build();
 		this.addRenderableWidget(button_2);
 		button_50 = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_50"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackNOTStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(4, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
@@ -135,6 +145,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 42, this.topPos + 135, 21, 20).build();
 		this.addRenderableWidget(button_50);
 		button_x2 = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_x2"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackNOTStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(5, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 5, x, y, z);
@@ -142,6 +154,8 @@ public class BlackJackGUIScreen extends AbstractContainerScreen<BlackJackGUIMenu
 		}).bounds(this.leftPos + 135, this.topPos + 135, 21, 20).build();
 		this.addRenderableWidget(button_x2);
 		button_50eu = Button.builder(Component.translatable("gui.loikvy.black_jack_gui.button_50eu"), e -> {
+			int x = BlackJackGUIScreen.this.x;
+			int y = BlackJackGUIScreen.this.y;
 			if (IsBlackjackNOTStartedProcedure.execute(world, x, y, z)) {
 				PacketDistributor.sendToServer(new BlackJackGUIButtonMessage(6, x, y, z));
 				BlackJackGUIButtonMessage.handleButtonAction(entity, 6, x, y, z);

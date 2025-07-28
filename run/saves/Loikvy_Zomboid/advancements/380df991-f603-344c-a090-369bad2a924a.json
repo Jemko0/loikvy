@@ -1237,6 +1237,7 @@
   },
   "minecraft:husbandry/balanced_diet": {
     "criteria": {
+      "bread": "2025-07-28 03:44:12 +0200",
       "cooked_beef": "2025-07-16 23:22:48 +0200"
     },
     "done": false
@@ -7676,6 +7677,12 @@
   "minecraft:recipes/decorations/campfire": {
     "criteria": {
       "has_coal": "2025-07-17 12:23:09 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/mine_stone": {
+    "criteria": {
+      "get_stone": "2025-07-28 04:24:14 +0200"
     },
     "done": true
   },

@@ -17,11 +17,10 @@ public class ReceiptAddElementProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player && !_player.level().isClientSide())
-			_player.displayClientMessage(
-					Component.literal((executeCommandGetResult(world, new Vec3(x, y, z),
-							("data modify storage minecraft:temp_receipt temp append value \"\u00A7" + ""
-									+ ((entity instanceof Player _entity && _entity.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu) ? _menu.getMenuState(0, "color", "") : "")
-									+ ((entity instanceof Player _entity && _entity.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu) ? _menu.getMenuState(0, "content", "") : "") + "\"")))),
+			_player.displayClientMessage(Component.literal((executeCommandGetResult(world, new Vec3(x, y, z),
+					("data modify storage minecraft:temp_receipt temp append value \"\u00A7" + ""
+							+ ((entity instanceof Player _entity0 && _entity0.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "color", "") : "")
+							+ ((entity instanceof Player _entity1 && _entity1.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(0, "content", "") : "") + "\"")))),
 					false);
 	}
 
