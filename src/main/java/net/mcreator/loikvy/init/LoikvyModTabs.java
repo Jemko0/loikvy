@@ -33,6 +33,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.CHISEL.get());
 			tabData.accept(LoikvyModItems.SMALL_ROCK.get());
 			tabData.accept(LoikvyModItems.SHARP_ROCK.get());
+			tabData.accept(LoikvyModItems.SHARP_STICK.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(LoikvyModBlocks.FRIDGE.get().asItem());
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());
@@ -72,6 +73,7 @@ public class LoikvyModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			tabData.accept(LoikvyModItems.LETTUCE_SEED.get());
 			tabData.accept(LoikvyModItems.RIPPED_SHEET.get());
+			tabData.accept(LoikvyModItems.TREE_BARK.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(LoikvyModItems.SHOP_CASHIER_SPAWN_EGG.get());
 			tabData.accept(LoikvyModItems.WHEELCHAIR_SPAWN_EGG.get());

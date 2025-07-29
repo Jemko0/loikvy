@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "loikvy:tree_bark"
+    },
+    {
+      "item": "loikvy:tree_bark"
+    },
+    {
+      "item": "loikvy:tree_bark"
+    },
+    {
+      "item": "loikvy:tree_bark"
+    }
+  ],
+  "result": {
+    "id": "minecraft:oak_log",
+    "count": 1
+  }
+}

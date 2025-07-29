@@ -6,7 +6,7 @@ entityDistanceScaling:1.0
 entityShadows:true
 forceUnicodeFont:false
 japaneseGlyphVariants:false
-fov:0.25
+fov:0.5
 fovEffectScale:0.505901606824043
 darknessEffectScale:1.0
 glintSpeed:0.5
@@ -15,7 +15,7 @@ prioritizeChunkUpdates:0
 fullscreen:false
 gamma:0.0
 graphicsMode:1
-guiScale:2
+guiScale:3
 maxFps:260
 mipmapLevels:4
 narrator:0

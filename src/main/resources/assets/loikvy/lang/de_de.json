@@ -226,5 +226,8 @@
   "gui.loikvy.app_wifi_settings.label_strength": "Strength:",
   "gui.loikvy.app_wifi_settings.label_wifi_settings": "Wifi Settings",
   "gui.loikvy.app_wifi_settings.label_ipaddress": "IP-Address:",
-  "gui.loikvy.app_wifi_settings.label_name": "Name:"
+  "gui.loikvy.app_wifi_settings.label_name": "Name:",
+  "item.loikvy.tree_bark": "Tree Bark",
+  "item.loikvy.sharp_stick": "Sharp Stick",
+  "item.loikvy.plant_fiber": "Plant Fiber"
 }

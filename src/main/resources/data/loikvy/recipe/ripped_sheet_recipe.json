@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    }
+  ],
+  "result": {
+    "id": "loikvy:ripped_sheet",
+    "count": 2
+  }
+}

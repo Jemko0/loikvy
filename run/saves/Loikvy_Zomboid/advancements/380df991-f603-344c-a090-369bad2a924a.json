@@ -7723,5 +7723,41 @@
     },
     "done": true
   },
+  "loikvy:recipes/sticks": {
+    "criteria": {
+      "has_ingredient_0": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "loikvy:recipes/oak_log": {
+    "criteria": {
+      "has_ingredient_0": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "loikvy:recipes/sharp_rock_recipe": {
+    "criteria": {
+      "has_ingredient_0": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "loikvy:recipes/sharp_stick_recipe": {
+    "criteria": {
+      "has_ingredient_0": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "loikvy:recipes/planks_override": {
+    "criteria": {
+      "has_ingredient_0": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "loikvy:recipes/basic_axe": {
+    "criteria": {
+      "has_ingredient_2": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

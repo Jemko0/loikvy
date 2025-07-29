@@ -32,6 +32,7 @@ import net.mcreator.loikvy.item.WeightSmallOneHandedItem;
 import net.mcreator.loikvy.item.UncookedNoodlesItem;
 import net.mcreator.loikvy.item.UnbakedPizzaItem;
 import net.mcreator.loikvy.item.UnbakedCheesePizzaItem;
+import net.mcreator.loikvy.item.TreeBarkItem;
 import net.mcreator.loikvy.item.TomatoSliceItem;
 import net.mcreator.loikvy.item.TomatoItem;
 import net.mcreator.loikvy.item.TeaspoonItem;
@@ -39,9 +40,11 @@ import net.mcreator.loikvy.item.TableSpoonItem;
 import net.mcreator.loikvy.item.SunflowerOilItem;
 import net.mcreator.loikvy.item.StoneAxeItem;
 import net.mcreator.loikvy.item.SmallRockItem;
+import net.mcreator.loikvy.item.SharpStickItem;
 import net.mcreator.loikvy.item.SharpRockItem;
 import net.mcreator.loikvy.item.RottenFoodItem;
 import net.mcreator.loikvy.item.RippedSheetItem;
+import net.mcreator.loikvy.item.PlantFiberItem;
 import net.mcreator.loikvy.item.PizzaSliceItem;
 import net.mcreator.loikvy.item.PizzaItem;
 import net.mcreator.loikvy.item.PhoneItem;
@@ -142,6 +145,9 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> EMPTY_CAN = REGISTRY.register("empty_can", EmptyCanItem::new);
 	public static final DeferredItem<Item> UNCOOKED_NOODLES = REGISTRY.register("uncooked_noodles", UncookedNoodlesItem::new);
 	public static final DeferredItem<Item> COOKED_NOODLES = REGISTRY.register("cooked_noodles", CookedNoodlesItem::new);
+	public static final DeferredItem<Item> TREE_BARK = REGISTRY.register("tree_bark", TreeBarkItem::new);
+	public static final DeferredItem<Item> SHARP_STICK = REGISTRY.register("sharp_stick", SharpStickItem::new);
+	public static final DeferredItem<Item> PLANT_FIBER = REGISTRY.register("plant_fiber", PlantFiberItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

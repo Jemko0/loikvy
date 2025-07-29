@@ -29,7 +29,7 @@ public class SharpRockItem extends TieredItem {
 
 		@Override
 		public float getSpeed() {
-			return 4f;
+			return 3f;
 		}
 
 		@Override
@@ -44,7 +44,7 @@ public class SharpRockItem extends TieredItem {
 
 		@Override
 		public int getEnchantmentValue() {
-			return 2;
+			return 15;
 		}
 
 		@Override
@@ -71,7 +71,7 @@ public class SharpRockItem extends TieredItem {
 
 	@Override
 	public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-		return 4f;
+		return 3f;
 	}
 
 	@Override
