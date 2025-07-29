@@ -210,5 +210,18 @@
   "gui.loikvy.phone_gui.label_empty": "________________",
   "gui.loikvy.phone_gui.label_contacts": "Contacts",
   "block.loikvy.wifi_router": "Wifi Router",
-  "effect.loikvy.mining_efficiency": "Mining Efficiency"
+  "effect.loikvy.mining_efficiency": "Mining Efficiency",
+  "item.loikvy.stone_axe": "Basic Axe",
+  "entity.loikvy.ground_item": "Ground Item",
+  "item.loikvy.ground_item_spawn_egg": "Ground Item Spawn Egg",
+  "subtitles.silence": "",
+  "item.loikvy.chisel": "Chisel",
+  "item.loikvy.small_rock": "Small Rock",
+  "item.loikvy.sharp_rock": "Sharp Rock",
+  "item.loikvy.energy_drink": "Energy Drink",
+  "item.loikvy.energy_drink.description_0": "§2+5 Energy",
+  "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
+  "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
+  "item.loikvy.empty_can": "Empty Can",
+  "subtitles.bone_break": ""
 }

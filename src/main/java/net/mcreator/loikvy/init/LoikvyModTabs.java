@@ -29,6 +29,10 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.BAG.get());
 			tabData.accept(LoikvyModItems.LOCK_REMOVER.get());
 			tabData.accept(LoikvyModItems.WEIGHT_SMALL_ONE_HANDED.get());
+			tabData.accept(LoikvyModItems.STONE_AXE.get());
+			tabData.accept(LoikvyModItems.CHISEL.get());
+			tabData.accept(LoikvyModItems.SMALL_ROCK.get());
+			tabData.accept(LoikvyModItems.SHARP_ROCK.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(LoikvyModBlocks.FRIDGE.get().asItem());
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());
@@ -56,6 +60,8 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.UNBAKED_CHEESE_PIZZA.get());
 			tabData.accept(LoikvyModItems.PEPPERONI_CHUNK.get());
 			tabData.accept(LoikvyModItems.PEPPERONI_SLICE.get());
+			tabData.accept(LoikvyModItems.ENERGY_DRINK.get());
+			tabData.accept(LoikvyModItems.EMPTY_CAN.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(LoikvyModItems.AA_BATTERY.get());
 			tabData.accept(LoikvyModBlocks.COAL_GENERATOR.get().asItem());
@@ -68,6 +74,7 @@ public class LoikvyModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(LoikvyModItems.SHOP_CASHIER_SPAWN_EGG.get());
 			tabData.accept(LoikvyModItems.WHEELCHAIR_SPAWN_EGG.get());
+			tabData.accept(LoikvyModItems.GROUND_ITEM_SPAWN_EGG.get());
 		}
 	}
 }

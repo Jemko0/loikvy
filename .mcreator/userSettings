@@ -2,8 +2,22 @@
   "workspacePanelIconSize": "LIST",
   "workspacePanelSortType": "CREATED",
   "workspacePanelSortAscending": true,
-  "projectBrowserSplitPos": 403,
+  "projectBrowserSplitPos": 119,
   "projectBrowserState": {
-    "expandedPaths": []
+    "expandedPaths": [
+      "[, Loikvy Roleplay]",
+      "[, Loikvy Roleplay, Source (Gradle)]",
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net]",
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator]",
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy]",
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy\\item]",
+      "[, Loikvy Roleplay, Resources (Gradle)]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\models]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\models, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\models\\item]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\textures]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\textures, C:\\Users\\pc\\Documents\\GitHub\\loikvy\\src\\main\\resources\\assets\\loikvy\\textures\\item]"
+    ]
   }
 }

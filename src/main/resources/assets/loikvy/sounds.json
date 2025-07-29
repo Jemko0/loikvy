@@ -89,5 +89,21 @@
         "stream": false
       }
     ]
+  },
+  "silence": {
+    "sounds": [
+      {
+        "name": "loikvy:silence",
+        "stream": false
+      }
+    ]
+  },
+  "bone_break": {
+    "sounds": [
+      {
+        "name": "loikvy:break_bone",
+        "stream": false
+      }
+    ]
   }
 }

@@ -25,4 +25,6 @@ public class LoikvyModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DREAM1 = REGISTRY.register("dream1", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("loikvy", "dream1")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> DREAM2 = REGISTRY.register("dream2", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("loikvy", "dream2")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> DREAM3 = REGISTRY.register("dream3", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("loikvy", "dream3")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SILENCE = REGISTRY.register("silence", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("loikvy", "silence")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> BONE_BREAK = REGISTRY.register("bone_break", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("loikvy", "bone_break")));
 }

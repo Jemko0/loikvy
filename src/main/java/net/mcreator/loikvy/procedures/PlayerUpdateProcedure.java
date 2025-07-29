@@ -7,6 +7,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -34,16 +36,17 @@ import javax.annotation.Nullable;
 public class PlayerUpdateProcedure {
 	@SubscribeEvent
 	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity());
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
+		ItemStack bandage = ItemStack.EMPTY;
 		double enduranceLoss = 0;
 		double ickyLevel = 0;
 		double hygeneLoss = 0;
@@ -51,7 +54,7 @@ public class PlayerUpdateProcedure {
 		double energyLoss = 0;
 		double shortEffectLength = 0;
 		double sicknessMultiplier = 0;
-		ItemStack bandage = ItemStack.EMPTY;
+		double regenTimeAddition = 0;
 		sicknessMultiplier = 1;
 		if (entity.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerIsResistantToSickness) {
 			sicknessMultiplier = 0.5;
@@ -177,31 +180,39 @@ public class PlayerUpdateProcedure {
 						_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.SAD, (int) shortEffectLength, 0));
 				}
 			}
-			if ((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.5) {
-				if ((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.25) {
+			if ((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.66) {
+				if ((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.4) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.MAJOR_INJURY, (int) shortEffectLength, 0));
+					if ((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.2) {
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int) shortEffectLength, 0));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.RESTRICTED_MOVEMENT, (int) shortEffectLength, 0));
+					}
 				} else {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.MINOR_INJURY, (int) shortEffectLength, 0));
 				}
 			}
-			if (entity instanceof LivingEntity _livEnt36 && _livEnt36.hasEffect(LoikvyModMobEffects.PANIC)) {
+			if (entity instanceof LivingEntity _livEnt41 && _livEnt41.hasEffect(LoikvyModMobEffects.PANIC)) {
 				PlayerGainHappinessProcedure.execute(entity, -0.003);
 			}
-			if (entity instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(LoikvyModMobEffects.BLEEDING)) {
+			if (entity instanceof LivingEntity _livEnt42 && _livEnt42.hasEffect(LoikvyModMobEffects.BLEEDING)) {
 				PlayerGainHappinessProcedure.execute(entity, -0.007);
 			}
-			if (entity instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(LoikvyModMobEffects.DRUNK)) {
+			if (entity instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(LoikvyModMobEffects.DRUNK)) {
 				PlayerGainHappinessProcedure.execute(entity, 0.0004);
 			}
-			if (entity instanceof LivingEntity _livEnt39 && _livEnt39.hasEffect(LoikvyModMobEffects.OVERSTIMULATED)) {
+			if (entity instanceof LivingEntity _livEnt44 && _livEnt44.hasEffect(LoikvyModMobEffects.OVERSTIMULATED)) {
 				PlayerGainHappinessProcedure.execute(entity, -0.002);
 			}
-			if (entity instanceof LivingEntity _livEnt40 && _livEnt40.hasEffect(LoikvyModMobEffects.OVERDOSING)) {
+			if (entity instanceof LivingEntity _livEnt45 && _livEnt45.hasEffect(LoikvyModMobEffects.OVERDOSING)) {
 				PlayerGainHappinessProcedure.execute(entity, -0.05);
 			}
-			if (entity instanceof LivingEntity _livEnt41 && _livEnt41.hasEffect(LoikvyModMobEffects.BLEEDING)) {
+			if (entity instanceof LivingEntity _livEnt46 && _livEnt46.hasEffect(LoikvyModMobEffects.BLEEDING)) {
 				if (entity.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerBandaged) {
 					{
 						LoikvyModVariables.PlayerVariables _vars = entity.getData(LoikvyModVariables.PLAYER_VARIABLES);
@@ -246,10 +257,30 @@ public class PlayerUpdateProcedure {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.LOIKVIAN, 5, 0));
 		}
-		if (entity instanceof LivingEntity _livEnt48 && _livEnt48.hasEffect(LoikvyModMobEffects.EXERTION) || entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(LoikvyModMobEffects.DEPRESSED)) {
+		if (entity instanceof LivingEntity _livEnt53 && _livEnt53.hasEffect(LoikvyModMobEffects.EXERTION) || entity instanceof LivingEntity _livEnt54 && _livEnt54.hasEffect(LoikvyModMobEffects.DEPRESSED)) {
 			if (entity.isSprinting()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.RESTRICTED_MOVEMENT, (int) shortEffectLength, 0));
+			}
+		}
+		regenTimeAddition = 0;
+		if (entity instanceof LivingEntity _livEnt57 && _livEnt57.hasEffect(LoikvyModMobEffects.SICK)) {
+			regenTimeAddition = regenTimeAddition + 600;
+		}
+		if (entity instanceof LivingEntity _livEnt58 && _livEnt58.hasEffect(LoikvyModMobEffects.TIRED)) {
+			regenTimeAddition = regenTimeAddition + 300;
+		}
+		if (entity instanceof LivingEntity _livEnt59 && _livEnt59.hasEffect(LoikvyModMobEffects.PANIC)) {
+			if (entity instanceof Player _player)
+				_player.causeFoodExhaustion((float) 0.1);
+			regenTimeAddition = regenTimeAddition + 900;
+		}
+		if (LoikvyModVariables.MapVariables.get(world).GlobalTicks % (1200 + regenTimeAddition) == 0 && (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) > 16) {
+			if (!(entity instanceof LivingEntity _livEnt62 && _livEnt62.hasEffect(LoikvyModMobEffects.BLEEDING))) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth((float) ClampNumberProcedure.execute(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1, 0, (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1));
+				if (entity instanceof Player _player)
+					_player.causeFoodExhaustion(2);
 			}
 		}
 	}

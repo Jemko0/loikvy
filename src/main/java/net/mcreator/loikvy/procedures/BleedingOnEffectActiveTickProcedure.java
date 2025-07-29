@@ -11,7 +11,7 @@ public class BleedingOnEffectActiveTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (LoikvyModVariables.MapVariables.get(world).GlobalTicks % 100 <= 3) {
+		if (LoikvyModVariables.MapVariables.get(world).GlobalTicks % 150 <= 8) {
 			if (!entity.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerBandaged) {
 				entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.IN_WALL), entity), 1);
 			}

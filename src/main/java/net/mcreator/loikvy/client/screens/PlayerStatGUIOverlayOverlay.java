@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.loikvy.procedures.PlayerStatGUIOverlayDisplayOverlayIngameProcedure;
 import net.mcreator.loikvy.procedures.DebugGetPlayerStatStringProcedure;
+import net.mcreator.loikvy.procedures.DebugGetPlayerStatString2Procedure;
 
 @EventBusSubscriber({Dist.CLIENT})
 public class PlayerStatGUIOverlayOverlay {
@@ -36,6 +37,9 @@ public class PlayerStatGUIOverlayOverlay {
 			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
 
 					DebugGetPlayerStatStringProcedure.execute(entity), 3, 3, -1, false);
+			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
+
+					DebugGetPlayerStatString2Procedure.execute(world, entity), 3, 15, -1, false);
 		}
 	}
 }

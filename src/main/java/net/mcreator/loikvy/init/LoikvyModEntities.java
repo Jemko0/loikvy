@@ -20,6 +20,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.loikvy.entity.WheelchairEntity;
 import net.mcreator.loikvy.entity.ShopCashierEntity;
+import net.mcreator.loikvy.entity.GroundItemEntity;
 import net.mcreator.loikvy.LoikvyMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -33,6 +34,10 @@ public class LoikvyModEntities {
 			EntityType.Builder.<WheelchairEntity>of(WheelchairEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<GroundItemEntity>> GROUND_ITEM = register("ground_item",
+			EntityType.Builder.<GroundItemEntity>of(GroundItemEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.ridingOffset(-0.6f).sized(0.6f, 1f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -49,11 +54,13 @@ public class LoikvyModEntities {
 	public static void init(RegisterSpawnPlacementsEvent event) {
 		ShopCashierEntity.init(event);
 		WheelchairEntity.init(event);
+		GroundItemEntity.init(event);
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(SHOP_CASHIER.get(), ShopCashierEntity.createAttributes().build());
 		event.put(WHEELCHAIR.get(), WheelchairEntity.createAttributes().build());
+		event.put(GROUND_ITEM.get(), GroundItemEntity.createAttributes().build());
 	}
 }

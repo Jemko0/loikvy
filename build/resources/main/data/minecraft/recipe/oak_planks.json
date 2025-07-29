@@ -4,7 +4,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:stone_axe"
+      "tag": "minecraft:axes"
     },
     {
       "tag": "minecraft:logs"

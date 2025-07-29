@@ -1,50 +1,50 @@
-/time set 6000
-/time set 6000d
-/time set 60000d
-/time set 600000d
-/give @s loikvy:calendar
-/effect give @s loikvy:bleeding 0 0 true
-/effect give @s loikvy:bleeding 20 0 true
-/give @s cake[minecraft:max_stack_size=99]
-/give @s cake[minecraft:max_stack_size=99] 99
-/give @s loikvy:wifi_router
-/give @s loikvy:phone
-/rc
-/data get block
-/data get block 681 65 1728
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 15
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 5
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 10
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 8
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 7
+/kill @e[type=minecraft:item_display]
+/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
+/data get entity 6ef76d38-b1d1-4a76-ab35-89b4243a5626
+/data get entity @n[type=minecraft:item_display]
+/kill @e[type=minecraft:item_display]
+/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
+/kill @e[type=minecraft:item_display]
+/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
+/give @s loikvy:chisel
+/kill @e[type=item]
+/tick rate 200
+/tick rate 2000
+/tick rate 20
+/effect give @s haste infinite 5 true
+/effect give @s haste infinite 50 true
+/effect clear
+/playsound block.anvil.fall
+/playsound block.anvil.hit
+/playsound block.anvil.destroy
+/playsound block.anvil.break
+/playsound block.anvil.land
+/playsound block.anvil.land block @a ~ ~ ~ 1 2 1
+/effect give @s haste infinite 50 true
+/effect clear
+/give @s string
+/setplayerstat Dev fitness 10
+/give @s loikvy:energy_drink
+/give @s loikvy:energy_drink 16
 /neoforge data_components list
-/data modify block 681 65 1728 NeoForgeData.max_wifi set value 6
-/neoforge data_components list
-/pauseplayerstats @s
-/setplayerstat @s energy 100
-/setplayerstat @s hygene 100
-/settrait @s prone_to_injury false
-/settrait @s tough true
-/data get entity @s neoforge:attachments.loikvy:player_variables
-/effect give @s minecraft:instant_health
-/effect give @s minecraft:instant_health 5
-/data get entity @s neoforge:attachments.loikvy:player_variables
-/settrait @s tough false
-/settrait @s prone_to_injury true
-/effect give @s minecraft:instant_health 5
-/settrait @s prone_to_injury false
-/settrait @s tough false
-/effect give @s minecraft:instant_health 5
-/effect give @s loikvy:food_poisoning 15 0 true
-/settrait @s tough truw
-/effect give @s minecraft:instant_health 5
-/settrait @s tough true
-/settrait @s prone_to_injury false
-/effect give @s loikvy:food_poisoning 15 0 true
-/settrait @s tough false
-/settrait @s prone_to_injury true
-/effect give @s minecraft:instant_health 5
-/effect give @s loikvy:food_poisoning 15 0 true
-/pauseplayerstats @s
+/playsound minecraft:block.basalt.break
+/playsound minecraft:block.bone_block.break
+/playsound minecraft:block.bone_block.fall
+/playsound minecraft:block.bone_block.hit
+/playsound minecraft:block.bone_block.place
+/playsound minecraft:block.bone_block.step
+/data get entity Dev foodLevel
+/data get entity Dev
+/data get entity Dev foodExhaustionLevel
+/tick rate 20
+/tick rate 10
+/tick rate 1
+/tick rate 20
 /gamerule randomTickSpeed
-/gamerule randomTickSpeed 1
+/effect give @a minecraft:instant_health
+/give @s dirt 100
+/effect give @a minecraft:instant_health
+/give @s minecraft:cooked_chicken 32
+/effect give @a minecraft:instant_health
+/give @s minecraft:cooked_chicken 32
+/effect give @a minecraft:instant_health

@@ -24,6 +24,7 @@ import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.mcreator.loikvy.procedures.RippedSheetPropertyValueProviderProcedure;
 import net.mcreator.loikvy.procedures.PhonePropertyValueProviderProcedure;
+import net.mcreator.loikvy.procedures.EmptyCanPropertyValueProviderProcedure;
 import net.mcreator.loikvy.procedures.BasicClockPropertyValueProviderProcedure;
 import net.mcreator.loikvy.item.inventory.PhoneInventoryCapability;
 import net.mcreator.loikvy.item.WheatFlourItem;
@@ -35,6 +36,9 @@ import net.mcreator.loikvy.item.TomatoItem;
 import net.mcreator.loikvy.item.TeaspoonItem;
 import net.mcreator.loikvy.item.TableSpoonItem;
 import net.mcreator.loikvy.item.SunflowerOilItem;
+import net.mcreator.loikvy.item.StoneAxeItem;
+import net.mcreator.loikvy.item.SmallRockItem;
+import net.mcreator.loikvy.item.SharpRockItem;
 import net.mcreator.loikvy.item.RottenFoodItem;
 import net.mcreator.loikvy.item.RippedSheetItem;
 import net.mcreator.loikvy.item.PizzaSliceItem;
@@ -49,10 +53,13 @@ import net.mcreator.loikvy.item.LettuceItem;
 import net.mcreator.loikvy.item.KitchenKnifeItem;
 import net.mcreator.loikvy.item.GasolineItem;
 import net.mcreator.loikvy.item.FlourItem;
+import net.mcreator.loikvy.item.EnergyDrinkItem;
+import net.mcreator.loikvy.item.EmptyCanItem;
 import net.mcreator.loikvy.item.DoughItem;
 import net.mcreator.loikvy.item.DoorLockerItem;
 import net.mcreator.loikvy.item.DoorKeyItem;
 import net.mcreator.loikvy.item.DebugViewStatsItem;
+import net.mcreator.loikvy.item.ChiselItem;
 import net.mcreator.loikvy.item.CheeseWheelItem;
 import net.mcreator.loikvy.item.CheeseSliceItem;
 import net.mcreator.loikvy.item.CheesePizzaSliceItem;
@@ -124,6 +131,13 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> RIPPED_SHEET = REGISTRY.register("ripped_sheet", RippedSheetItem::new);
 	public static final DeferredItem<Item> WHEELCHAIR_SPAWN_EGG = REGISTRY.register("wheelchair_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.WHEELCHAIR, -16724788, -1, new Item.Properties()));
 	public static final DeferredItem<Item> WIFI_ROUTER = block(LoikvyModBlocks.WIFI_ROUTER);
+	public static final DeferredItem<Item> STONE_AXE = REGISTRY.register("stone_axe", StoneAxeItem::new);
+	public static final DeferredItem<Item> GROUND_ITEM_SPAWN_EGG = REGISTRY.register("ground_item_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.GROUND_ITEM, -16777216, -256, new Item.Properties()));
+	public static final DeferredItem<Item> CHISEL = REGISTRY.register("chisel", ChiselItem::new);
+	public static final DeferredItem<Item> SMALL_ROCK = REGISTRY.register("small_rock", SmallRockItem::new);
+	public static final DeferredItem<Item> SHARP_ROCK = REGISTRY.register("sharp_rock", SharpRockItem::new);
+	public static final DeferredItem<Item> ENERGY_DRINK = REGISTRY.register("energy_drink", EnergyDrinkItem::new);
+	public static final DeferredItem<Item> EMPTY_CAN = REGISTRY.register("empty_can", EmptyCanItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -149,6 +163,7 @@ public class LoikvyModItems {
 				ItemProperties.register(BASIC_CLOCK.get(), ResourceLocation.parse("loikvy:basic_clock_time"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BasicClockPropertyValueProviderProcedure.execute());
 				ItemProperties.register(PHONE.get(), ResourceLocation.parse("loikvy:phone_turned_on"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) PhonePropertyValueProviderProcedure.execute(itemStackToRender));
 				ItemProperties.register(RIPPED_SHEET.get(), ResourceLocation.parse("loikvy:ripped_sheet_dirty"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) RippedSheetPropertyValueProviderProcedure.execute(itemStackToRender));
+				ItemProperties.register(EMPTY_CAN.get(), ResourceLocation.parse("loikvy:empty_can_type"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EmptyCanPropertyValueProviderProcedure.execute(itemStackToRender));
 			});
 		}
 	}

@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "loikvy:item/empty_can"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "loikvy:empty_can_type": 0
+      },
+      "model": "loikvy:item/empty_can_0"
+    },
+    {
+      "predicate": {
+        "loikvy:empty_can_type": 1
+      },
+      "model": "loikvy:item/empty_can_1"
+    }
+  ]
+}

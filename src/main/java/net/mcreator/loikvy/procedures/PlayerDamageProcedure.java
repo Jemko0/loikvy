@@ -67,6 +67,10 @@ public class PlayerDamageProcedure {
 				_vars.gDamageCancelled = false;
 				_vars.syncPlayerVariables(entity);
 			}
+			if (amount > 5) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.BLEEDING, (int) (30 * 20 * (amount / 20)), 0));
+			}
 			if (amount > 8) {
 				if (Mth.nextInt(RandomSource.create(), 1, 100) > 95) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

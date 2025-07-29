@@ -21,6 +21,24 @@
           "y": 3,
           "locked": false
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_debug_get_player_stat_strin1",
+          "text": {
+            "fixedValue": "",
+            "name": "DebugGetPlayerStatString2"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 3,
+          "y": 15,
+          "locked": false
+        }
       }
     ],
     "baseTexture": "",
