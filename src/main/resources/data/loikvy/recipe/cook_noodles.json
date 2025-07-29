@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 1,
+  "cookingtime": 2100,
+  "ingredient": {
+    "item": "loikvy:uncooked_noodles"
+  },
+  "result": {
+    "id": "loikvy:cooked_noodles"
+  }
+}

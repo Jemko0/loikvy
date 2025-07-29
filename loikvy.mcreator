@@ -6701,6 +6701,20 @@
         ]
       },
       "path": "~/CraftingRecipes"
+    },
+    {
+      "name": "CookNoodles",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cook_noodles",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/loikvy/recipe/cook_noodles.json",
+          "src/main/resources/data/loikvy/advancement/recipes/cook_noodles.json"
+        ]
+      },
+      "path": "~/CraftingRecipes"
     }
   ],
   "variable_elements": [

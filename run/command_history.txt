@@ -1,4 +1,3 @@
-/data get entity Dev foodExhaustionLevel
 /tick rate 20
 /tick rate 10
 /tick rate 1
@@ -48,3 +47,4 @@
 /tick rate20
 /tick rate 20
 /createcharacter
+/give @s loikvy:debug_view_stats
