@@ -41,12 +41,18 @@ public class WifiRouterOnTickUpdateProcedure {
 									final double _tagValue = (maxWifi * (1 - distance / maxDist));
 									CustomData.update(DataComponents.CUSTOM_DATA, itemstackiterator, tag -> tag.putDouble(_tagName, _tagValue));
 								}
+								{
+									final String _tagName = "last_ip";
+									final String _tagValue = (getBlockNBTString(world, BlockPos.containing(x, y, z), "ip_address"));
+									CustomData.update(DataComponents.CUSTOM_DATA, itemstackiterator, tag -> tag.putString(_tagName, _tagValue));
+								}
 								if (entityiterator.getCapability(Capabilities.ItemHandler.ENTITY, null) instanceof IItemHandlerModifiable _modHandler) {
 									ItemStack _setstack = itemstackiterator.copy();
 									_setstack.setCount(itemstackiterator.getCount());
 									_modHandler.setStackInSlot((int) entSlot, _setstack);
 								}
 							}
+							entSlot = entSlot + 1;
 						}
 					}
 				}
@@ -59,5 +65,12 @@ public class WifiRouterOnTickUpdateProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
+	}
+
+	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getString(tag);
+		return "";
 	}
 }

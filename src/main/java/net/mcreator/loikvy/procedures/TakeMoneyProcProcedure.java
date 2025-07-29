@@ -21,6 +21,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 
 public class TakeMoneyProcProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments) {
+		String cmd = "";
 		{
 			Entity _ent = (commandParameterEntity(arguments, "target"));
 			Scoreboard _sc = _ent.level().getScoreboard();
@@ -30,10 +31,10 @@ public class TakeMoneyProcProcedure {
 			_sc.getOrCreatePlayerScore(ScoreHolder.forNameOnly(_ent.getScoreboardName()), _so).set((int) (getEntityScore("Money", (commandParameterEntity(arguments, "target"))) - DoubleArgumentType.getDouble(arguments, "amount")));
 		}
 		if (!(StringArgumentType.getString(arguments, "name")).equals("0")) {
+			cmd = "data modify storage bank_history " + (commandParameterEntity(arguments, "target")).getDisplayName().getString() + " append value {\"date\":\"" + GetCalendarDaysProcedure.execute() + " " + GetClockTimeFormattedProcedure.execute()
+					+ "\",\"amount\":" + Math.floor(DoubleArgumentType.getDouble(arguments, "amount")) * (-1) + ",\"name\":\"" + StringArgumentType.getString(arguments, "name") + "\"}";
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						("data modify storage bank_history " + (commandParameterEntity(arguments, "target")).getDisplayName().getString() + "append value {\"date\":\"" + GetCalendarDaysProcedure.execute() + " "
-								+ GetClockTimeFormattedProcedure.execute() + "\",\"amount\":" + Math.floor(DoubleArgumentType.getDouble(arguments, "amount")) * (-1) + ",\"name\":\"" + StringArgumentType.getString(arguments, "name") + "\"}"));
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), cmd);
 		}
 	}
 

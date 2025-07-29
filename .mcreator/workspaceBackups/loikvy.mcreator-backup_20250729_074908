@@ -6064,7 +6064,7 @@
           "src/main/resources/data/minecraft/recipe/crafting_table.json"
         ]
       },
-      "path": "~/CraftingRecipes"
+      "path": "~/CraftingRecipes/Removals"
     },
     {
       "name": "PlanksOverride",
@@ -6091,29 +6091,6 @@
         ]
       },
       "path": "~/Effects"
-    },
-    {
-      "name": "CraftingOverride",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "crafting_override",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/CraftingOverrideProcedure.java"
-        ]
-      },
-      "path": "~/CraftingRecipes"
     },
     {
       "name": "StoneAxe",
@@ -6410,31 +6387,95 @@
       "path": "~/Items/Drinks"
     },
     {
-      "name": "PlayerSwings",
+      "name": "DebugGetPlayerStatString2",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "player_swings",
+      "registry_name": "debug_get_player_stat_string_2",
       "metadata": {
         "dependencies": [
           {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "duration",
-            "type": "number"
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "world",
             "type": "world"
           }
         ],
+        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/PlayerSwingsProcedure.java"
+          "src/main/java/net/mcreator/loikvy/procedures/DebugGetPlayerStatString2Procedure.java"
         ]
       },
-      "path": "~/GlobalProcs/PlayerProcs"
+      "path": "~/GUIs/DebugGUI"
+    },
+    {
+      "name": "WoodenAxeOverride",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_axe_override",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_axe.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "WoodenPickaxe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_pickaxe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_pickaxe.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "WoodenSword",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_sword.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "UncookedNoodles",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uncooked_noodles",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/loikvy/models/item/uncooked_noodles.json",
+          "src/main/java/net/mcreator/loikvy/item/UncookedNoodlesItem.java"
+        ]
+      },
+      "path": "~/Items/Foods/Misc"
+    },
+    {
+      "name": "CookedNoodles",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooked_noodles",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/item/CookedNoodlesItem.java",
+          "src/main/resources/assets/loikvy/models/item/cooked_noodles.json"
+        ]
+      },
+      "path": "~/Items/Foods/Misc"
     }
   ],
   "variable_elements": [
@@ -7101,7 +7142,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7328,7 +7371,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -7555,7 +7600,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     }
   },
   "metadata": {
@@ -7914,6 +7961,10 @@
         "children": [
           {
             "name": "survival",
+            "children": []
+          },
+          {
+            "name": "Removals",
             "children": []
           }
         ]

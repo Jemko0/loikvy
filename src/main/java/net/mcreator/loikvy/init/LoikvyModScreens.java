@@ -35,6 +35,7 @@ import net.mcreator.loikvy.client.gui.BookEditGUIScreen;
 import net.mcreator.loikvy.client.gui.BlackJackGUIScreen;
 import net.mcreator.loikvy.client.gui.BasicClockGUIScreen;
 import net.mcreator.loikvy.client.gui.BankHistoryGUIScreen;
+import net.mcreator.loikvy.client.gui.AppWifiSettingsScreen;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class LoikvyModScreens {
@@ -56,10 +57,11 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.STORE_GUI.get(), StoreGUIScreen::new);
 		event.register(LoikvyModMenus.BOOK_EDIT_GUI.get(), BookEditGUIScreen::new);
 		event.register(LoikvyModMenus.RECEIPT_MAKER.get(), ReceiptMakerScreen::new);
-		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
 		event.register(LoikvyModMenus.SLOTS_GUI.get(), SlotsGUIScreen::new);
 		event.register(LoikvyModMenus.BLACK_JACK_GUI.get(), BlackJackGUIScreen::new);
 		event.register(LoikvyModMenus.HEALTH_MENU_GUI.get(), HealthMenuGUIScreen::new);
+		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
+		event.register(LoikvyModMenus.APP_WIFI_SETTINGS.get(), AppWifiSettingsScreen::new);
 	}
 
 	public interface ScreenAccessor {

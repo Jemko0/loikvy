@@ -62,6 +62,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.PEPPERONI_SLICE.get());
 			tabData.accept(LoikvyModItems.ENERGY_DRINK.get());
 			tabData.accept(LoikvyModItems.EMPTY_CAN.get());
+			tabData.accept(LoikvyModItems.UNCOOKED_NOODLES.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(LoikvyModItems.AA_BATTERY.get());
 			tabData.accept(LoikvyModBlocks.COAL_GENERATOR.get().asItem());

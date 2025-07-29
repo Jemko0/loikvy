@@ -1,24 +1,3 @@
-/kill @e[type=minecraft:item_display]
-/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
-/data get entity 6ef76d38-b1d1-4a76-ab35-89b4243a5626
-/data get entity @n[type=minecraft:item_display]
-/kill @e[type=minecraft:item_display]
-/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
-/kill @e[type=minecraft:item_display]
-/summon loikvy:ground_item 660.26 65.50 1762.79 {"Dataitem":"minecraft:iron_hoe"}
-/give @s loikvy:chisel
-/kill @e[type=item]
-/tick rate 200
-/tick rate 2000
-/tick rate 20
-/effect give @s haste infinite 5 true
-/effect give @s haste infinite 50 true
-/effect clear
-/playsound block.anvil.fall
-/playsound block.anvil.hit
-/playsound block.anvil.destroy
-/playsound block.anvil.break
-/playsound block.anvil.land
 /playsound block.anvil.land block @a ~ ~ ~ 1 2 1
 /effect give @s haste infinite 50 true
 /effect clear
@@ -48,3 +27,24 @@
 /effect give @a minecraft:instant_health
 /give @s minecraft:cooked_chicken 32
 /effect give @a minecraft:instant_health
+/bankhistory
+/takemoney Dev 10 "Boners"
+/bankhistory
+/data get storage minecraft:test
+/data get storage minecraft:locked_doors
+/data get storage bank_history
+/takemoney Dev 10 "Boners"
+/data get storage bank_history
+/takemoney Dev 10 bone
+/data get storage bank_history
+/takemoney Dev 10 bone
+/data get storage bank_history
+/bankhistory
+/takemoney Dev 10 bone
+/data get storage bank_history
+/data get storage bank_history Dev
+/takemoney Dev 10 bone
+/bankhistory
+/give @s loikvy:phone
+/data get block 681 65 1728
+/data get entity @s SelectedItem

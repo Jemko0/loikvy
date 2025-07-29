@@ -35,6 +35,7 @@ import net.mcreator.loikvy.world.inventory.BookEditGUIMenu;
 import net.mcreator.loikvy.world.inventory.BlackJackGUIMenu;
 import net.mcreator.loikvy.world.inventory.BasicClockGUIMenu;
 import net.mcreator.loikvy.world.inventory.BankHistoryGUIMenu;
+import net.mcreator.loikvy.world.inventory.AppWifiSettingsMenu;
 import net.mcreator.loikvy.network.MenuStateUpdateMessage;
 import net.mcreator.loikvy.LoikvyMod;
 
@@ -58,10 +59,11 @@ public class LoikvyModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<StoreGUIMenu>> STORE_GUI = REGISTRY.register("store_gui", () -> IMenuTypeExtension.create(StoreGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<BookEditGUIMenu>> BOOK_EDIT_GUI = REGISTRY.register("book_edit_gui", () -> IMenuTypeExtension.create(BookEditGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<ReceiptMakerMenu>> RECEIPT_MAKER = REGISTRY.register("receipt_maker", () -> IMenuTypeExtension.create(ReceiptMakerMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<SlotsGUIMenu>> SLOTS_GUI = REGISTRY.register("slots_gui", () -> IMenuTypeExtension.create(SlotsGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<BlackJackGUIMenu>> BLACK_JACK_GUI = REGISTRY.register("black_jack_gui", () -> IMenuTypeExtension.create(BlackJackGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<AppWifiSettingsMenu>> APP_WIFI_SETTINGS = REGISTRY.register("app_wifi_settings", () -> IMenuTypeExtension.create(AppWifiSettingsMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

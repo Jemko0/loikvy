@@ -15,6 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.loikvy.procedures.BankHistoryGUIThisGUIIsOpenedProcedure;
 import net.mcreator.loikvy.init.LoikvyModMenus;
 
 import java.util.function.Supplier;
@@ -26,7 +27,7 @@ public class BankHistoryGUIMenu extends AbstractContainerMenu implements LoikvyM
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 4)
+			if (!this.containsKey(key) && this.size() >= 1)
 				return null;
 			return super.put(key, value);
 		}
@@ -55,6 +56,7 @@ public class BankHistoryGUIMenu extends AbstractContainerMenu implements LoikvyM
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
+		BankHistoryGUIThisGUIIsOpenedProcedure.execute(world, x, y, z, entity);
 	}
 
 	@Override

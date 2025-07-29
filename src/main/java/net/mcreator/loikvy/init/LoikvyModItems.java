@@ -29,6 +29,7 @@ import net.mcreator.loikvy.procedures.BasicClockPropertyValueProviderProcedure;
 import net.mcreator.loikvy.item.inventory.PhoneInventoryCapability;
 import net.mcreator.loikvy.item.WheatFlourItem;
 import net.mcreator.loikvy.item.WeightSmallOneHandedItem;
+import net.mcreator.loikvy.item.UncookedNoodlesItem;
 import net.mcreator.loikvy.item.UnbakedPizzaItem;
 import net.mcreator.loikvy.item.UnbakedCheesePizzaItem;
 import net.mcreator.loikvy.item.TomatoSliceItem;
@@ -59,6 +60,7 @@ import net.mcreator.loikvy.item.DoughItem;
 import net.mcreator.loikvy.item.DoorLockerItem;
 import net.mcreator.loikvy.item.DoorKeyItem;
 import net.mcreator.loikvy.item.DebugViewStatsItem;
+import net.mcreator.loikvy.item.CookedNoodlesItem;
 import net.mcreator.loikvy.item.ChiselItem;
 import net.mcreator.loikvy.item.CheeseWheelItem;
 import net.mcreator.loikvy.item.CheeseSliceItem;
@@ -138,6 +140,8 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> SHARP_ROCK = REGISTRY.register("sharp_rock", SharpRockItem::new);
 	public static final DeferredItem<Item> ENERGY_DRINK = REGISTRY.register("energy_drink", EnergyDrinkItem::new);
 	public static final DeferredItem<Item> EMPTY_CAN = REGISTRY.register("empty_can", EmptyCanItem::new);
+	public static final DeferredItem<Item> UNCOOKED_NOODLES = REGISTRY.register("uncooked_noodles", UncookedNoodlesItem::new);
+	public static final DeferredItem<Item> COOKED_NOODLES = REGISTRY.register("cooked_noodles", CookedNoodlesItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

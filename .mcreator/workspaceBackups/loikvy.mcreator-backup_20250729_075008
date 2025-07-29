@@ -4191,23 +4191,9 @@
       "path": "~/Commands"
     },
     {
-      "name": "BankHistoryGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "bank_history_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/loikvy/client/gui/BankHistoryGUIScreen.java",
-          "src/main/java/net/mcreator/loikvy/world/inventory/BankHistoryGUIMenu.java"
-        ]
-      },
-      "path": "~/GUIs/BankHistory"
-    },
-    {
       "name": "BankhistoryProc",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "bankhistory_proc",
       "metadata": {
@@ -6064,7 +6050,7 @@
           "src/main/resources/data/minecraft/recipe/crafting_table.json"
         ]
       },
-      "path": "~/CraftingRecipes"
+      "path": "~/CraftingRecipes/Removals"
     },
     {
       "name": "PlanksOverride",
@@ -6091,29 +6077,6 @@
         ]
       },
       "path": "~/Effects"
-    },
-    {
-      "name": "CraftingOverride",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "crafting_override",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/CraftingOverrideProcedure.java"
-        ]
-      },
-      "path": "~/CraftingRecipes"
     },
     {
       "name": "StoneAxe",
@@ -6432,6 +6395,73 @@
         ]
       },
       "path": "~/GUIs/DebugGUI"
+    },
+    {
+      "name": "WoodenAxeOverride",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_axe_override",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_axe.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "WoodenPickaxe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_pickaxe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_pickaxe.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "WoodenSword",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/recipe/wooden_sword.json"
+        ]
+      },
+      "path": "~/CraftingRecipes/Removals"
+    },
+    {
+      "name": "UncookedNoodles",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uncooked_noodles",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/loikvy/models/item/uncooked_noodles.json",
+          "src/main/java/net/mcreator/loikvy/item/UncookedNoodlesItem.java"
+        ]
+      },
+      "path": "~/Items/Foods/Misc"
+    },
+    {
+      "name": "CookedNoodles",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooked_noodles",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/item/CookedNoodlesItem.java",
+          "src/main/resources/assets/loikvy/models/item/cooked_noodles.json"
+        ]
+      },
+      "path": "~/Items/Foods/Misc"
     }
   ],
   "variable_elements": [
@@ -7033,10 +7063,6 @@
       "gui.loikvy.receipt_maker.color": "C",
       "gui.loikvy.receipt_maker.label_ss": "§",
       "gui.loikvy.receipt_maker.button_empty1": "+",
-      "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.bank_history_gui.label_page": "Page 97/503",
-      "gui.loikvy.bank_history_gui.button_next": "Next",
-      "gui.loikvy.bank_history_gui.button_previous": "Previous",
       "gui.loikvy.door_lock_idgui.button_master_lock": "master_lock",
       "item.loikvy.shop_cashier_spawn_egg": "Shop Cashier Spawn Egg",
       "entity.loikvy.shop_cashier": "Shop Cashier",
@@ -7098,7 +7124,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7260,10 +7288,6 @@
       "gui.loikvy.receipt_maker.color": "Color Code",
       "gui.loikvy.receipt_maker.label_ss": "§",
       "gui.loikvy.receipt_maker.button_empty1": "+",
-      "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.bank_history_gui.label_page": "Page 97/503",
-      "gui.loikvy.bank_history_gui.button_next": "Next",
-      "gui.loikvy.bank_history_gui.button_previous": "Previous",
       "gui.loikvy.door_lock_idgui.button_master_lock": "master_lock",
       "item.loikvy.shop_cashier_spawn_egg": "Shop Cashier Spawn Egg",
       "entity.loikvy.shop_cashier": "Shop Cashier",
@@ -7325,7 +7349,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -7487,10 +7513,6 @@
       "gui.loikvy.receipt_maker.color": "Color Code",
       "gui.loikvy.receipt_maker.label_ss": "§",
       "gui.loikvy.receipt_maker.button_empty1": "+",
-      "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.bank_history_gui.label_page": "Page 97/503",
-      "gui.loikvy.bank_history_gui.button_next": "Next",
-      "gui.loikvy.bank_history_gui.button_previous": "Previous",
       "gui.loikvy.door_lock_idgui.button_master_lock": "master_lock",
       "item.loikvy.shop_cashier_spawn_egg": "Shop Cashier Spawn Egg",
       "entity.loikvy.shop_cashier": "Shop Cashier",
@@ -7552,7 +7574,9 @@
       "item.loikvy.energy_drink.description_2": "§4-0.1 Fitness",
       "item.loikvy.energy_drink.description_1": "§4+5 Sickness",
       "item.loikvy.empty_can": "Empty Can",
-      "subtitles.bone_break": ""
+      "subtitles.bone_break": "",
+      "item.loikvy.uncooked_noodles": "Uncooked Noodles",
+      "item.loikvy.cooked_noodles": "Cooked Noodles"
     }
   },
   "metadata": {
@@ -7911,6 +7935,10 @@
         "children": [
           {
             "name": "survival",
+            "children": []
+          },
+          {
+            "name": "Removals",
             "children": []
           }
         ]
