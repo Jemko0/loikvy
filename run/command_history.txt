@@ -1,50 +1,50 @@
-/tick rate 20
-/tick rate 10
-/tick rate 1
-/tick rate 20
-/gamerule randomTickSpeed
-/effect give @a minecraft:instant_health
-/give @s dirt 100
-/effect give @a minecraft:instant_health
-/give @s minecraft:cooked_chicken 32
-/effect give @a minecraft:instant_health
-/give @s minecraft:cooked_chicken 32
-/effect give @a minecraft:instant_health
-/bankhistory
-/takemoney Dev 10 "Boners"
-/bankhistory
-/data get storage minecraft:test
-/data get storage minecraft:locked_doors
-/data get storage bank_history
-/takemoney Dev 10 "Boners"
-/data get storage bank_history
-/takemoney Dev 10 bone
-/data get storage bank_history
-/takemoney Dev 10 bone
-/data get storage bank_history
-/bankhistory
-/takemoney Dev 10 bone
-/data get storage bank_history
-/data get storage bank_history Dev
-/takemoney Dev 10 bone
-/bankhistory
-/give @s loikvy:phone
-/data get block 681 65 1728
-/data get entity @s SelectedItem
-/give @s loikvy:energy_drink
-/give @s loikvy:energy_drink 5
-/clear
-/give @s loikvy:debug_view_stats
-/config
+/data get storage minecraft:registry citizens[0]
+/data modify storage minecraft:registry citizens append value {"a":"b"}
+/data get storage minecraft:registry citizens
+/data get storage minecraft:registry citizens 1
+/data get storage minecraft:registry citizens 0
+/data get storage minecraft:registry 0 0
+/data modify storage minecraft:registry citizens set value {"a":"c"}
+/data get storage minecraft:registry
+/data modify storage minecraft:registry citizens set value {"e":"c"}
+/data get storage minecraft:registry
+/data modify storage minecraft:registry citizens.e set value {"g":"c"}
+/data get storage minecraft:registry
+/data modify storage minecraft:registry citizens.jew set value {"g":"c"}
+/data get storage minecraft:registry
+/c
 /createcharacter
-/kill
+/data modify storage minecraft:registry
+/data get storage minecraft:registry
+/data remove storage minecraft:registry citizens.e
+/data remove storage minecraft:registry citizens.jew
+/data get storage minecraft:registry
+/data remove storage minecraft:registry citizens
+/data get storage minecraft:registry
 /createcharacter
-/setplayerstat Dev lives 100
-/setplayerstatuncapped Dev lives 1000000000
+/data get storage minecraft:registry
+/data get storage minecraft:registry citizens
 /createcharacter
-/tick rate 100
-/tick rate
-/tick rate20
-/tick rate 20
+/data get storage minecraft:registry citizens
+/data get storage minecraft:registry
 /createcharacter
-/give @s loikvy:debug_view_stats
+/data get storage minecraft:registry
+/createcharacter
+/data get storage minecraft:registry
+/createcharacter
+/data get storage minecraft:registry
+/data get storage minecraft:registry citizens
+/data get storage minecraft:registry citizens.MinMaxxing
+/data get storage minecraft:registry citizens.MinMaxxing.date_of_death
+/data get storage minecraft:registry citizens.MinMaxxing.alive
+/data modify storage minecraft:registry citizens.MinMaxxing.alive set value 1b
+/createcharacter
+/data get storage minecraft:registry citizens.JungExplode
+/time add 30000t
+/data get storage minecraft:registry citizens.JungExplode
+/createcharacter
+/kill 957ac25f-46ac-404e-83a8-d0d3a9222fdd
+/kill 70118dbd-a495-4b93-86d7-c6ef72620960
+/kill d1b63a31-1ee2-4cb3-852d-e6d0aebdaa11
+/kill 8c7cde6c-3f88-4bda-82d5-d7eff50f4192
+/kill @s

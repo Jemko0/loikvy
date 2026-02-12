@@ -20,6 +20,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.loikvy.entity.WheelchairEntity;
 import net.mcreator.loikvy.entity.ShopCashierEntity;
+import net.mcreator.loikvy.entity.PlayerCorpseEntity;
 import net.mcreator.loikvy.entity.GroundItemEntity;
 import net.mcreator.loikvy.LoikvyMod;
 
@@ -38,6 +39,10 @@ public class LoikvyModEntities {
 			EntityType.Builder.<GroundItemEntity>of(GroundItemEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.ridingOffset(-0.6f).sized(0.6f, 1f));
+	public static final DeferredHolder<EntityType<?>, EntityType<PlayerCorpseEntity>> PLAYER_CORPSE = register("player_corpse",
+			EntityType.Builder.<PlayerCorpseEntity>of(PlayerCorpseEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3)
+
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -48,6 +53,7 @@ public class LoikvyModEntities {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
 		event.registerEntity(Capabilities.ItemHandler.ENTITY, SHOP_CASHIER.get(), (living, context) -> living.getCombinedInventory());
+		event.registerEntity(Capabilities.ItemHandler.ENTITY, PLAYER_CORPSE.get(), (living, context) -> living.getCombinedInventory());
 	}
 
 	@SubscribeEvent
@@ -55,6 +61,7 @@ public class LoikvyModEntities {
 		ShopCashierEntity.init(event);
 		WheelchairEntity.init(event);
 		GroundItemEntity.init(event);
+		PlayerCorpseEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -62,5 +69,6 @@ public class LoikvyModEntities {
 		event.put(SHOP_CASHIER.get(), ShopCashierEntity.createAttributes().build());
 		event.put(WHEELCHAIR.get(), WheelchairEntity.createAttributes().build());
 		event.put(GROUND_ITEM.get(), GroundItemEntity.createAttributes().build());
+		event.put(PLAYER_CORPSE.get(), PlayerCorpseEntity.createAttributes().build());
 	}
 }

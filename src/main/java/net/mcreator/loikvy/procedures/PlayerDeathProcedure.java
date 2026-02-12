@@ -72,6 +72,9 @@ public class PlayerDeathProcedure {
 					_vars.gPlayerDeathTime = LoikvyModVariables.MapVariables.get(world).GlobalTicks;
 					_vars.syncPlayerVariables(entity);
 				}
+				SetPersonPropertyProcedure.execute(world, entity, "alive", "0b");
+				SetPersonPropertyProcedure.execute(world, entity, "date_of_death", "\"" + "" + GetCalendarDaysProcedure.execute() + "\"");
+				SpawnCorpseProcedure.execute(world, x, y, z, entity);
 				DeathTextProcedureProcedure.execute(entity);
 				if (event instanceof ICancellableEvent _cancellable) {
 					_cancellable.setCanceled(true);

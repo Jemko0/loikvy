@@ -103,6 +103,7 @@ public class LoikvyModVariables {
 			clone.gPlayerBandageDirty = original.gPlayerBandageDirty;
 			clone.gPlayerBandageTime = original.gPlayerBandageTime;
 			clone.gPlayerBandageItem = original.gPlayerBandageItem;
+			clone.gPlayerRegisterName = original.gPlayerRegisterName;
 			if (!event.isWasDeath()) {
 				clone.gPlayerCurrentDoorID = original.gPlayerCurrentDoorID;
 				clone.gPlayerCurrentBreakBlock = original.gPlayerCurrentBreakBlock;
@@ -274,6 +275,7 @@ public class LoikvyModVariables {
 		public double gPlayerBandageTime = 0;
 		public ItemStack gPlayerBandageItem = ItemStack.EMPTY;
 		public String gPlayerCurrentBreakBlock = "\"\"";
+		public String gPlayerRegisterName = "\"\"";
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -308,6 +310,7 @@ public class LoikvyModVariables {
 			nbt.putDouble("gPlayerBandageTime", gPlayerBandageTime);
 			nbt.put("gPlayerBandageItem", gPlayerBandageItem.saveOptional(lookupProvider));
 			nbt.putString("gPlayerCurrentBreakBlock", gPlayerCurrentBreakBlock);
+			nbt.putString("gPlayerRegisterName", gPlayerRegisterName);
 			return nbt;
 		}
 
@@ -343,6 +346,7 @@ public class LoikvyModVariables {
 			gPlayerBandageTime = nbt.getDouble("gPlayerBandageTime");
 			gPlayerBandageItem = ItemStack.parseOptional(lookupProvider, nbt.getCompound("gPlayerBandageItem"));
 			gPlayerCurrentBreakBlock = nbt.getString("gPlayerCurrentBreakBlock");
+			gPlayerRegisterName = nbt.getString("gPlayerRegisterName");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

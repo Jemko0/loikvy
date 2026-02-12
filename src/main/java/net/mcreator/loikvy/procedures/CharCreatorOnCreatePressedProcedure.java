@@ -41,8 +41,6 @@ public class CharCreatorOnCreatePressedProcedure {
 						_serverPlayer.getYRot(), true, false);
 			if (entity instanceof Player _player)
 				_player.getInventory().clearContent();
-			if (entity instanceof Player _player)
-				_player.closeContainer();
 			DetermineTraitsProcedure.execute(world, entity);
 			{
 				LoikvyModVariables.PlayerVariables _vars = entity.getData(LoikvyModVariables.PLAYER_VARIABLES);
@@ -64,6 +62,10 @@ public class CharCreatorOnCreatePressedProcedure {
 							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "/stopsound @s * loikvy:loikvy_death");
 				}
 			}
+			RegisterPersonProcedure.execute(world, entity, (entity instanceof Player _entity15 && _entity15.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(0, "ply_first_name", "") : "",
+					(entity instanceof Player _entity16 && _entity16.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu16) ? _menu16.getMenuState(0, "ply_last_name", "") : "");
+			if (entity instanceof Player _player)
+				_player.closeContainer();
 		}
 	}
 }

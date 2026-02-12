@@ -28,6 +28,7 @@ import net.mcreator.loikvy.world.inventory.FridgeGUIMenu;
 import net.mcreator.loikvy.world.inventory.FreezerGUIMenu;
 import net.mcreator.loikvy.world.inventory.DoorLockIDGUIMenu;
 import net.mcreator.loikvy.world.inventory.DeathGUIMenu;
+import net.mcreator.loikvy.world.inventory.CorpseInventoryGUIMenu;
 import net.mcreator.loikvy.world.inventory.CookingPanGUIMenu;
 import net.mcreator.loikvy.world.inventory.CoalGeneratorGUIMenu;
 import net.mcreator.loikvy.world.inventory.CalendarGUIMenu;
@@ -64,6 +65,7 @@ public class LoikvyModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<AppWifiSettingsMenu>> APP_WIFI_SETTINGS = REGISTRY.register("app_wifi_settings", () -> IMenuTypeExtension.create(AppWifiSettingsMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

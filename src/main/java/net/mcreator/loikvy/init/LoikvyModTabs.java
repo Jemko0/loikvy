@@ -78,6 +78,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.SHOP_CASHIER_SPAWN_EGG.get());
 			tabData.accept(LoikvyModItems.WHEELCHAIR_SPAWN_EGG.get());
 			tabData.accept(LoikvyModItems.GROUND_ITEM_SPAWN_EGG.get());
+			tabData.accept(LoikvyModItems.PLAYER_CORPSE_SPAWN_EGG.get());
 		}
 	}
 }

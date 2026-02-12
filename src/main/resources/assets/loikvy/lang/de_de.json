@@ -229,5 +229,8 @@
   "gui.loikvy.app_wifi_settings.label_name": "Name:",
   "item.loikvy.tree_bark": "Tree Bark",
   "item.loikvy.sharp_stick": "Sharp Stick",
-  "item.loikvy.plant_fiber": "Plant Fiber"
+  "item.loikvy.plant_fiber": "Plant Fiber",
+  "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
+  "entity.loikvy.player_corpse": "Player Corpse",
+  "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse"
 }

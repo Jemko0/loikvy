@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 /run/logs
 /run/logs
+/run/saves
+/run

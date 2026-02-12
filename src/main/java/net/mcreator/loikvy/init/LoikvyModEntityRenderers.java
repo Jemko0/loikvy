@@ -10,6 +10,7 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.mcreator.loikvy.client.renderer.WheelchairRenderer;
 import net.mcreator.loikvy.client.renderer.ShopCashierRenderer;
+import net.mcreator.loikvy.client.renderer.PlayerCorpseRenderer;
 import net.mcreator.loikvy.client.renderer.GroundItemRenderer;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -19,5 +20,6 @@ public class LoikvyModEntityRenderers {
 		event.registerEntityRenderer(LoikvyModEntities.SHOP_CASHIER.get(), ShopCashierRenderer::new);
 		event.registerEntityRenderer(LoikvyModEntities.WHEELCHAIR.get(), WheelchairRenderer::new);
 		event.registerEntityRenderer(LoikvyModEntities.GROUND_ITEM.get(), GroundItemRenderer::new);
+		event.registerEntityRenderer(LoikvyModEntities.PLAYER_CORPSE.get(), PlayerCorpseRenderer::new);
 	}
 }

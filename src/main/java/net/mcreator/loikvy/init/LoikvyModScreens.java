@@ -28,6 +28,7 @@ import net.mcreator.loikvy.client.gui.FridgeGUIScreen;
 import net.mcreator.loikvy.client.gui.FreezerGUIScreen;
 import net.mcreator.loikvy.client.gui.DoorLockIDGUIScreen;
 import net.mcreator.loikvy.client.gui.DeathGUIScreen;
+import net.mcreator.loikvy.client.gui.CorpseInventoryGUIScreen;
 import net.mcreator.loikvy.client.gui.CookingPanGUIScreen;
 import net.mcreator.loikvy.client.gui.CoalGeneratorGUIScreen;
 import net.mcreator.loikvy.client.gui.CalendarGUIScreen;
@@ -62,6 +63,7 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.HEALTH_MENU_GUI.get(), HealthMenuGUIScreen::new);
 		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
 		event.register(LoikvyModMenus.APP_WIFI_SETTINGS.get(), AppWifiSettingsScreen::new);
+		event.register(LoikvyModMenus.CORPSE_INVENTORY_GUI.get(), CorpseInventoryGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {

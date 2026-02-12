@@ -148,6 +148,7 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> TREE_BARK = REGISTRY.register("tree_bark", TreeBarkItem::new);
 	public static final DeferredItem<Item> SHARP_STICK = REGISTRY.register("sharp_stick", SharpStickItem::new);
 	public static final DeferredItem<Item> PLANT_FIBER = REGISTRY.register("plant_fiber", PlantFiberItem::new);
+	public static final DeferredItem<Item> PLAYER_CORPSE_SPAWN_EGG = REGISTRY.register("player_corpse_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.PLAYER_CORPSE, -6750208, -1, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items
