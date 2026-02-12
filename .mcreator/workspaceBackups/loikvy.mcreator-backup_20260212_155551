@@ -6838,6 +6838,20 @@
         ]
       },
       "path": "~/CorpseSystem"
+    },
+    {
+      "name": "SpawnCorpse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spawn_corpse",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/SpawnCorpseProcedure.java"
+        ]
+      },
+      "path": "~/CorpseSystem"
     }
   ],
   "variable_elements": [
@@ -7521,7 +7535,8 @@
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
-      "entity.loikvy.player_corpse": "Player Corpse"
+      "entity.loikvy.player_corpse": "Player Corpse",
+      "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7756,7 +7771,8 @@
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
-      "entity.loikvy.player_corpse": "Player Corpse"
+      "entity.loikvy.player_corpse": "Player Corpse",
+      "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -7991,7 +8007,8 @@
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
-      "entity.loikvy.player_corpse": "Player Corpse"
+      "entity.loikvy.player_corpse": "Player Corpse",
+      "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse"
     }
   },
   "metadata": {
