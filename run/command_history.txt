@@ -1,11 +1,3 @@
-/data get storage minecraft:registry stores
-/data get block 610 67 1735
-/neoforge day
-/neoforge data_components list
-/data get block 610 67 1735
-/neoforge data_components list
-/neoforge tps
-/neoforge dimensions
 /time add 30000
 /neoforge day length set 120
 /time query day
@@ -48,3 +40,11 @@
 /tick rate 20
 /neoforge day speed
 /neoforge day speed set 30
+/neoforge day speed set 0.5
+/neoforge day speed set 2
+/neoforge day speed set 5
+/neoforge day speed set 6
+/neoforge day speed set 10
+/neoforge day speed set 1
+/neoforge day speed set 100
+/neoforge day speed set 1

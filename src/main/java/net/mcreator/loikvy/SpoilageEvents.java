@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -39,7 +38,6 @@ public class SpoilageEvents {
 	public SpoilageEvents() {
 	}
 
-	// Check every 10 seconds
 	private static final int SPOIL_RATE = 20 * 10;
 
 	private static Map<Item, Integer> SPOILAGE_DAYS = null;
@@ -64,7 +62,7 @@ public class SpoilageEvents {
 			SPOILAGE_DAYS.put(LoikvyModItems.PEPPERONI_CHUNK.get(), 7);
 			SPOILAGE_DAYS.put(LoikvyModItems.PEPPERONI_SLICE.get(), 5);
 
-			// Prepared/cooked food - spoils faster
+			// Prepared/cooked food
 			SPOILAGE_DAYS.put(LoikvyModItems.BURGER.get(), 2);
 			SPOILAGE_DAYS.put(LoikvyModItems.CHEESE_BURGER.get(), 2);
 			SPOILAGE_DAYS.put(LoikvyModItems.PEPPERONI_PIZZA.get(), 3);
@@ -111,7 +109,6 @@ public class SpoilageEvents {
 		return SPOILAGE_DAYS;
 	}
 
-	// Keyed by block entity type ResourceLocation e.g. "loikvy:fridge"
 	private static Map<ResourceLocation, Float> CONTAINER_SPOILAGE_MULTIPLIER = null;
 
 	private static Map<ResourceLocation, Float> getContainerMultiplier()
@@ -143,42 +140,28 @@ public class SpoilageEvents {
 		return !getNeverSpoil().contains(item);
 	}
 
-	public static long GetSpoilageRemainingTime(ItemStack stack)
+	// Max spoilage is always 100.0 - item spoils when it reaches 100
+	// Each check increments by (100 / totalChecksToSpoil) / multiplier
+	// totalChecksToSpoil = (days * dayLengthTicks) / SPOIL_RATE
+	private static float getSpoilageIncrement(ItemStack stack, float multiplier, ServerLevel level)
 	{
-		if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return -1L;
-
-		long now = (long) LoikvyModVariables.gWorldTicks;
-
-		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
-		if (spoilAtTick != -1L)
-		{
-			return spoilAtTick - now;
-		}
-
-		long created = stack.getOrDefault(LoikvyModDataAttachments.CREATION_TIME.get(), -1L);
-		if (created == -1L) return -1L;
-
-		long elapsed = now - created;
-		return GetSpoilageTicksForItem(stack) - elapsed;
+		int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
+		long dayLengthTicks = LoikvyJavaUtil.GetDayLengthInTicks(level);
+		float totalChecks = (days * dayLengthTicks) / (float) SPOIL_RATE;
+		return (100.0f / totalChecks) / multiplier;
 	}
 
-	public static long GetSpoilageTicksForItem(ItemStack stack)
+	// Returns 0.0 - 100.0, or -1 if not yet tracked
+	public static float GetSpoilagePercent(ItemStack stack)
 	{
-		long created = stack.getOrDefault(LoikvyModDataAttachments.CREATION_TIME.get(), -1L);
-		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
-		if (created != -1L && spoilAtTick != -1L)
-		{
-			return spoilAtTick - created;
-		}
-
-		int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
-		return (long)(days * LoikvyJavaUtil.GetDayLengthInTicks());
+		Float spoilage = stack.get(LoikvyModDataAttachments.SPOILAGE.get());
+		if (spoilage == null) return -1.0f;
+		return spoilage;
 	}
 
 	private static float getBlockEntityMultiplier(BlockEntity be)
 	{
 		ResourceLocation location = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
-		System.out.println("BlockEntity type: " + location);
 		if (location == null) return 1.0f;
 		return getContainerMultiplier().getOrDefault(location, 1.0f);
 	}
@@ -189,46 +172,22 @@ public class SpoilageEvents {
 		if (stack.getItem().getFoodProperties(stack, null) == null) return;
 		if (!GetShouldSpoil(stack.getItem())) return;
 
-		long now = (long) LoikvyModVariables.gWorldTicks;
+		float spoilage = stack.getOrDefault(LoikvyModDataAttachments.SPOILAGE.get(), 0.0f);
+		spoilage += getSpoilageIncrement(stack, multiplier, level);
+		stack.set(LoikvyModDataAttachments.SPOILAGE.get(), spoilage);
 
-		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
-		if (spoilAtTick == -1L)
-		{
-			int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
-			long spoilTicks = (long)(days * LoikvyJavaUtil.GetDayLengthInTicks(level));
-			stack.set(LoikvyModDataAttachments.CREATION_TIME.get(), now);
-			stack.set(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), now + spoilTicks);
-			stack.set(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
-			System.out.println("Stamped " + stack.getItem() + " spoilAtTick=" + (now + spoilTicks));
-			return;
-		}
-
-		System.out.println("Checking " + stack.getItem() + " multiplier=" + multiplier + " now=" + now + " spoilAtTick=" + spoilAtTick + " remaining=" + (spoilAtTick - now));
-
-		if (multiplier > 1.0f && now < spoilAtTick)
-		{
-			long lastCheck = stack.getOrDefault(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
-			long ticksElapsed = now - lastCheck;
-			long ticksSaved = (long)(ticksElapsed - (ticksElapsed / multiplier));
-			System.out.println("Freezer extending deadline by " + ticksSaved + " ticks (elapsed=" + ticksElapsed + ")");
-			stack.set(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), spoilAtTick + ticksSaved);
-			spoilAtTick += ticksSaved;
-		}
-
-		stack.set(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
-
-		if (now >= spoilAtTick)
+		if (spoilage >= 100.0f)
 		{
 			int count = stack.getCount();
 			stack.setCount(0);
-			ItemStack spoiled = new ItemStack(LoikvyModItems.ROTTEN_FOOD.get(), count);
-			handler.insertItem(slot, spoiled, false);
+			handler.insertItem(slot, new ItemStack(LoikvyModItems.ROTTEN_FOOD.get(), count), false);
 		}
 	}
 
 	private static final java.util.concurrent.ConcurrentHashMap<ServerLevel, Set<BlockPos>> TRACKED_POSITIONS = new java.util.concurrent.ConcurrentHashMap<>();
 
-	private static Set<BlockPos> getPositions(ServerLevel level) {
+	private static Set<BlockPos> getPositions(ServerLevel level)
+	{
 		return TRACKED_POSITIONS.computeIfAbsent(level, k -> new HashSet<>());
 	}
 
@@ -305,7 +264,6 @@ public class SpoilageEvents {
 				ItemStack stack = player.getInventory().getItem(i);
 				if (!stack.isEmpty())
 				{
-					// Use a simple wrapper to work with spoilItem
 					final int slotIndex = i;
 					IItemHandler fakeHandler = new IItemHandler() {
 						public int getSlots() { return player.getInventory().getContainerSize(); }
@@ -333,16 +291,14 @@ public class SpoilageEvents {
 			if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return;
 			if (!GetShouldSpoil(stack.getItem())) return;
 
-			long spoilTicks = GetSpoilageTicksForItem(stack);
-			long remaining = GetSpoilageRemainingTime(stack);
+			float spoilage = GetSpoilagePercent(stack);
+			if (spoilage < 0.0f) return; // not yet tracked
 
-			if (remaining == -1L) return;
-
-			if (remaining <= 0)
+			if (spoilage >= 100.0f)
 			{
 				event.getToolTip().add(Component.literal("Spoiled").withStyle(ChatFormatting.RED));
 			}
-			else if (remaining < spoilTicks / 4)
+			else if (spoilage >= 50.0f)
 			{
 				event.getToolTip().add(Component.literal("Stale").withStyle(ChatFormatting.YELLOW));
 			}
@@ -351,16 +307,11 @@ public class SpoilageEvents {
 				event.getToolTip().add(Component.literal("Fresh").withStyle(ChatFormatting.GREEN));
 			}
 
-			if (event.getEntity() != null)
-			{
-				System.out.println("canUseGameMasterBlocks: " + event.getEntity().canUseGameMasterBlocks());
-				System.out.println("hasPermissions(0): " + event.getEntity().hasPermissions(0));
-			}
-
 			if (event.getEntity() != null && event.getEntity().canUseGameMasterBlocks())
 			{
-				event.getToolTip().add(Component.literal("Remaining: " + remaining + " ticks").withStyle(ChatFormatting.GRAY));
-				event.getToolTip().add(Component.literal("Remaining Time: " + remaining / 20 / 60 / 60 + ":" + (remaining / 20 / 60) % 60 + ":" + (remaining / 20) % 60).withStyle(ChatFormatting.GRAY));
+				event.getToolTip().add(Component.literal(
+						String.format("Spoilage: %.1f%%", spoilage)
+				).withStyle(ChatFormatting.GRAY));
 			}
 		}
 	}

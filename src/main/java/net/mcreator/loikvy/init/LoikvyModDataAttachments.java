@@ -13,24 +13,10 @@ public class LoikvyModDataAttachments {
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENTS =
             DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, "loikvy");
 
-    public static final Supplier<DataComponentType<Long>> CREATION_TIME =
-            DATA_COMPONENTS.register("creation_time", () ->
-                    DataComponentType.<Long>builder()
-                            .persistent(Codec.LONG)
-                            .build()
-            );
-
-    public static final Supplier<DataComponentType<Long>> LAST_CHECK_TICK =
-            DATA_COMPONENTS.register("last_check_tick", () ->
-                    DataComponentType.<Long>builder()
-                            .persistent(Codec.LONG)
-                            .build()
-            );
-
-    public static final Supplier<DataComponentType<Long>> SPOIL_AT_TICK =
-            DATA_COMPONENTS.register("spoil_at_tick", () ->
-                    DataComponentType.<Long>builder()
-                            .persistent(Codec.LONG)
+    public static final Supplier<DataComponentType<Float>> SPOILAGE =
+            DATA_COMPONENTS.register("spoilage", () ->
+                    DataComponentType.<Float>builder()
+                            .persistent(Codec.FLOAT)
                             .build()
             );
 
