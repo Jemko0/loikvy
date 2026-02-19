@@ -1,50 +1,50 @@
-/data get storage minecraft:registry citizens
-/data get storage minecraft:registry citizens 1
-/data get storage minecraft:registry citizens 0
-/data get storage minecraft:registry 0 0
-/data modify storage minecraft:registry citizens set value {"a":"c"}
-/data get storage minecraft:registry
-/data modify storage minecraft:registry citizens set value {"e":"c"}
-/data get storage minecraft:registry
-/data modify storage minecraft:registry citizens.e set value {"g":"c"}
-/data get storage minecraft:registry
-/data modify storage minecraft:registry citizens.jew set value {"g":"c"}
-/data get storage minecraft:registry
-/c
-/createcharacter
-/data modify storage minecraft:registry
-/data get storage minecraft:registry
-/data remove storage minecraft:registry citizens.e
-/data remove storage minecraft:registry citizens.jew
-/data get storage minecraft:registry
-/data remove storage minecraft:registry citizens
-/data get storage minecraft:registry
-/createcharacter
-/data get storage minecraft:registry
-/data get storage minecraft:registry citizens
-/createcharacter
-/data get storage minecraft:registry citizens
-/data get storage minecraft:registry
-/createcharacter
-/data get storage minecraft:registry
-/createcharacter
-/data get storage minecraft:registry
-/createcharacter
-/data get storage minecraft:registry
-/data get storage minecraft:registry citizens
-/data get storage minecraft:registry citizens.MinMaxxing
-/data get storage minecraft:registry citizens.MinMaxxing.date_of_death
-/data get storage minecraft:registry citizens.MinMaxxing.alive
-/data modify storage minecraft:registry citizens.MinMaxxing.alive set value 1b
-/createcharacter
-/data get storage minecraft:registry citizens.JungExplode
-/time add 30000t
-/data get storage minecraft:registry citizens.JungExplode
-/createcharacter
-/kill 957ac25f-46ac-404e-83a8-d0d3a9222fdd
-/kill 70118dbd-a495-4b93-86d7-c6ef72620960
-/kill d1b63a31-1ee2-4cb3-852d-e6d0aebdaa11
-/kill 8c7cde6c-3f88-4bda-82d5-d7eff50f4192
-/kill @s
-/kill 8c7cde6c-3f88-4bda-82d5-d7eff50f4192
-/kill @e[type=loikvy:player_corpse]
+/data get storage minecraft:locked_doors locked[].door{locked:1b}
+/data get storage minecraft:locked_doors locked[2].door{locked:1b}
+/data get storage minecraft:locked_doors locked{}
+/data get storage minecraft:locked_doors locked{}.door
+/data get storage minecraft:locked_doors locked[]
+/data get storage minecraft:locked_doors locked[].door
+/data get storage minecraft:locked_doors locked[{door}]
+/data get storage minecraft:locked_doors locked[{door:{}}]
+/data get storage minecraft:locked_doors locked[1b]
+/data get storage minecraft:locked_doors
+/data get storage minecraft:locked_doors.locked
+/data get storage minecraft:locked_doors door
+/data get storage minecraft:locked_doors locked
+/data get storage minecraft:locked_doors locked[]
+/data get storage minecraft:locked_doors locked[{door:{locked:1b}}]
+/data get storage minecraft:locked_doors locked[].door:{locked:1b}
+/data get storage minecraft:locked_doors locked.door:{locked:1b}
+/data get storage minecraft:locked_doors locked[].door
+/data get storage minecraft:locked_doors locked.door
+/data get storage minecraft:locked_doors locked[{door}]
+/data get storage minecraft:locked_doors locked[]
+/data get storage minecraft:locked_doors locked[{door:{}}]
+/data get storage minecraft:registry stores
+/data get storage minecraft:registry stores[{owner:"GoofyMcGooferSon"}]
+/data get storage minecraft:registry stores[0]
+/data get storage minecraft:registry stores[]
+/data get storage minecraft:registry stores
+/data get block 610 67 1735
+/neoforge day
+/neoforge data_components list
+/data get block 610 67 1735
+/neoforge data_components list
+/neoforge tps
+/neoforge dimensions
+/time add 30000
+/neoforge day length set 120
+/time query day
+/time query daytime
+/neoforge day length set 120
+/neoforge day w
+/neoforge data_components list
+/neoforge day speed set 20
+/neoforge day speed set 100
+/neoforge day length set 60
+/neoforge data_components list
+/neoforge day length set 2
+/neoforge data_components list
+/neoforge day speed set 200
+/neoforge day speed set 20
+/neoforge data_components list

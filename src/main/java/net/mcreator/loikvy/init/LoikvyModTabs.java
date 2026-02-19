@@ -34,6 +34,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.SMALL_ROCK.get());
 			tabData.accept(LoikvyModItems.SHARP_ROCK.get());
 			tabData.accept(LoikvyModItems.SHARP_STICK.get());
+			tabData.accept(LoikvyModItems.ID_CARD.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(LoikvyModBlocks.FRIDGE.get().asItem());
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());
@@ -61,6 +62,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.UNBAKED_CHEESE_PIZZA.get());
 			tabData.accept(LoikvyModItems.PEPPERONI_CHUNK.get());
 			tabData.accept(LoikvyModItems.PEPPERONI_SLICE.get());
+			tabData.accept(LoikvyModBlocks.STOVE.get().asItem());
 			tabData.accept(LoikvyModItems.ENERGY_DRINK.get());
 			tabData.accept(LoikvyModItems.EMPTY_CAN.get());
 			tabData.accept(LoikvyModItems.UNCOOKED_NOODLES.get());

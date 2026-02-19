@@ -12,9 +12,9 @@ public class FridgeOnRandomClientDisplayTickProcedure {
 		if (world instanceof Level _level0 && _level0.hasNeighborSignal(BlockPos.containing(x, y - 1, z))) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x - 0.5, y - 0.5, z - 0.5), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("loikvy:fridge_hum_short2")), SoundSource.BLOCKS, (float) 0.25, 1);
+					//_level.playSound(null, BlockPos.containing(x - 0.5, y - 0.5, z - 0.5), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("loikvy:fridge_hum_short2")), SoundSource.BLOCKS, (float) 0.25, 1);
 				} else {
-					_level.playLocalSound((x - 0.5), (y - 0.5), (z - 0.5), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("loikvy:fridge_hum_short2")), SoundSource.BLOCKS, (float) 0.25, 1, false);
+					_level.playLocalSound((x), (y), (z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("loikvy:fridge_hum_short2")), SoundSource.BLOCKS, (float) 0.25, 1, false);
 				}
 			}
 		}

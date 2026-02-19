@@ -56,10 +56,11 @@ public class HealthMenuGUIScreen extends AbstractContainerScreen<HealthMenuGUIMe
 			LoikvyModScreens.renderEntityInInventoryFollowsAngle(guiGraphics, this.leftPos + 36, this.topPos + 69, 20, 0f + (float) Math.atan((this.leftPos + 36 - mouseX) / 40.0), (float) Math.atan((this.topPos + 20 - mouseY) / 40.0), livingEntity);
 		}
 		boolean customTooltipShown = false;
-		if (mouseX > leftPos + 54 && mouseX < leftPos + 70 && mouseY > topPos + 36 && mouseY < topPos + 52) {
-			guiGraphics.renderTooltip(font, Component.translatable("gui.loikvy.health_menu_gui.tooltip_take_off"), mouseX, mouseY);
-			customTooltipShown = true;
-		}
+		if (HasBandageProcedure.execute(entity))
+			if (mouseX > leftPos + 54 && mouseX < leftPos + 70 && mouseY > topPos + 36 && mouseY < topPos + 52) {
+				guiGraphics.renderTooltip(font, Component.translatable("gui.loikvy.health_menu_gui.tooltip_take_off"), mouseX, mouseY);
+				customTooltipShown = true;
+			}
 		if (!customTooltipShown)
 			this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}

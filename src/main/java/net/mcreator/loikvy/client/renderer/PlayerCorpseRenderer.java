@@ -23,31 +23,31 @@ public class PlayerCorpseRenderer extends HumanoidMobRenderer<PlayerCorpseEntity
     }
 
     @Override
-    public ResourceLocation getTextureLocation(PlayerCorpseEntity entity) {
+    public ResourceLocation getTextureLocation(PlayerCorpseEntity entity)
+    {
         GameProfile profile = entity.getPlayerProfile();
+
+        ResourceLocation skinResource = ResourceLocation.parse("loikvy:textures/entities/2025_07_07_mango-fruit-skin-23384942.png");
         
         if (profile != null) {
-            // Get player skin from Minecraft's skin manager
             Minecraft minecraft = Minecraft.getInstance();
             PlayerSkin playerSkin = minecraft.getSkinManager().getInsecureSkin(profile);
             
             if (playerSkin != null) {
-                return playerSkin.texture();
+                skinResource = playerSkin.texture();
+            } else {
+            	skinResource = DefaultPlayerSkin.getDefaultTexture();
             }
-            
-            // Fallback to default skin based on UUID
-            return DefaultPlayerSkin.getDefaultTexture();
         }
         
-        // Fallback to your original texture if no profile
-        return ResourceLocation.parse("loikvy:textures/entities/2025_07_07_mango-fruit-skin-23384942.png");
+        return skinResource;
     }
 
     @Override
-	protected void setupRotations(PlayerCorpseEntity entity, PoseStack poseStack, float ageInTicks, float rotationYaw, float partialTicks, float scale) {
-    	super.setupRotations(entity, poseStack, ageInTicks, rotationYaw, partialTicks, scale);
+    protected void setupRotations(PlayerCorpseEntity entity, PoseStack poseStack, float ageInTicks, float rotationYaw, float partialTicks, float scale) {
+        super.setupRotations(entity, poseStack, ageInTicks, rotationYaw, partialTicks, scale);
     
-    	poseStack.mulPose(Axis.XP.rotationDegrees(90));
-    	poseStack.translate(0.0, -0.4, 0.0);
-	}
+        poseStack.mulPose(Axis.XP.rotationDegrees(90));
+        poseStack.translate(0.0, -0.4, 0.0);
+    }
 }

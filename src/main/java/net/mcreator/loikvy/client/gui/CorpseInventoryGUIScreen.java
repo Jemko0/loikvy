@@ -9,6 +9,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.loikvy.world.inventory.CorpseInventoryGUIMenu;
+import net.mcreator.loikvy.procedures.GetPlayerNameFromCorpseProcedure;
 import net.mcreator.loikvy.init.LoikvyModScreens;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -64,7 +65,7 @@ public class CorpseInventoryGUIScreen extends AbstractContainerScreen<CorpseInve
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.corpse_inventory_gui.label_corpse"), 5, 5, -12829636, false);
+		guiGraphics.drawString(this.font, GetPlayerNameFromCorpseProcedure.execute(entity), 5, 5, -12829636, false);
 	}
 
 	@Override

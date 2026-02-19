@@ -49,6 +49,7 @@ public class PlayerCorpseEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Integer> DATA_age = SynchedEntityData.defineId(PlayerCorpseEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<String> DATA_PLAYER_NAME = SynchedEntityData.defineId(PlayerCorpseEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> DATA_PLAYER_UUID = SynchedEntityData.defineId(PlayerCorpseEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Long> DATA_death_time = SynchedEntityData.defineId(PlayerCorpseEntity.class, EntityDataSerializers.LONG);
 	
 	private GameProfile playerProfile;
 
@@ -59,6 +60,11 @@ public class PlayerCorpseEntity extends PathfinderMob {
 		setPersistenceRequired();
 
 		this.setBoundingBox(this.makeBoundingBox());
+
+		if (!world.isClientSide())
+		{
+        	this.entityData.set(DATA_death_time, world.getDayTime());
+    	}
 	}
 
 	@Override
@@ -67,6 +73,15 @@ public class PlayerCorpseEntity extends PathfinderMob {
 		builder.define(DATA_age, 0);
 		builder.define(DATA_PLAYER_NAME, "");
 		builder.define(DATA_PLAYER_UUID, "");
+		builder.define(DATA_death_time, 0L);
+	}
+
+	@Override
+	public void tick() {
+    	super.tick();
+
+    	int currentAge = this.entityData.get(DATA_age);
+    	this.entityData.set(DATA_age, currentAge + 1);
 	}
 
 	public void setPlayerProfile(GameProfile profile) {
@@ -130,6 +145,27 @@ public class PlayerCorpseEntity extends PathfinderMob {
     	);
 	}
 
+
+	// Public getter method for age data
+	public int getAge() {
+		return this.entityData.get(DATA_age);
+	}
+	
+	public int getDaysOld()
+	{
+    	long deathTime = this.entityData.get(DATA_death_time);
+    	long currentTime = this.level().getDayTime();
+    	long ticksElapsed = currentTime - deathTime;
+    	
+    	long dayLength = this.level().dimensionType().fixedTime().orElse(24000L);
+    	
+    	if (dayLength == 0L) {
+    		dayLength = 24000L;
+    	}
+
+    	return (int)(ticksElapsed / dayLength);
+	}
+
 	private final ItemStackHandler inventory = new ItemStackHandler(36);
 	private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
 
@@ -151,7 +187,9 @@ public class PlayerCorpseEntity extends PathfinderMob {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
+		
 		compound.putInt("Dataage", this.entityData.get(DATA_age));
+		compound.putLong("DeathTime", this.entityData.get(DATA_death_time));
 		compound.put("InventoryCustom", inventory.serializeNBT(this.registryAccess()));
 		
 		if (this.playerProfile != null) {
@@ -162,9 +200,12 @@ public class PlayerCorpseEntity extends PathfinderMob {
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
+		
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Dataage"))
 			this.entityData.set(DATA_age, compound.getInt("Dataage"));
+		if (compound.contains("DeathTime"))
+			this.entityData.set(DATA_death_time, compound.getLong("DeathTime"));
 		if (compound.get("InventoryCustom") instanceof CompoundTag inventoryTag)
 			inventory.deserializeNBT(this.registryAccess(), inventoryTag);
 		
@@ -215,6 +256,15 @@ public class PlayerCorpseEntity extends PathfinderMob {
 		Level world = this.level();
 		Entity entity = this;
 		return false;
+	}
+
+	@Override
+	public void die(DamageSource damageSource) {
+    	super.die(damageSource);
+    	// Force removal
+    	if (!this.level().isClientSide) {
+        	this.remove(RemovalReason.KILLED);
+    	}
 	}
 
 	public static void init(RegisterSpawnPlacementsEvent event) {

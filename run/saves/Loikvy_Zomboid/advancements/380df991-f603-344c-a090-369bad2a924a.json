@@ -1239,6 +1239,7 @@
     "criteria": {
       "bread": "2025-07-28 03:44:12 +0200",
       "cooked_chicken": "2025-07-29 03:50:12 +0200",
+      "enchanted_golden_apple": "2026-02-18 22:17:16 +0100",
       "cooked_beef": "2025-07-16 23:22:48 +0200"
     },
     "done": false
@@ -7756,6 +7757,18 @@
   "loikvy:recipes/basic_axe": {
     "criteria": {
       "has_ingredient_2": "2025-07-29 08:55:51 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/smelt_iron": {
+    "criteria": {
+      "iron": "2026-02-18 18:31:05 +0100"
+    },
+    "done": true
+  },
+  "loikvy:recipes/fridge_recipe": {
+    "criteria": {
+      "has_ingredient_0": "2026-02-18 18:31:05 +0100"
     },
     "done": true
   },

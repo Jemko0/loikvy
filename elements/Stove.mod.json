@@ -48,7 +48,11 @@
     "maxStackSize": 64,
     "rarity": "COMMON",
     "immuneToFire": false,
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "FOOD"
+      }
+    ],
     "destroyTool": "pickaxe",
     "customDrop": {
       "value": ""

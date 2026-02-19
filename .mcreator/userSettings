@@ -2,16 +2,14 @@
   "workspacePanelIconSize": "LIST",
   "workspacePanelSortType": "CREATED",
   "workspacePanelSortAscending": true,
-  "projectBrowserSplitPos": 319,
+  "projectBrowserSplitPos": 362,
   "projectBrowserState": {
     "expandedPaths": [
       "[, Loikvy Roleplay]",
       "[, Loikvy Roleplay, Source (Gradle)]",
       "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net]",
       "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator]",
-      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy]",
-      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy\\entity]",
-      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy\\init]"
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy]"
     ]
   }
 }

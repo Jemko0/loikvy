@@ -15,7 +15,8 @@
         "data": {
           "name": "label_corpse",
           "text": {
-            "fixedValue": "Corpse"
+            "fixedValue": "Corpse",
+            "name": "GetPlayerNameFromCorpse"
           },
           "color": {
             "value": -12829636,

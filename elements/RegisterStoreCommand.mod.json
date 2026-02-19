@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "command",
+  "definition": {
+    "commandName": "registerstore",
+    "type": "STANDARD",
+    "permissionLevel": "2",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"blockpos\"><field name=\"name\">storePosition</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">storeRegistryName</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">storeDesiredName</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">storeType</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">storeAddress</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">ownerName</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">responsibleParty</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">additionalInfo</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">RegisterStoreCommandProc</field></block></statement></block></statement></block></statement></block></statement></block></statement></block></statement></block></statement></block></statement></block></next></block></xml>"
+  }
+}

@@ -28,6 +28,7 @@ import net.mcreator.loikvy.init.LoikvyModItems;
 import net.mcreator.loikvy.init.LoikvyModFluids;
 import net.mcreator.loikvy.init.LoikvyModFluidTypes;
 import net.mcreator.loikvy.init.LoikvyModEntities;
+import net.mcreator.loikvy.init.LoikvyModDataAttachments;
 import net.mcreator.loikvy.init.LoikvyModBlocks;
 import net.mcreator.loikvy.init.LoikvyModBlockEntities;
 import net.mcreator.loikvy.init.LoikvyModAttributes;
@@ -56,15 +57,14 @@ public class LoikvyMod {
 		LoikvyModEntities.REGISTRY.register(modEventBus);
 		LoikvyModTabs.REGISTRY.register(modEventBus);
 		LoikvyModVariables.ATTACHMENT_TYPES.register(modEventBus);
-
 		LoikvyModMobEffects.REGISTRY.register(modEventBus);
 		LoikvyModMenus.REGISTRY.register(modEventBus);
 		LoikvyModParticleTypes.REGISTRY.register(modEventBus);
-
 		LoikvyModFluids.REGISTRY.register(modEventBus);
 		LoikvyModFluidTypes.REGISTRY.register(modEventBus);
 		LoikvyModAttributes.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
+		LoikvyModDataAttachments.register(modEventBus);
 		// End of user code block mod init
 	}
 

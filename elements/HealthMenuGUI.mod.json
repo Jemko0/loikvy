@@ -92,6 +92,9 @@
           "text": {
             "fixedValue": "Take Off"
           },
+          "displayCondition": {
+            "name": "HasBandage"
+          },
           "width": 16,
           "height": 16,
           "x": 182,
