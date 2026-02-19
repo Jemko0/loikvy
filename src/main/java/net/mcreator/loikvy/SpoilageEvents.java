@@ -1,51 +1,33 @@
-/*
- * The code of this mod element is always locked.
- *
- * You can register new events in this class too.
- *
- * If you want to make a plain independent class, create it using
- * Project Browser -> New... and make sure to make the class
- * outside net.mcreator.loikvy as this package is managed by MCreator.
- *
- * If you change workspace package, modid or prefix, you will need
- * to manually adapt this file to these changes or remake it.
- *
- * This class will be added in the mod root package.
-*/
 package net.mcreator.loikvy;
 
-import net.mcreator.loikvy.init.LoikvyModBlocks;
 import net.mcreator.loikvy.init.LoikvyModDataAttachments;
 import net.mcreator.loikvy.init.LoikvyModItems;
 import net.mcreator.loikvy.network.LoikvyModVariables;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.AbstractFurnaceMenu;
-import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerContainerEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.neoforge.items.wrapper.PlayerInvWrapper;
-import net.neoforged.neoforge.items.wrapper.PlayerMainInvWrapper;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -56,6 +38,9 @@ import java.util.Set;
 public class SpoilageEvents {
 	public SpoilageEvents() {
 	}
+
+	// Check every 10 seconds
+	private static final int SPOIL_RATE = 20 * 10;
 
 	private static Map<Item, Integer> SPOILAGE_DAYS = null;
 
@@ -89,20 +74,20 @@ public class SpoilageEvents {
 			SPOILAGE_DAYS.put(LoikvyModItems.COOKED_NOODLES.get(), 2);
 			SPOILAGE_DAYS.put(LoikvyModItems.DOUGH.get(), 3);
 
-			// Unbaked - treat like dough
+			// Unbaked
 			SPOILAGE_DAYS.put(LoikvyModItems.UNBAKED_PEPPERONI_PIZZA.get(), 2);
 			SPOILAGE_DAYS.put(LoikvyModItems.UNBAKED_CHEESE_PIZZA.get(), 2);
 
-			// Dry goods - long shelf life
+			// Dry goods
 			SPOILAGE_DAYS.put(LoikvyModItems.FLOUR.get(), 30);
 			SPOILAGE_DAYS.put(LoikvyModItems.WHEAT_FLOUR.get(), 30);
 			SPOILAGE_DAYS.put(LoikvyModItems.UNCOOKED_NOODLES.get(), 30);
 
-			// Drinks/packaged - very long
+			// Drinks/packaged
 			SPOILAGE_DAYS.put(LoikvyModItems.ENERGY_DRINK.get(), 60);
 			SPOILAGE_DAYS.put(LoikvyModItems.SUNFLOWER_OIL.get(), 60);
 
-			// Vanilla food items
+			// Vanilla
 			SPOILAGE_DAYS.put(Items.BREAD, 5);
 			SPOILAGE_DAYS.put(Items.APPLE, 5);
 			SPOILAGE_DAYS.put(Items.COOKED_BEEF, 3);
@@ -126,54 +111,31 @@ public class SpoilageEvents {
 		return SPOILAGE_DAYS;
 	}
 
-	private static Map<Block, Float> CONTAINER_SPOILAGE_MULTIPLIER = null;
+	// Keyed by block entity type ResourceLocation e.g. "loikvy:fridge"
+	private static Map<ResourceLocation, Float> CONTAINER_SPOILAGE_MULTIPLIER = null;
 
-	private static Map<Block, Float> getContainerMultiplier()
+	private static Map<ResourceLocation, Float> getContainerMultiplier()
 	{
 		if (CONTAINER_SPOILAGE_MULTIPLIER == null)
 		{
 			CONTAINER_SPOILAGE_MULTIPLIER = new HashMap<>();
-			CONTAINER_SPOILAGE_MULTIPLIER.put(LoikvyModBlocks.FRIDGE.get(), 3.0f);
-			CONTAINER_SPOILAGE_MULTIPLIER.put(LoikvyModBlocks.FREEZER.get(), 10.0f);
+			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:fridge"), 3.0f);
+			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:freezer"), 10.0f);
 		}
 		return CONTAINER_SPOILAGE_MULTIPLIER;
 	}
 
-	private static Set<Item> CONTAINER_NEVER_SPOIL = null;
+	private static Set<Item> NEVER_SPOIL = null;
 
 	private static Set<Item> getNeverSpoil()
 	{
-		if (CONTAINER_NEVER_SPOIL == null)
+		if (NEVER_SPOIL == null)
 		{
-			CONTAINER_NEVER_SPOIL = new HashSet<>();
-			CONTAINER_NEVER_SPOIL.add(LoikvyModItems.ROTTEN_FOOD.get());
-			CONTAINER_NEVER_SPOIL.add(LoikvyModItems.BURNT_FOOD.get());
+			NEVER_SPOIL = new HashSet<>();
+			NEVER_SPOIL.add(LoikvyModItems.ROTTEN_FOOD.get());
+			NEVER_SPOIL.add(LoikvyModItems.BURNT_FOOD.get());
 		}
-		return CONTAINER_NEVER_SPOIL;
-	}
-
-	public static long GetSpoilageTicksForItem(ItemStack stack, long dayLengthTicks)
-	{
-		int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
-		return days * dayLengthTicks;
-	}
-
-	public static float GetContainerSpoilageMultiplier(AbstractContainerMenu container)
-	{
-		if (container instanceof InventoryMenu) return 1.0f;
-
-		if (container instanceof AbstractFurnaceMenu) return 1.0f;
-
-		// for block entity containers, check the block type
-		for (Slot slot : container.slots) {
-			if (slot.container instanceof BaseContainerBlockEntity be) {
-				Block block = be.getLevel().getBlockState(be.getBlockPos()).getBlock();
-				return getContainerMultiplier().getOrDefault(block, 1.0f);
-			}
-			break;
-		}
-
-		return 1.0f;
+		return NEVER_SPOIL;
 	}
 
 	public static boolean GetShouldSpoil(Item item)
@@ -185,13 +147,89 @@ public class SpoilageEvents {
 	{
 		if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return -1L;
 
+		long now = (long) LoikvyModVariables.gWorldTicks;
+
+		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
+		if (spoilAtTick != -1L)
+		{
+			return spoilAtTick - now;
+		}
+
 		long created = stack.getOrDefault(LoikvyModDataAttachments.CREATION_TIME.get(), -1L);
 		if (created == -1L) return -1L;
 
-		long elapsed = (long) LoikvyModVariables.gWorldTicks - created;
-		long spoilTicks = GetSpoilageTicksForItem(stack, LoikvyJavaUtil.GetDayLengthInTicks());
+		long elapsed = now - created;
+		return GetSpoilageTicksForItem(stack) - elapsed;
+	}
 
-		return spoilTicks - elapsed;
+	public static long GetSpoilageTicksForItem(ItemStack stack)
+	{
+		long created = stack.getOrDefault(LoikvyModDataAttachments.CREATION_TIME.get(), -1L);
+		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
+		if (created != -1L && spoilAtTick != -1L)
+		{
+			return spoilAtTick - created;
+		}
+
+		int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
+		return (long)(days * LoikvyJavaUtil.GetDayLengthInTicks());
+	}
+
+	private static float getBlockEntityMultiplier(BlockEntity be)
+	{
+		ResourceLocation location = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
+		System.out.println("BlockEntity type: " + location);
+		if (location == null) return 1.0f;
+		return getContainerMultiplier().getOrDefault(location, 1.0f);
+	}
+
+	private static void spoilItem(ItemStack stack, float multiplier, IItemHandler handler, int slot, ServerLevel level)
+	{
+		if (stack.isEmpty()) return;
+		if (stack.getItem().getFoodProperties(stack, null) == null) return;
+		if (!GetShouldSpoil(stack.getItem())) return;
+
+		long now = (long) LoikvyModVariables.gWorldTicks;
+
+		long spoilAtTick = stack.getOrDefault(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), -1L);
+		if (spoilAtTick == -1L)
+		{
+			int days = getSpoilageDays().getOrDefault(stack.getItem(), 3);
+			long spoilTicks = (long)(days * LoikvyJavaUtil.GetDayLengthInTicks(level));
+			stack.set(LoikvyModDataAttachments.CREATION_TIME.get(), now);
+			stack.set(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), now + spoilTicks);
+			stack.set(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
+			System.out.println("Stamped " + stack.getItem() + " spoilAtTick=" + (now + spoilTicks));
+			return;
+		}
+
+		System.out.println("Checking " + stack.getItem() + " multiplier=" + multiplier + " now=" + now + " spoilAtTick=" + spoilAtTick + " remaining=" + (spoilAtTick - now));
+
+		if (multiplier > 1.0f && now < spoilAtTick)
+		{
+			long lastCheck = stack.getOrDefault(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
+			long ticksElapsed = now - lastCheck;
+			long ticksSaved = (long)(ticksElapsed - (ticksElapsed / multiplier));
+			System.out.println("Freezer extending deadline by " + ticksSaved + " ticks (elapsed=" + ticksElapsed + ")");
+			stack.set(LoikvyModDataAttachments.SPOIL_AT_TICK.get(), spoilAtTick + ticksSaved);
+			spoilAtTick += ticksSaved;
+		}
+
+		stack.set(LoikvyModDataAttachments.LAST_CHECK_TICK.get(), now);
+
+		if (now >= spoilAtTick)
+		{
+			int count = stack.getCount();
+			stack.setCount(0);
+			ItemStack spoiled = new ItemStack(LoikvyModItems.ROTTEN_FOOD.get(), count);
+			handler.insertItem(slot, spoiled, false);
+		}
+	}
+
+	private static final java.util.concurrent.ConcurrentHashMap<ServerLevel, Set<BlockPos>> TRACKED_POSITIONS = new java.util.concurrent.ConcurrentHashMap<>();
+
+	private static Set<BlockPos> getPositions(ServerLevel level) {
+		return TRACKED_POSITIONS.computeIfAbsent(level, k -> new HashSet<>());
 	}
 
 	@SubscribeEvent
@@ -207,65 +245,98 @@ public class SpoilageEvents {
 	@EventBusSubscriber
 	private static class SpoilageEventsForgeBusEvents {
 		@SubscribeEvent
-		public static void serverLoad(ServerStartingEvent event)
+		public static void serverLoad(ServerStartingEvent event) {
+		}
+
+		@SubscribeEvent
+		public static void onChunkLoad(net.neoforged.neoforge.event.level.ChunkEvent.Load event)
 		{
+			if (!(event.getLevel() instanceof ServerLevel level)) return;
+			if (!(event.getChunk() instanceof net.minecraft.world.level.chunk.LevelChunk chunk)) return;
+			getPositions(level).addAll(chunk.getBlockEntities().keySet());
 		}
 
 		@SubscribeEvent
-		public static void onContainerOpened(PlayerContainerEvent.Open event) {
-			Player player = event.getEntity();
-			AbstractContainerMenu menu = event.getContainer();
+		public static void onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload event)
+		{
+			if (!(event.getLevel() instanceof ServerLevel level)) return;
+			if (!(event.getChunk() instanceof net.minecraft.world.level.chunk.LevelChunk chunk)) return;
+			getPositions(level).removeAll(chunk.getBlockEntities().keySet());
+		}
 
-			if (player.level().isClientSide()) return;
+		@SubscribeEvent
+		public static void onLevelTick(LevelTickEvent.Post event)
+		{
+			if (!(event.getLevel() instanceof ServerLevel level)) return;
+			if (level.dimension() != Level.OVERWORLD) return;
+			if (level.getGameTime() % SPOIL_RATE != 0) return;
 
-			ServerLevel level = (ServerLevel) player.level();
-
-			for (int i = 0; i < menu.slots.size(); i++)
+			for (BlockPos pos : new HashSet<>(getPositions(level)))
 			{
-				Slot slot = menu.getSlot(i);
-				ItemStack stack = slot.getItem();
-				if (!stack.isEmpty() && stack.getItem().getFoodProperties(stack, null) != null)
+				IItemHandler handler = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, null);
+				if (handler == null || handler.getSlots() == 0) continue;
+
+				BlockEntity be = level.getBlockEntity(pos);
+				if (be == null) continue;
+
+				float multiplier = getBlockEntityMultiplier(be);
+
+				for (int i = 0; i < handler.getSlots(); i++)
 				{
-					if(GetShouldSpoil(stack.getItem()))
+					ItemStack stack = handler.getStackInSlot(i);
+					if (!stack.isEmpty())
 					{
-						checkSpoilage(stack, level, menu, player);
+						spoilItem(stack, multiplier, handler, i, level);
 					}
 				}
 			}
 		}
 
 		@SubscribeEvent
-		public static void onPlayerTick(PlayerTickEvent.Post event) {
-			if (event.getEntity().level().isClientSide()) return;
-			if (event.getEntity().tickCount % (20 * 15) != 0) return; // check every 15 seconds
+		public static void onPlayerTick(PlayerTickEvent.Post event)
+		{
+			if (!(event.getEntity() instanceof ServerPlayer player)) return;
+			if (player.level().getGameTime() % SPOIL_RATE != 0) return;
 
-			Player player = event.getEntity();
 			ServerLevel level = (ServerLevel) player.level();
 
-			for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+			for (int i = 0; i < player.getInventory().getContainerSize(); i++)
+			{
 				ItemStack stack = player.getInventory().getItem(i);
-				if (!stack.isEmpty() && stack.getItem().getFoodProperties(stack, null) != null)
+				if (!stack.isEmpty())
 				{
-					if(GetShouldSpoil(stack.getItem()))
-					{
-						checkSpoilage(stack, level, player.inventoryMenu, player);
-					}
+					// Use a simple wrapper to work with spoilItem
+					final int slotIndex = i;
+					IItemHandler fakeHandler = new IItemHandler() {
+						public int getSlots() { return player.getInventory().getContainerSize(); }
+						public ItemStack getStackInSlot(int slot) { return player.getInventory().getItem(slot); }
+						public ItemStack insertItem(int slot, ItemStack s, boolean sim) {
+							if (!sim) player.getInventory().setItem(slot, s);
+							return ItemStack.EMPTY;
+						}
+						public ItemStack extractItem(int slot, int amount, boolean sim) { return ItemStack.EMPTY; }
+						public int getSlotLimit(int slot) { return 64; }
+						public boolean isItemValid(int slot, ItemStack s) { return true; }
+					};
+
+					spoilItem(stack, 1.0f, fakeHandler, slotIndex, level);
 				}
 			}
+
+			player.inventoryMenu.broadcastChanges();
 		}
 
 		@SubscribeEvent
-		public static void onItemTooltip(ItemTooltipEvent event) {
+		public static void onItemTooltip(ItemTooltipEvent event)
+		{
 			ItemStack stack = event.getItemStack();
 			if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return;
+			if (!GetShouldSpoil(stack.getItem())) return;
 
-			long spoilTicks = GetSpoilageTicksForItem(stack, LoikvyJavaUtil.GetDayLengthInTicks());
+			long spoilTicks = GetSpoilageTicksForItem(stack);
 			long remaining = GetSpoilageRemainingTime(stack);
 
-			if (remaining == -1L)
-			{
-				return;
-			}
+			if (remaining == -1L) return;
 
 			if (remaining <= 0)
 			{
@@ -279,35 +350,18 @@ public class SpoilageEvents {
 			{
 				event.getToolTip().add(Component.literal("Fresh").withStyle(ChatFormatting.GREEN));
 			}
-		}
-	}
 
-	private static void checkSpoilage(ItemStack stack, ServerLevel level, AbstractContainerMenu container, Player player)
-	{
-		long created = stack.getOrDefault(LoikvyModDataAttachments.CREATION_TIME.get(), -1L);
-		if (created == -1L)
-		{
-			stack.set(LoikvyModDataAttachments.CREATION_TIME.get(), (long) LoikvyModVariables.gWorldTicks);
-			return;
-		}
-
-		long elapsed = (long) LoikvyModVariables.gWorldTicks - created;
-		float multiplier = GetContainerSpoilageMultiplier(container);
-		long spoilTicks = GetSpoilageTicksForItem(stack, (long)((float) LoikvyJavaUtil.GetDayLengthInTicks(level) * multiplier));
-
-		if (elapsed > spoilTicks)
-		{
-			ItemStack spoiled = new ItemStack(LoikvyModItems.ROTTEN_FOOD.get());
-			stack.shrink(1);
-
-			if(!stack.isEmpty())
+			if (event.getEntity() != null)
 			{
-				stack.set(LoikvyModDataAttachments.CREATION_TIME.get(), (long) LoikvyModVariables.gWorldTicks);
+				System.out.println("canUseGameMasterBlocks: " + event.getEntity().canUseGameMasterBlocks());
+				System.out.println("hasPermissions(0): " + event.getEntity().hasPermissions(0));
 			}
 
-			player.getInventory().add(spoiled);
-
-			container.broadcastChanges();
+			if (event.getEntity() != null && event.getEntity().canUseGameMasterBlocks())
+			{
+				event.getToolTip().add(Component.literal("Remaining: " + remaining + " ticks").withStyle(ChatFormatting.GRAY));
+				event.getToolTip().add(Component.literal("Remaining Time: " + remaining / 20 / 60 / 60 + ":" + (remaining / 20 / 60) % 60 + ":" + (remaining / 20) % 60).withStyle(ChatFormatting.GRAY));
+			}
 		}
 	}
 }

@@ -20,6 +20,20 @@ public class LoikvyModDataAttachments {
                             .build()
             );
 
+    public static final Supplier<DataComponentType<Long>> LAST_CHECK_TICK =
+            DATA_COMPONENTS.register("last_check_tick", () ->
+                    DataComponentType.<Long>builder()
+                            .persistent(Codec.LONG)
+                            .build()
+            );
+
+    public static final Supplier<DataComponentType<Long>> SPOIL_AT_TICK =
+            DATA_COMPONENTS.register("spoil_at_tick", () ->
+                    DataComponentType.<Long>builder()
+                            .persistent(Codec.LONG)
+                            .build()
+            );
+
     public static void register(IEventBus modBus) {
         DATA_COMPONENTS.register(modBus);
     }

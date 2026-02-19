@@ -1,29 +1,3 @@
-/data get storage minecraft:locked_doors locked[].door{locked:1b}
-/data get storage minecraft:locked_doors locked[2].door{locked:1b}
-/data get storage minecraft:locked_doors locked{}
-/data get storage minecraft:locked_doors locked{}.door
-/data get storage minecraft:locked_doors locked[]
-/data get storage minecraft:locked_doors locked[].door
-/data get storage minecraft:locked_doors locked[{door}]
-/data get storage minecraft:locked_doors locked[{door:{}}]
-/data get storage minecraft:locked_doors locked[1b]
-/data get storage minecraft:locked_doors
-/data get storage minecraft:locked_doors.locked
-/data get storage minecraft:locked_doors door
-/data get storage minecraft:locked_doors locked
-/data get storage minecraft:locked_doors locked[]
-/data get storage minecraft:locked_doors locked[{door:{locked:1b}}]
-/data get storage minecraft:locked_doors locked[].door:{locked:1b}
-/data get storage minecraft:locked_doors locked.door:{locked:1b}
-/data get storage minecraft:locked_doors locked[].door
-/data get storage minecraft:locked_doors locked.door
-/data get storage minecraft:locked_doors locked[{door}]
-/data get storage minecraft:locked_doors locked[]
-/data get storage minecraft:locked_doors locked[{door:{}}]
-/data get storage minecraft:registry stores
-/data get storage minecraft:registry stores[{owner:"GoofyMcGooferSon"}]
-/data get storage minecraft:registry stores[0]
-/data get storage minecraft:registry stores[]
 /data get storage minecraft:registry stores
 /data get block 610 67 1735
 /neoforge day
@@ -48,3 +22,29 @@
 /neoforge day speed set 200
 /neoforge day speed set 20
 /neoforge data_components list
+/neoforge day length set 20
+/neoforge day length set 2
+/neoforge data_components
+/neoforge data_components list
+/neoforge day length set 1
+/neoforge day length set 10
+/neoforge day length set 1
+/neoforge day length set 40
+/neoforge day length set 5
+/neoforge day length set 1
+/gamemode 1
+/gamemode creative
+/neoforge day length
+/neoforge day length set 1
+/neoforge day length set 10
+/neoforge day length set 1
+/neoforge day speed set 1
+/neoforge day speed set 100
+/neoforge day speed set 10
+/neoforge day speed set 30
+/neoforge day speed set 1
+/tick rate 20
+/tick rate 200
+/tick rate 20
+/neoforge day speed
+/neoforge day speed set 30
