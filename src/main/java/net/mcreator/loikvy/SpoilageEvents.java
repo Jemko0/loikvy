@@ -2,7 +2,6 @@ package net.mcreator.loikvy;
 
 import net.mcreator.loikvy.init.LoikvyModDataAttachments;
 import net.mcreator.loikvy.init.LoikvyModItems;
-import net.mcreator.loikvy.network.LoikvyModVariables;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -48,7 +47,7 @@ public class SpoilageEvents {
 		{
 			SPOILAGE_DAYS = new HashMap<>();
 
-			// Produce - spoils fast
+			// Produce spoils fast
 			SPOILAGE_DAYS.put(LoikvyModItems.TOMATO.get(), 3);
 			SPOILAGE_DAYS.put(LoikvyModItems.TOMATO_SLICE.get(), 2);
 			SPOILAGE_DAYS.put(LoikvyModItems.LETTUCE.get(), 3);
@@ -116,8 +115,8 @@ public class SpoilageEvents {
 		if (CONTAINER_SPOILAGE_MULTIPLIER == null)
 		{
 			CONTAINER_SPOILAGE_MULTIPLIER = new HashMap<>();
-			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:fridge"), 3.0f);
-			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:freezer"), 10.0f);
+			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:fridge"), 8.0f);
+			CONTAINER_SPOILAGE_MULTIPLIER.put(ResourceLocation.parse("loikvy:freezer"), 12.0f);
 		}
 		return CONTAINER_SPOILAGE_MULTIPLIER;
 	}
