@@ -7104,6 +7104,18 @@
           "src/main/java/net/mcreator/loikvy/SpoilageEvents.java"
         ]
       }
+    },
+    {
+      "name": "LoikvyJavaUtil",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "loikvy_java_util",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/LoikvyJavaUtil.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -8349,6 +8361,10 @@
           },
           {
             "name": "JSON",
+            "children": []
+          },
+          {
+            "name": "FoodProcs",
             "children": []
           }
         ]

@@ -2805,11 +2805,11 @@
       "registry_name": "stove",
       "metadata": {
         "files": [
+          "src/main/resources/assets/loikvy/blockstates/stove.json",
+          "src/main/resources/data/loikvy/loot_table/blocks/stove.json",
+          "src/main/java/net/mcreator/loikvy/block/StoveBlock.java",
           "src/main/resources/assets/loikvy/models/item/stove.json",
           "src/main/java/net/mcreator/loikvy/block/entity/StoveBlockEntity.java",
-          "src/main/resources/assets/loikvy/blockstates/stove.json",
-          "src/main/java/net/mcreator/loikvy/block/StoveBlock.java",
-          "src/main/resources/data/loikvy/loot_table/blocks/stove.json",
           "src/main/resources/assets/loikvy/models/block/stove.json"
         ]
       },
@@ -7092,6 +7092,30 @@
         ]
       },
       "path": "~/Commands/Gov"
+    },
+    {
+      "name": "SpoilageEvents",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spoilage_events",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/SpoilageEvents.java"
+        ]
+      }
+    },
+    {
+      "name": "LoikvyJavaUtil",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "loikvy_java_util",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/LoikvyJavaUtil.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -8338,6 +8362,10 @@
           {
             "name": "JSON",
             "children": []
+          },
+          {
+            "name": "FoodProcs",
+            "children": []
           }
         ]
       },
@@ -8671,6 +8699,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Events",
+        "children": []
       }
     ]
   },

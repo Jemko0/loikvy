@@ -7139,21 +7139,6 @@
         ]
       },
       "path": "~/GlobalProcs/FoodProcs"
-    },
-    {
-      "name": "LightSwitchEmittedRedstonePower",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "light_switch_emitted_redstone_power",
-      "metadata": {
-        "dependencies": [],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/LightSwitchEmittedRedstonePowerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Electric/NewRedstone"
     }
   ],
   "variable_elements": [

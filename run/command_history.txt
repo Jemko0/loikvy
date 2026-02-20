@@ -1,26 +1,3 @@
-/time add 30000
-/neoforge day length set 120
-/time query day
-/time query daytime
-/neoforge day length set 120
-/neoforge day w
-/neoforge data_components list
-/neoforge day speed set 20
-/neoforge day speed set 100
-/neoforge day length set 60
-/neoforge data_components list
-/neoforge day length set 2
-/neoforge data_components list
-/neoforge day speed set 200
-/neoforge day speed set 20
-/neoforge data_components list
-/neoforge day length set 20
-/neoforge day length set 2
-/neoforge data_components
-/neoforge data_components list
-/neoforge day length set 1
-/neoforge day length set 10
-/neoforge day length set 1
 /neoforge day length set 40
 /neoforge day length set 5
 /neoforge day length set 1
@@ -48,3 +25,26 @@
 /neoforge day speed set 1
 /neoforge day speed set 100
 /neoforge day speed set 1
+/neoforge day length set 10
+/neoforge day length set 120
+/neoforge data_components list
+/time add 500000
+/neoforge day speed set 100
+/neoforge day speed set 1
+/neoforge day speed set 50
+/neoforge day speed set 100
+/neoforge day speed set 1
+/neoforge day speed set 0.03
+/neoforge day speed set 20
+/neoforge day speed set 100
+/neoforge day speed set 50
+/neoforge day speed set 100
+/neoforge day speed set 1
+/neoforge day speed set 100
+/neoforge day speed set 1
+/effect give @s hunger 5 20 true
+/neoforge day speed set 0.001
+/effect give @s hunger 5 50 true
+/effect give @s hunger 5 100 true
+/neoforge day speed set 0.001
+/neoforge data_components list

@@ -2805,11 +2805,11 @@
       "registry_name": "stove",
       "metadata": {
         "files": [
+          "src/main/resources/assets/loikvy/blockstates/stove.json",
+          "src/main/resources/data/loikvy/loot_table/blocks/stove.json",
+          "src/main/java/net/mcreator/loikvy/block/StoveBlock.java",
           "src/main/resources/assets/loikvy/models/item/stove.json",
           "src/main/java/net/mcreator/loikvy/block/entity/StoveBlockEntity.java",
-          "src/main/resources/assets/loikvy/blockstates/stove.json",
-          "src/main/java/net/mcreator/loikvy/block/StoveBlock.java",
-          "src/main/resources/data/loikvy/loot_table/blocks/stove.json",
           "src/main/resources/assets/loikvy/models/block/stove.json"
         ]
       },
@@ -7092,6 +7092,53 @@
         ]
       },
       "path": "~/Commands/Gov"
+    },
+    {
+      "name": "SpoilageEvents",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spoilage_events",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/SpoilageEvents.java"
+        ]
+      }
+    },
+    {
+      "name": "LoikvyJavaUtil",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "loikvy_java_util",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/LoikvyJavaUtil.java"
+        ]
+      }
+    },
+    {
+      "name": "OnFoodEaten",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/OnFoodEatenProcedure.java"
+        ]
+      },
+      "path": "~/GlobalProcs/FoodProcs"
     }
   ],
   "variable_elements": [
@@ -8256,20 +8303,20 @@
   },
   "metadata": {
     "files": [
-      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModSounds.java",
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModTabs.java",
       "src/main/resources/assets/loikvy/sounds.json",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModModels.java",
       "src/main/java/net/mcreator/loikvy/network/LoikvyModVariables.java",
+      "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/loikvy/LoikvyMod.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModSounds.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModModels.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModAttributes.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModFluids.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFluidTypes.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModFluids.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModMenus.java",
-      "src/main/java/net/mcreator/loikvy/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModScreens.java",
+      "src/main/java/net/mcreator/loikvy/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModGameRules.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFuels.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModKeyMappings.java",
@@ -8279,8 +8326,8 @@
       "src/main/java/net/mcreator/loikvy/init/LoikvyModBlocks.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModBlockEntities.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModItems.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntityRenderers.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntities.java"
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntities.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntityRenderers.java"
     ]
   },
   "foldersRoot": {
@@ -8337,6 +8384,10 @@
           },
           {
             "name": "JSON",
+            "children": []
+          },
+          {
+            "name": "FoodProcs",
             "children": []
           }
         ]
@@ -8671,6 +8722,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Events",
+        "children": []
       }
     ]
   },
