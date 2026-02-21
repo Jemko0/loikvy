@@ -4,7 +4,7 @@ license="Not specified"
 
 [[mods]]
 modId="loikvy"
-version="1.7.1"
+version="1.8.0"
 displayName="Loikvy Roleplay"
 displayURL="https://github.com/Jemko0"
 logoFile="logo.png"
@@ -40,6 +40,8 @@ authors="Jemko"
     ordering="NONE"
     side="BOTH"
 
+[[mixins]]
+    config = "loikvy.mixins.json"
 
 # Start of user code block dependencies configuration
 # End of user code block dependencies configuration

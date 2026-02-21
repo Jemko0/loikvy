@@ -7116,6 +7116,44 @@
           "src/main/java/net/mcreator/loikvy/LoikvyJavaUtil.java"
         ]
       }
+    },
+    {
+      "name": "OnFoodEaten",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/OnFoodEatenProcedure.java"
+        ]
+      },
+      "path": "~/GlobalProcs/FoodProcs"
+    },
+    {
+      "name": "LightSwitchEmittedRedstonePower",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_switch_emitted_redstone_power",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/LightSwitchEmittedRedstonePowerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Electric/NewRedstone"
     }
   ],
   "variable_elements": [
@@ -8626,7 +8664,12 @@
           },
           {
             "name": "Electric",
-            "children": []
+            "children": [
+              {
+                "name": "NewRedstone",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Gambling",

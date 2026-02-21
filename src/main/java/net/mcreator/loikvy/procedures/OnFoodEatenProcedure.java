@@ -35,6 +35,11 @@ public class OnFoodEatenProcedure {
 		double foodSpoilageFactor = 0;
 		double foodFoodValue = 0;
 		if ((itemstack.has(DataComponents.FOOD) ? itemstack.getFoodProperties(null).nutrition() : 0) > 0) {
+			if(!itemstack.has(LoikvyModDataAttachments.SPOILAGE.get()))
+			{
+				return;
+			}
+
 			foodSpoilageLevel = itemstack.get(LoikvyModDataAttachments.SPOILAGE.get());;
 			foodSpoilageFactor = foodSpoilageLevel / 100;
 			foodFoodValue = itemstack.has(DataComponents.FOOD) ? itemstack.getFoodProperties(null).nutrition() : 0;

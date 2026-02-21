@@ -6,14 +6,14 @@ entityDistanceScaling:1.0
 entityShadows:true
 forceUnicodeFont:false
 japaneseGlyphVariants:false
-fov:0.5
+fov:1.0
 fovEffectScale:1.0
 darknessEffectScale:1.0
 glintSpeed:0.5
 glintStrength:0.75
 prioritizeChunkUpdates:0
 fullscreen:false
-gamma:1.0
+gamma:0.0
 graphicsMode:0
 guiScale:5
 maxFps:260

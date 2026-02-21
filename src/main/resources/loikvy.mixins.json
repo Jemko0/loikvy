@@ -1,0 +1,13 @@
+﻿{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.mcreator.loikvy.client.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "LightTextureMixin"
+  ],
+  "mixins": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
