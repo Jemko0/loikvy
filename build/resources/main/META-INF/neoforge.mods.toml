@@ -14,8 +14,11 @@ authors="Jemko"
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-
 # Start of user code block custom mixins
+
+[[mixins]]
+config = "loikvy.mixins.json"
+
 # End of user code block custom mixins
 
 [[dependencies.loikvy]]
@@ -32,16 +35,12 @@ authors="Jemko"
     ordering="AFTER"
     side="BOTH"
 
-
 [[dependencies.loikvy]]
     modId="kleidersplayerrenderer"
     type="optional"
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-
-[[mixins]]
-    config = "loikvy.mixins.json"
 
 # Start of user code block dependencies configuration
 # End of user code block dependencies configuration

@@ -1,6 +1,3 @@
-/createid owen oerk "42"
-/createid owen oerk 7.4.2009 41-Fe 6.11
-/pauseplayerstats
 /pauseplayerstats Dev
 /createid owen oerk "4/4/3" "DL4039" "74/44"
 /setplayerstat Dev
@@ -48,3 +45,6 @@
 /effect give 03e62adb-8c58-41f1-89f4-2a6e6ee455ff minecraft:fire_resistance 60 1 true
 /neoforge data_components list
 /time add 12000
+/kill 1d41cf7f-f19b-46f8-bbed-1864f183f55c
+/kill @e[type=minecraft:chicken,nbt={isBaby:1b}]
+/kill @e[type=minecraft:chicken]
