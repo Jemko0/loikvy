@@ -1,50 +1,50 @@
-/neoforge day speed set 100
-/neoforge day speed set 1
-/effect give @s hunger 5 20 true
-/neoforge day speed set 0.001
-/effect give @s hunger 5 50 true
-/effect give @s hunger 5 100 true
-/neoforge day speed set 0.001
-/neoforge data_components list
-/give Dev loikvy:gambling_slots_machine
-/scoreboard players add Dev Money 25000
-/scoreboard players set Dev Money 25000
-/gamerule gamblingSlotsTwoMatchWinMultiplier
-/gamerule gamblingSlotsThreeMatchMultiplier
-/scoreboard players set Dev Money 100000
-/gamerule gamblingSlotsTwoMatchWinMultiplier
-/gamerule gamblingSlotsTwoMatchWinMultiplier 1
-/gamerule gamblingSlotsTwoMatchWinMultiplier 2
-/createcharacter
-/data get storage minecraft:registry
-/data get storage minecraft:registry dasddas
-/data get storage minecraft:registry citizens.dasddas
-/data get storage minecraft:registry citizens
-/data get storage minecraft:registry stores
-/give Dev loikvy:debug_view_stats
+/createid owen oerk "42"
+/createid owen oerk 7.4.2009 41-Fe 6.11
+/pauseplayerstats
 /pauseplayerstats Dev
-/setplayerstat Dev endurance 100
-/setplayerstat Dev endurance 0
-/setplayerstat Dev fitness 0
-/setplayerstat Dev fitness 50
-/setplayerstat Dev fitness 100
-/tick rate 100
-/tick rate 20
-/setplayerstat Dev sickness 0
-/gamerule randomTickSpeed 3000
-/gamerule randomTickSpeed 3
-/kill 10d70930-eaf7-4beb-bcaf-48d04ca2c70c
-/give Dev loikvy:wifi_router
+/createid owen oerk "4/4/3" "DL4039" "74/44"
+/setplayerstat Dev
+/give Dev loikvy:debug_view_stats
+/setplayerstat Dev Hygene 100
+/setplayerstat Dev hygene 100
+/setplayerstat Dev energy 100
+/data get
+/data get entity 2610e0c9-4aa1-48c1-8994-5395b078afc1
+/data get entity 2610e0c9-4aa1-48c1-8994-5395b078afc1 Brain
+/data get entity 03e62adb-8c58-41f1-89f4-2a6e6ee455ff
+/data get entity 03e62adb-8c58-41f1-89f4-2a6e6ee455ff Brain
+/tick rate 50
+/tick rate 60
+/neoforge data_components list
+/neoforge day length
 /neoforge day length set 120
-/time set midnight
-/gamerule doDreams true
-/data get entity @s neoforge:attachments
-/time set night
+/tick rate 600
+/tick rate 60
 /time add 3000
-/time add 10
-/time add 100
-/time add 1200
-/time add 500
-/time add 100
-/time set midnight
-/time set day
+/pauseplayerstats Dev
+/createid Nick Gurr "69/69/69" oierjwat38 NOW
+/data get storage
+/data get storag
+/data get storage minecraft:registry
+/data get storage minecraft:registry citizens
+/data get storage minecraft:registry citizens.dasddas
+/give Dev loikvy:ripped_sheet
+/give Dev loikvy:antidepressants
+/time add 30000
+/pauseplayerstats Dev
+/setplayerstat Dev hygene 100
+/setplayerstat Dev sickness 0
+/setplayerstat Dev energy 100
+/give Dev loikvy:antidepressants 23
+/gamerule keepInventory
+/gamerule keepInventory true
+/pauseplayerstats Dev
+/data get storage minecraft:registry citizens.dasddas
+/bookeditcommand
+/time add 12000
+/fog
+/tp 03e62adb-8c58-41f1-89f4-2a6e6ee455ff
+/tp 03e62adb-8c58-41f1-89f4-2a6e6ee455ff Dev
+/effect give 03e62adb-8c58-41f1-89f4-2a6e6ee455ff minecraft:fire_resistance 60 1 true
+/neoforge data_components list
+/time add 12000

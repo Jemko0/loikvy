@@ -70,6 +70,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.AA_BATTERY.get());
 			tabData.accept(LoikvyModBlocks.COAL_GENERATOR.get().asItem());
 			tabData.accept(LoikvyModItems.PHONE.get());
+			tabData.accept(LoikvyModBlocks.LIGHT_SWITCH.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(LoikvyModItems.WHEAT_FLOUR.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {

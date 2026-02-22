@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "damagetype",
   "definition": {
-    "exhaustion": 0.1,
+    "exhaustion": 0.01,
     "scaling": "never",
     "effects": "hurt",
     "normalDeathMessage": "%1$s bled out",

@@ -7120,7 +7120,7 @@
     {
       "name": "OnFoodEaten",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "on_food_eaten",
       "metadata": {
@@ -7139,6 +7139,103 @@
         ]
       },
       "path": "~/GlobalProcs/FoodProcs"
+    },
+    {
+      "name": "LightSwitchEmittedRedstonePower",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_switch_emitted_redstone_power",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/LightSwitchEmittedRedstonePowerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Electric/NewRedstone"
+    },
+    {
+      "name": "IDCardSpecialInformation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "id_card_special_information",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/IDCardSpecialInformationProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateIDProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_id_proc",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/CreateIDProcProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Gov/IDCard"
+    },
+    {
+      "name": "CreateID",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_id",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/command/CreateIDCommand.java"
+        ]
+      },
+      "path": "~/Commands/Gov/IDCard"
+    },
+    {
+      "name": "SleepHereProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sleep_here_proc",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/SleepHereProcProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Character"
+    },
+    {
+      "name": "SleepHere",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleep_here",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/command/SleepHereCommand.java"
+        ]
+      },
+      "path": "~/Commands/Character"
     }
   ],
   "variable_elements": [
@@ -8303,20 +8400,20 @@
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModSounds.java",
+      "src/main/resources/pack.mcmeta",
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModTabs.java",
       "src/main/resources/assets/loikvy/sounds.json",
-      "src/main/java/net/mcreator/loikvy/network/LoikvyModVariables.java",
-      "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/loikvy/LoikvyMod.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModModels.java",
+      "src/main/java/net/mcreator/loikvy/network/LoikvyModVariables.java",
+      "src/main/java/net/mcreator/loikvy/LoikvyMod.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModSounds.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModAttributes.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModFluidTypes.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFluids.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModFluidTypes.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModMenus.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModScreens.java",
       "src/main/java/net/mcreator/loikvy/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModScreens.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModGameRules.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFuels.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModKeyMappings.java",
@@ -8326,8 +8423,8 @@
       "src/main/java/net/mcreator/loikvy/init/LoikvyModBlocks.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModBlockEntities.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModItems.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntities.java",
-      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntityRenderers.java"
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntityRenderers.java",
+      "src/main/java/net/mcreator/loikvy/init/LoikvyModEntities.java"
     ]
   },
   "foldersRoot": {
@@ -8598,7 +8695,12 @@
           },
           {
             "name": "Gov",
-            "children": []
+            "children": [
+              {
+                "name": "IDCard",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -8649,7 +8751,12 @@
           },
           {
             "name": "Electric",
-            "children": []
+            "children": [
+              {
+                "name": "NewRedstone",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Gambling",
@@ -8732,7 +8839,7 @@
   "workspaceSettings": {
     "modid": "loikvy",
     "modName": "Loikvy Roleplay",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "author": "Jemko",
     "websiteURL": "https://github.com/Jemko0",
     "license": "Not specified",

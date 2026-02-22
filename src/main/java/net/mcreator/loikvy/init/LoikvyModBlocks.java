@@ -16,6 +16,7 @@ import net.mcreator.loikvy.block.WifiRouterBlock;
 import net.mcreator.loikvy.block.StoveBlock;
 import net.mcreator.loikvy.block.SmokeDetectorBlock;
 import net.mcreator.loikvy.block.SinkBlockBlock;
+import net.mcreator.loikvy.block.LightSwitchBlock;
 import net.mcreator.loikvy.block.LettuceCropBlock;
 import net.mcreator.loikvy.block.GasolineBlock;
 import net.mcreator.loikvy.block.GamblingSlotsMachineBlock;
@@ -44,6 +45,7 @@ public class LoikvyModBlocks {
 	public static final DeferredBlock<Block> BRIGHTER_TORCH = REGISTRY.register("brighter_torch", BrighterTorchBlock::new);
 	public static final DeferredBlock<Block> GAMBLING_BLACK_JACK_TABLE = REGISTRY.register("gambling_black_jack_table", GamblingBlackJackTableBlock::new);
 	public static final DeferredBlock<Block> WIFI_ROUTER = REGISTRY.register("wifi_router", WifiRouterBlock::new);
+	public static final DeferredBlock<Block> LIGHT_SWITCH = REGISTRY.register("light_switch", LightSwitchBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

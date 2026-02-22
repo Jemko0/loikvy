@@ -9,7 +9,13 @@
       "[, Loikvy Roleplay, Source (Gradle)]",
       "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net]",
       "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator]",
-      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy]"
+      "[, Loikvy Roleplay, Source (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\java\\net\\mcreator\\loikvy]",
+      "[, Loikvy Roleplay, Resources (Gradle)]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\assets]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\assets, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\assets\\loikvy]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\data]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\data, C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\data\\loikvy]",
+      "[, Loikvy Roleplay, Resources (Gradle), C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\src\\main\\resources\\META-INF]"
     ]
   }
 }

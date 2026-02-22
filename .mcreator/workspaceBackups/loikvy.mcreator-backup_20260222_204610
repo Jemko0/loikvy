@@ -7154,6 +7154,69 @@
         ]
       },
       "path": "~/Blocks/Electric/NewRedstone"
+    },
+    {
+      "name": "IDCardSpecialInformation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "id_card_special_information",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/IDCardSpecialInformationProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateIDProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_id_proc",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/CreateIDProcProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Gov/IDCard"
+    },
+    {
+      "name": "CreateID",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_id",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/command/CreateIDCommand.java"
+        ]
+      },
+      "path": "~/Commands/Gov/IDCard"
+    },
+    {
+      "name": "LightSwitch",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_switch",
+      "path": "~/Blocks/Electric/NewRedstone"
     }
   ],
   "variable_elements": [
@@ -8613,7 +8676,12 @@
           },
           {
             "name": "Gov",
-            "children": []
+            "children": [
+              {
+                "name": "IDCard",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -8752,7 +8820,7 @@
   "workspaceSettings": {
     "modid": "loikvy",
     "modName": "Loikvy Roleplay",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "author": "Jemko",
     "websiteURL": "https://github.com/Jemko0",
     "license": "Not specified",

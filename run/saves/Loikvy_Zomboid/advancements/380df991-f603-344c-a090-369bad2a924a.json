@@ -1239,6 +1239,7 @@
     "criteria": {
       "bread": "2025-07-28 03:44:12 +0200",
       "cooked_chicken": "2025-07-29 03:50:12 +0200",
+      "cookie": "2026-02-21 19:15:10 +0100",
       "enchanted_golden_apple": "2026-02-18 22:17:16 +0100",
       "cooked_beef": "2025-07-16 23:22:48 +0200"
     },
@@ -7775,6 +7776,12 @@
   "minecraft:husbandry/obtain_netherite_hoe": {
     "criteria": {
       "netherite_hoe": "2026-02-21 03:06:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/ol_betsy": {
+    "criteria": {
+      "shot_crossbow": "2026-02-22 17:37:14 +0100"
     },
     "done": true
   },

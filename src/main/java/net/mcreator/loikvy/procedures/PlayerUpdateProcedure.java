@@ -272,7 +272,7 @@ public class PlayerUpdateProcedure {
 		}
 		if (entity instanceof LivingEntity _livEnt59 && _livEnt59.hasEffect(LoikvyModMobEffects.PANIC)) {
 			if (entity instanceof Player _player)
-				_player.causeFoodExhaustion((float) 0.1);
+				_player.causeFoodExhaustion((float) 0.02);
 			regenTimeAddition = regenTimeAddition + 900;
 		}
 		if (LoikvyModVariables.MapVariables.get(world).GlobalTicks % (1200 + regenTimeAddition) == 0 && (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) > 16) {

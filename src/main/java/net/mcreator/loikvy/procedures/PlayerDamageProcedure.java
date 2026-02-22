@@ -61,7 +61,7 @@ public class PlayerDamageProcedure {
 				entity.hurt(damagesource, (float) (amount * damageMultiplier));
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 200, 0));
+				_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 160, 0));
 			{
 				LoikvyModVariables.PlayerVariables _vars = entity.getData(LoikvyModVariables.PLAYER_VARIABLES);
 				_vars.gDamageCancelled = false;

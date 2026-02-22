@@ -30,7 +30,8 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [],
+      "name": "IDCardSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

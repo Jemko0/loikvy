@@ -23,6 +23,7 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.minecraft.network.chat.TextColor;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.api.distmarker.Dist;
@@ -286,32 +287,55 @@ public class SpoilageEvents {
 		@SubscribeEvent
 		public static void onItemTooltip(ItemTooltipEvent event)
 		{
-			ItemStack stack = event.getItemStack();
-			if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return;
-			if (!GetShouldSpoil(stack.getItem())) return;
-
-			float spoilage = GetSpoilagePercent(stack);
-			if (spoilage < 0.0f) return; // not yet tracked
-
-			if (spoilage >= 100.0f)
-			{
-				event.getToolTip().add(Component.literal("Spoiled").withStyle(ChatFormatting.RED));
-			}
-			else if (spoilage >= 50.0f)
-			{
-				event.getToolTip().add(Component.literal("Stale").withStyle(ChatFormatting.YELLOW));
-			}
-			else
-			{
-				event.getToolTip().add(Component.literal("Fresh").withStyle(ChatFormatting.GREEN));
-			}
-
-			if (event.getEntity() != null && event.getEntity().canUseGameMasterBlocks())
-			{
-				event.getToolTip().add(Component.literal(
-						String.format("Spoilage: %.1f%%", spoilage)
-				).withStyle(ChatFormatting.GRAY));
-			}
+		    ItemStack stack = event.getItemStack();
+		    if (stack.isEmpty() || stack.getItem().getFoodProperties(stack, null) == null) return;
+		    if (!GetShouldSpoil(stack.getItem())) return;
+		
+		    float spoilage = GetSpoilagePercent(stack);
+		    if (spoilage < 0.0f) return;
+		
+		    // Lerp color: green (0x55FF55) -> yellow (0xFFFF55) -> red (0xFF5555)
+		    // These match ChatFormatting's actual color values
+		    int color;
+		    if (spoilage < 50.0f)
+		    {
+		        float t = spoilage / 50.0f;
+		        color = lerpColor(0x55FF55, 0xFFFF55, t); // green -> yellow
+		    }
+		    else
+		    {
+		        float t = (spoilage - 50.0f) / 50.0f;
+		        color = lerpColor(0xFFFF55, 0xFF5555, t); // yellow -> red
+		    }
+		
+		    String label;
+		    if (spoilage >= 100.0f)       label = "Spoiled";
+		    else if (spoilage >= 50.0f)   label = "Stale";
+		    else                          label = "Fresh";
+		
+		    event.getToolTip().add(
+		        Component.literal(label)
+		            .withStyle(style -> style.withColor(TextColor.fromRgb(color)))
+		    );
+		
+		    if (event.getEntity() != null && event.getEntity().canUseGameMasterBlocks())
+		    {
+		        event.getToolTip().add(Component.literal(
+		                String.format("Spoilage: %.1f%%", spoilage)
+		        ).withStyle(ChatFormatting.GRAY));
+		    }
+		}
+		
+		private static int lerpColor(int colorA, int colorB, float t)
+		{
+		    int rA = (colorA >> 16) & 0xFF, gA = (colorA >> 8) & 0xFF, bA = colorA & 0xFF;
+		    int rB = (colorB >> 16) & 0xFF, gB = (colorB >> 8) & 0xFF, bB = colorB & 0xFF;
+		
+		    int r = (int)(rA + (rB - rA) * t);
+		    int g = (int)(gA + (gB - gA) * t);
+		    int b = (int)(bA + (bB - bA) * t);
+		
+		    return (r << 16) | (g << 8) | b;
 		}
 	}
 }

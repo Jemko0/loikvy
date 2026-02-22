@@ -233,5 +233,6 @@
   "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
   "entity.loikvy.player_corpse": "Player Corpse",
   "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-  "item.loikvy.id_card": "ID Card"
+  "item.loikvy.id_card": "ID Card",
+  "block.loikvy.light_switch": "Light Switch"
 }

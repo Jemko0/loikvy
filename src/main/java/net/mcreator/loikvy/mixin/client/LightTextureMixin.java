@@ -1,4 +1,4 @@
-package net.mcreator.loikvy.client.mixins;
+package net.mcreator.loikvy.mixin.client;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import net.minecraft.client.Minecraft;
@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -144,13 +143,19 @@ public class LightTextureMixin {
         NativeImage pixels = this.lightTexture.getPixels();
         if (pixels == null || client.level == null) return;
 
-        // 0.0f for prevFlicker
         updateLuminance(partialTick, client, 0.0f);
 
         for (int sky = 0; sky < 16; sky++) {
             for (int block = 0; block < 16; block++) {
                 int color = pixels.getPixelRGBA(block, sky);
-                pixels.setPixelRGBA(block, sky, darken(color, block, sky));
+
+                // FIX: If we are at the very edge of the lightmap (often used for UI/Fullbright)
+                // or if the indices are at their maximum, let the original color pass through.
+                if (block == 15 && sky == 15) {
+                    pixels.setPixelRGBA(block, sky, color);
+                } else {
+                    pixels.setPixelRGBA(block, sky, darken(color, block, sky));
+                }
             }
         }
 
