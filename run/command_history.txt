@@ -1,4 +1,3 @@
-/pauseplayerstats Dev
 /createid owen oerk "4/4/3" "DL4039" "74/44"
 /setplayerstat Dev
 /give Dev loikvy:debug_view_stats
@@ -48,3 +47,4 @@
 /kill 1d41cf7f-f19b-46f8-bbed-1864f183f55c
 /kill @e[type=minecraft:chicken,nbt={isBaby:1b}]
 /kill @e[type=minecraft:chicken]
+/give Dev light

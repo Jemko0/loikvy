@@ -22,6 +22,7 @@ import net.mcreator.loikvy.block.GamblingSlotsMachineBlock;
 import net.mcreator.loikvy.block.GamblingBlackJackTableBlock;
 import net.mcreator.loikvy.block.FridgeBlock;
 import net.mcreator.loikvy.block.FreezerBlock;
+import net.mcreator.loikvy.block.FluidContainerBlock;
 import net.mcreator.loikvy.block.CuttingBoardBlock;
 import net.mcreator.loikvy.block.CookingPanBlock;
 import net.mcreator.loikvy.block.CoalGeneratorBlock;
@@ -44,6 +45,7 @@ public class LoikvyModBlocks {
 	public static final DeferredBlock<Block> BRIGHTER_TORCH = REGISTRY.register("brighter_torch", BrighterTorchBlock::new);
 	public static final DeferredBlock<Block> GAMBLING_BLACK_JACK_TABLE = REGISTRY.register("gambling_black_jack_table", GamblingBlackJackTableBlock::new);
 	public static final DeferredBlock<Block> WIFI_ROUTER = REGISTRY.register("wifi_router", WifiRouterBlock::new);
+	public static final DeferredBlock<Block> FLUID_CONTAINER = REGISTRY.register("fluid_container", FluidContainerBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

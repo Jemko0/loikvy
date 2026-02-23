@@ -7785,5 +7785,11 @@
     },
     "done": true
   },
+  "loikvy:recipes/cook_noodles": {
+    "criteria": {
+      "has_ingredient_0": "2026-02-22 22:58:17 +0100"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

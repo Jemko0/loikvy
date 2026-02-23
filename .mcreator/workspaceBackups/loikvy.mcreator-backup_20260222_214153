@@ -7211,31 +7211,23 @@
       "path": "~/Commands/Gov/IDCard"
     },
     {
-      "name": "SleepHereProc",
-      "type": "procedure",
+      "name": "LightSwitch",
+      "type": "block",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "sleep_here_proc",
-      "metadata": {
-        "dependencies": [],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/SleepHereProcProcedure.java"
-        ]
-      },
-      "path": "~/Commands/Character"
-    },
-    {
-      "name": "SleepHere",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "sleep_here",
+      "registry_name": "light_switch",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/loikvy/command/SleepHereCommand.java"
+          "src/main/resources/assets/loikvy/blockstates/light_switch.json",
+          "src/main/resources/assets/loikvy/models/block/light_switch_pressed.json",
+          "src/main/java/net/mcreator/loikvy/block/LightSwitchBlock.java",
+          "src/main/resources/data/loikvy/loot_table/blocks/light_switch.json",
+          "src/main/resources/assets/loikvy/models/block/light_switch_inventory.json",
+          "src/main/resources/assets/loikvy/models/block/light_switch.json",
+          "src/main/resources/assets/loikvy/models/item/light_switch.json"
         ]
       },
-      "path": "~/Commands/Character"
+      "path": "~/Blocks/Electric/NewRedstone"
     }
   ],
   "variable_elements": [
@@ -7921,7 +7913,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.light_switch": "Light Switch"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -8158,7 +8151,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.light_switch": "Light Switch"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8395,7 +8389,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.light_switch": "Light Switch"
     }
   },
   "metadata": {
@@ -8764,6 +8759,10 @@
           },
           {
             "name": "Internet",
+            "children": []
+          },
+          {
+            "name": "FluidStuff",
             "children": []
           }
         ]

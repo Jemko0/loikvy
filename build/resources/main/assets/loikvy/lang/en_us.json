@@ -234,5 +234,6 @@
   "entity.loikvy.player_corpse": "Player Corpse",
   "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
   "item.loikvy.id_card": "ID Card",
-  "block.loikvy.light_switch": "Light Switch"
+  "block.loikvy.light_switch": "Light Switch",
+  "block.loikvy.fluid_container": "Fluid Container"
 }
