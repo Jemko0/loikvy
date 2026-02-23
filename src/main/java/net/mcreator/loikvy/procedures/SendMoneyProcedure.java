@@ -28,7 +28,7 @@ public class SendMoneyProcedure {
 		targetMoney = getEntityScore("Money", ent);
 		execMoney = getEntityScore("Money", entity);
 		transferAmt = DoubleArgumentType.getDouble(arguments, "amount");
-		if (HasEnoughMoneyProcedure.execute(entity, transferAmt)) {
+		if (!HasEnoughMoneyProcedure.execute(entity, transferAmt)) {
 			if (!(entity == (commandParameterEntity(arguments, "target")))) {
 				{
 					Entity _ent = entity;

@@ -7246,6 +7246,37 @@
         ]
       },
       "path": "~/Blocks/FluidStuff"
+    },
+    {
+      "name": "FluidContainerOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fluid_container_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/FluidContainerOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/FluidStuff"
     }
   ],
   "variable_elements": [

@@ -1,8 +1,0 @@
-{
-  "parent": "block/button_pressed",
-  "textures": {
-    "particle": "minecraft:block/daylight_detector_inverted_top",
-    "texture": "minecraft:block/daylight_detector_inverted_top"
-  },
-  "render_type": "solid"
-}
