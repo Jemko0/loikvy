@@ -3,13 +3,41 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.95'
 }
 
-version = '1.0'
-base.archivesName = "modid"
+version = '1.8.2'
+base.archivesName = "loikvy"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+tasks.register('restoreProtectedFiles', Copy) {
+    from('protected_files/resources/') {
+        into('.')
+    }
+    into 'src/main/resources/'
+}
+
+tasks.register('restoreMetaFiles', Copy) {
+    from('protected_files/META-INF/') {
+        into('.')
+    }
+    into 'src/main/resources/META-INF/'
+}
+
+compileJava.dependsOn 'restoreProtectedFiles', 'restoreMetaFiles'
+
+tasks.named('processResources').configure {
+    dependsOn 'restoreProtectedFiles', 'restoreMetaFiles'
+}
+
+afterEvaluate {
+    tasks.named('createMinecraftArtifacts').configure {
+        dependsOn 'restoreProtectedFiles', 'restoreMetaFiles'
+    }
+}
+
 neoForge {
     version = "21.1.176"
+
+    accessTransformers = [file('src/main/resources/META-INF/accesstransformer.cfg')]
 
     runs {
         client {

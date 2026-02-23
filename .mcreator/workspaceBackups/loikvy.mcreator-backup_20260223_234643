@@ -7141,21 +7141,6 @@
       "path": "~/GlobalProcs/FoodProcs"
     },
     {
-      "name": "LightSwitchEmittedRedstonePower",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "light_switch_emitted_redstone_power",
-      "metadata": {
-        "dependencies": [],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/LightSwitchEmittedRedstonePowerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Electric/NewRedstone"
-    },
-    {
       "name": "IDCardSpecialInformation",
       "type": "procedure",
       "compiles": true,
@@ -7211,12 +7196,53 @@
       "path": "~/Commands/Gov/IDCard"
     },
     {
-      "name": "LightSwitch",
+      "name": "FluidContainer",
       "type": "block",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "light_switch",
-      "path": "~/Blocks/Electric/NewRedstone"
+      "registry_name": "fluid_container",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/loikvy/models/block/fluid_container.json",
+          "src/main/java/net/mcreator/loikvy/block/FluidContainerBlock.java",
+          "src/main/java/net/mcreator/loikvy/block/entity/FluidContainerBlockEntity.java",
+          "src/main/resources/assets/loikvy/blockstates/fluid_container.json",
+          "src/main/resources/data/loikvy/loot_table/blocks/fluid_container.json",
+          "src/main/resources/assets/loikvy/models/item/fluid_container.json"
+        ]
+      },
+      "path": "~/Blocks/FluidStuff"
+    },
+    {
+      "name": "FluidContainerOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fluid_container_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/FluidContainerOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/FluidStuff"
     }
   ],
   "variable_elements": [
@@ -7902,7 +7928,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.fluid_container": "Fluid Container"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -8139,7 +8166,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.fluid_container": "Fluid Container"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8376,7 +8404,8 @@
       "item.loikvy.player_corpse_spawn_egg": "Player Corpse Spawn Egg",
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
-      "item.loikvy.id_card": "ID Card"
+      "item.loikvy.id_card": "ID Card",
+      "block.loikvy.fluid_container": "Fluid Container"
     }
   },
   "metadata": {
@@ -8745,6 +8774,10 @@
           },
           {
             "name": "Internet",
+            "children": []
+          },
+          {
+            "name": "FluidStuff",
             "children": []
           }
         ]
