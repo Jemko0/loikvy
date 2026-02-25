@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "loikvy:cheese_slice"
+    },
+    "b": {
+      "item": "loikvy:tomato_slice"
+    },
+    "c": {
+      "item": "loikvy:dough"
+    }
+  },
+  "result": {
+    "id": "loikvy:unbaked_cheese_pizza",
+    "count": 1
+  }
+}

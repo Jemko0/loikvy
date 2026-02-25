@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/sink_nowater",
+  "textures": {
+    "all": "loikvy:block/sinktex",
+    "particle": "loikvy:block/sinktex",
+    "0": "loikvy:block/sinktex"
+  },
+  "render_type": "solid"
+}

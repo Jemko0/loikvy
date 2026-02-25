@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=north,contains_water=false": {
+      "model": "loikvy:block/sink_block",
+      "y": 90
+    },
+    "facing=east,contains_water=false": {
+      "model": "loikvy:block/sink_block",
+      "y": 180
+    },
+    "facing=south,contains_water=false": {
+      "model": "loikvy:block/sink_block",
+      "y": 270
+    },
+    "facing=west,contains_water=false": {
+      "model": "loikvy:block/sink_block"
+    },
+    
+    "facing=north,contains_water=true": {
+      "model": "loikvy:block/sink_block_water",
+      "y": 90
+    },
+    "facing=east,contains_water=true": {
+      "model": "loikvy:block/sink_block_water",
+      "y": 180
+    },
+    "facing=south,contains_water=true": {
+      "model": "loikvy:block/sink_block_water",
+      "y": 270
+    },
+    "facing=west,contains_water=true": {
+      "model": "loikvy:block/sink_block_water"
+    }
+  }
+}

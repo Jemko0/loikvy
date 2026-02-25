@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "loikvy:plant_fiber"
+    },
+    {
+      "item": "loikvy:plant_fiber"
+    },
+    {
+      "item": "loikvy:plant_fiber"
+    },
+    {
+      "item": "loikvy:plant_fiber"
+    }
+  ],
+  "result": {
+    "id": "minecraft:string",
+    "count": 1
+  }
+}

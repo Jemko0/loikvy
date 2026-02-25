@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "loikvy:stove",
+    "loikvy:fridge",
+    "loikvy:freezer"
+  ]
+}

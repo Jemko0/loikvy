@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/coal_generator"
+    },
+    "facing=east": {
+      "model": "loikvy:block/coal_generator",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/coal_generator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/coal_generator",
+      "y": 270
+    }
+  }
+}

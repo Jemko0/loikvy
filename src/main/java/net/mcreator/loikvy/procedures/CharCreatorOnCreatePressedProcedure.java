@@ -1,5 +1,7 @@
 package net.mcreator.loikvy.procedures;
 
+import net.neoforged.fml.ModList;
+
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
@@ -36,9 +38,20 @@ public class CharCreatorOnCreatePressedProcedure {
 			ResetPlayerStatProcProcedure.execute(entity, entity);
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeAllEffects();
+			if (entity instanceof Player _player)
+				_player.getFoodData().setFoodLevel(20);
 			if (entity instanceof ServerPlayer _serverPlayer)
 				_serverPlayer.setRespawnPosition(_serverPlayer.level().dimension(), new BlockPos(world.getLevelData().getSpawnPos().getX(), world.getLevelData().getSpawnPos().getY(), world.getLevelData().getSpawnPos().getZ()),
 						_serverPlayer.getYRot(), true, false);
+			if (ModList.get().isLoaded("toughasnails")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s toughasnails:climate_clemency 300 0 true");
+					}
+				}
+			}
 			if (entity instanceof Player _player)
 				_player.getInventory().clearContent();
 			DetermineTraitsProcedure.execute(world, entity);
@@ -55,15 +68,8 @@ public class CharCreatorOnCreatePressedProcedure {
 							("/tellraw @s {\"text\":\"Welcome, " + "" + entity.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerFullName + "!\",\"color\":\"green\"}"));
 				}
 			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "/stopsound @s * loikvy:loikvy_death");
-				}
-			}
-			RegisterPersonProcedure.execute(world, entity, (entity instanceof Player _entity15 && _entity15.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(0, "ply_first_name", "") : "",
-					(entity instanceof Player _entity16 && _entity16.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu16) ? _menu16.getMenuState(0, "ply_last_name", "") : "");
+			RegisterPersonProcedure.execute(world, entity, (entity instanceof Player _entity17 && _entity17.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu17) ? _menu17.getMenuState(0, "ply_first_name", "") : "",
+					(entity instanceof Player _entity18 && _entity18.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu18) ? _menu18.getMenuState(0, "ply_last_name", "") : "");
 			if (entity instanceof Player _player)
 				_player.closeContainer();
 		}

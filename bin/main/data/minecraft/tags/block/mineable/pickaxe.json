@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "loikvy:smoke_detector",
+    "loikvy:stove",
+    "loikvy:fridge",
+    "loikvy:freezer"
+  ]
+}

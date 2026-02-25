@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/coalgenerator",
+  "textures": {
+    "all": "loikvy:block/coalgeneratortexture",
+    "particle": "loikvy:block/coalgeneratortexture",
+    "0": "loikvy:block/coalgeneratortexture"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/cutting_board"
+    },
+    "facing=east": {
+      "model": "loikvy:block/cutting_board",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/cutting_board",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/cutting_board",
+      "y": 270
+    }
+  }
+}

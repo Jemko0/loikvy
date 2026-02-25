@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "loikvy:cheese_burger",
+    "loikvy:pizza_slice",
+    "loikvy:burger",
+    "loikvy:flour",
+    "loikvy:rotten_food",
+    "loikvy:pepperoni_pizza"
+  ]
+}

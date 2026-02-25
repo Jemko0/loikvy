@@ -1,0 +1,7 @@
+{
+  "parent": "loikvy:custom/weight_small_onehand",
+  "textures": {
+    "0": "loikvy:block/weight_small_one_handed_texture",
+    "particle": "loikvy:item/weight_small_one_handed"
+  }
+}

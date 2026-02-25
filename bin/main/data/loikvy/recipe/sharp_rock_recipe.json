@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "loikvy:small_rock"
+    },
+    {
+      "item": "loikvy:small_rock"
+    }
+  ],
+  "result": {
+    "id": "loikvy:sharp_rock",
+    "count": 1
+  }
+}

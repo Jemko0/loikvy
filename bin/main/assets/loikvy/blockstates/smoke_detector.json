@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "loikvy:block/smoke_detector"
+    },
+    "facing=east": {
+      "model": "loikvy:block/smoke_detector",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "loikvy:block/smoke_detector",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "loikvy:block/smoke_detector",
+      "y": 270
+    }
+  }
+}

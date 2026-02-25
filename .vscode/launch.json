@@ -12,11 +12,11 @@
       "projectName": "loikvy",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\build\\moddev\\clientRunProgramArgs.txt"
+        "@C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\build\\moddev\\clientRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\bin\\main"
+        "@C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -34,11 +34,11 @@
       "projectName": "loikvy",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\build\\moddev\\serverRunProgramArgs.txt"
+        "@C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\build\\moddev\\serverRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\jamal\\source\\repos\\mc-loikvy\\loikvy\\bin\\main"
+        "@C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\User\\MCreatorWorkspaces\\loikvy\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},

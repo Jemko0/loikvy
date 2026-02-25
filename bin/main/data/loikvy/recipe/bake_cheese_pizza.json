@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "experience": 0,
+  "cookingtime": 2000,
+  "ingredient": {
+    "item": "loikvy:unbaked_cheese_pizza"
+  },
+  "result": {
+    "id": "loikvy:cheese_pizza"
+  }
+}

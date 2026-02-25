@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 0,
+  "cookingtime": 2000,
+  "ingredient": {
+    "item": "loikvy:unbaked_pepperoni_pizza"
+  },
+  "result": {
+    "id": "loikvy:pepperoni_pizza"
+  }
+}

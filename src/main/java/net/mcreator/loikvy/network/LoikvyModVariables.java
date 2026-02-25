@@ -378,11 +378,20 @@ public class LoikvyModVariables {
 
 		public static void handleData(final PlayerVariablesSyncMessage message, final IPayloadContext context) {
 			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
-				context.enqueueWork(() -> context.player().level().getEntity(message.target()).getData(PLAYER_VARIABLES).deserializeNBT(context.player().registryAccess(), message.data.serializeNBT(context.player().registryAccess())))
-						.exceptionally(e -> {
-							context.connection().disconnect(Component.literal(e.getMessage()));
-							return null;
-						});
+				context.enqueueWork(() -> {
+
+					Entity targetEntity = context.player().level().getEntity(message.target());
+					if (targetEntity != null) {
+						targetEntity.getData(PLAYER_VARIABLES).deserializeNBT(
+								context.player().registryAccess(),
+								message.data.serializeNBT(context.player().registryAccess())
+						);
+					}
+
+				}).exceptionally(e -> {
+					context.connection().disconnect(Component.literal(e.getMessage()));
+					return null;
+				});
 			}
 		}
 	}

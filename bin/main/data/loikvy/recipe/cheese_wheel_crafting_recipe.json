@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cheese",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    },
+    {
+      "item": "loikvy:cheese_slice"
+    }
+  ],
+  "result": {
+    "id": "loikvy:cheese_wheel",
+    "count": 1
+  }
+}

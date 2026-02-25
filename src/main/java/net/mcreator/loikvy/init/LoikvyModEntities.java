@@ -34,7 +34,7 @@ public class LoikvyModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<WheelchairEntity>> WHEELCHAIR = register("wheelchair",
 			EntityType.Builder.<WheelchairEntity>of(WheelchairEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 0.6f));
 	public static final DeferredHolder<EntityType<?>, EntityType<GroundItemEntity>> GROUND_ITEM = register("ground_item",
 			EntityType.Builder.<GroundItemEntity>of(GroundItemEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 

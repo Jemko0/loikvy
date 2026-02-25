@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/pan",
+  "textures": {
+    "all": "minecraft:block/iron_block",
+    "particle": "minecraft:block/iron_block",
+    "0": "loikvy:block/panv1"
+  },
+  "render_type": "solid"
+}

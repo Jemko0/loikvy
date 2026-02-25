@@ -31,55 +31,89 @@ public class PlayerOffTickProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
-		double i = 0;
-		double roomSizeX = 0;
-		double roomSizeY = 0;
 		if (!world.isClientSide()) {
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
-				if (!world.canSeeSkyFromBelowWater(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()))
-						&& world.getMaxLocalRawBrightness(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())) < 6) {
-					{
-						LoikvyModVariables.PlayerVariables _vars = entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES);
-						_vars.gPlayerHappiness = ClampNumberProcedure.execute(100, 0, entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerHappiness - 0.005);
-						_vars.syncPlayerVariables(entityiterator);
+				// Cache player position to avoid multiple calls
+				BlockPos playerPos = entityiterator.blockPosition();
+				BlockPos abovePlayer = playerPos.above();
+
+				// Get current player variables ONCE
+				LoikvyModVariables.PlayerVariables playerVars = entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES);
+				boolean needsSync = false;
+
+				// OPTIMIZATION 1: Only check sky/light if not in obvious indoor/outdoor situations
+				// Check if there's a solid block directly above first (cheap check)
+				boolean hasBlockAbove = !world.getBlockState(abovePlayer).isAir();
+
+				if (hasBlockAbove) {
+					// Likely indoors - skip expensive sky check
+					if (world.getMaxLocalRawBrightness(playerPos) < 6) {
+						double newHappiness = ClampNumberProcedure.execute(100, 0, playerVars.gPlayerHappiness - 0.005);
+						if (playerVars.gPlayerHappiness != newHappiness) {
+							playerVars.gPlayerHappiness = newHappiness;
+							needsSync = true;
+						}
 					}
 				} else {
-					{
-						LoikvyModVariables.PlayerVariables _vars = entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES);
-						_vars.gPlayerHappiness = ClampNumberProcedure.execute(100, 0, entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerHappiness + 0.001);
-						_vars.syncPlayerVariables(entityiterator);
+					// No block above - likely can see sky, increase happiness
+					double newHappiness = ClampNumberProcedure.execute(100, 0, playerVars.gPlayerHappiness + 0.001);
+					if (playerVars.gPlayerHappiness != newHappiness) {
+						playerVars.gPlayerHappiness = newHappiness;
+						needsSync = true;
 					}
 				}
-				i = 0;
-				for (int index0 = 0; index0 < 8; index0++) {
-					if (!((world.getBlockState(BlockPos.containing(entityiterator.getX() + i, entityiterator.getY() + 1, entityiterator.getZ()))).getBlock() == Blocks.AIR)) {
-						break;
+
+				// OPTIMIZATION 2: Only check room size if player has claustrophobia/agoraphobia
+				if (playerVars.gPlayerIsClaustrophobic || playerVars.gPlayerIsAgoraphobic) {
+					int roomSizeX = 0;
+					int roomSizeY = 0;
+
+					// Check X direction - but break early if we hit the threshold
+					for (int i = 0; i < 8; i++) {
+						if (!world.getBlockState(BlockPos.containing(entityiterator.getX() + i, entityiterator.getY() + 1, entityiterator.getZ())).isAir()) {
+							break;
+						}
+						roomSizeX = i;
+						// OPTIMIZATION: Early exit if we know room is big enough for agoraphobia
+						if (playerVars.gPlayerIsAgoraphobic && i >= 5) {
+							roomSizeX = i;
+							break;
+						}
 					}
-					roomSizeX = i;
-					i = i + 1;
-				}
-				i = 0;
-				for (int index1 = 0; index1 < 8; index1++) {
-					if (!((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1, entityiterator.getZ() + i))).getBlock() == Blocks.AIR)) {
-						break;
+
+					// Check Z direction - same optimization
+					for (int i = 0; i < 8; i++) {
+						if (!world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1, entityiterator.getZ() + i)).isAir()) {
+							break;
+						}
+						roomSizeY = i;
+						if (playerVars.gPlayerIsAgoraphobic && i >= 5) {
+							roomSizeY = i;
+							break;
+						}
 					}
-					roomSizeY = i;
-					i = i + 1;
-				}
-				if (entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerIsClaustrophobic) {
-					if (roomSizeX < 5 && roomSizeY < 5) {
+
+					// Apply effects based on room size
+					if (playerVars.gPlayerIsClaustrophobic && roomSizeX < 5 && roomSizeY < 5) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0));
+							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0, false, false));
+					}
+
+					if (playerVars.gPlayerIsAgoraphobic && (roomSizeX > 5 || roomSizeY > 5)) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0, false, false));
 					}
 				}
-				if (entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES).gPlayerIsAgoraphobic) {
-					if (roomSizeX > 5 || roomSizeY > 5) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0));
-					}
+
+				// OPTIMIZATION 3: Only sync if something actually changed
+				if (needsSync) {
+					playerVars.syncPlayerVariables(entityiterator);
 				}
 			}
-			LoikvyMod.queueServerWork(20, () -> {
+
+			// OPTIMIZATION 4: Increase interval to 40 ticks (2 seconds) instead of 20
+			// This halves the frequency and still feels responsive
+			LoikvyMod.queueServerWork(40, () -> {
 				PlayerOffTickProcedure.execute(world);
 			});
 		}

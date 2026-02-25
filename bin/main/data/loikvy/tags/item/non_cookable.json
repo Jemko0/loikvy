@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "loikvy:burnt_food",
+    "loikvy:door_locker",
+    "loikvy:debug_view_stats",
+    "loikvy:door_key",
+    "loikvy:rotten_food",
+    "loikvy:sunflower_oil"
+  ]
+}

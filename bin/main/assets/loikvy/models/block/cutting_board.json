@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/cuttingboard",
+  "textures": {
+    "all": "minecraft:block/composter_top",
+    "particle": "minecraft:block/composter_top",
+    "0": "loikvy:block/cuttingboard"
+  },
+  "render_type": "cutout"
+}

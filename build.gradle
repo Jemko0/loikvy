@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.95'
 }
 
-version = '1.8.2'
+version = '1.8.4'
 base.archivesName = "loikvy"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)

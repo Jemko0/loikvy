@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab"
+  ],
+  "key": {
+    "a": {
+      "item": "loikvy:unbaked_cheese_pizza"
+    },
+    "b": {
+      "item": "loikvy:pepperoni_slice"
+    }
+  },
+  "result": {
+    "id": "loikvy:unbaked_pepperoni_pizza",
+    "count": 1
+  }
+}
