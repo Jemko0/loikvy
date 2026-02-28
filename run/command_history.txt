@@ -1,7 +1,3 @@
-/createid Nick Gurr "69/69/69" oierjwat38 NOW
-/data get storage
-/data get storag
-/data get storage minecraft:registry
 /data get storage minecraft:registry citizens
 /data get storage minecraft:registry citizens.dasddas
 /give Dev loikvy:ripped_sheet
@@ -48,3 +44,7 @@
 /give Dev loikvy:aa_battery[minecraft:damage=950]
 /give Dev loikvy:aa_battery[minecraft:damage=990]
 /give Dev loikvy:gambling_slots_machine
+/data get block 645 65 1711
+/data modify block 645 65 1711 NeoForgeData.dealer_hide_cards set value 0b
+/pay Dev 30
+/scoreboard players set Dev Money 5000

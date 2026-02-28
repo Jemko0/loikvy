@@ -33,16 +33,12 @@ public class PlayerOffTickProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (!world.isClientSide()) {
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
-				// Cache player position to avoid multiple calls
 				BlockPos playerPos = entityiterator.blockPosition();
 				BlockPos abovePlayer = playerPos.above();
 
-				// Get current player variables ONCE
 				LoikvyModVariables.PlayerVariables playerVars = entityiterator.getData(LoikvyModVariables.PLAYER_VARIABLES);
 				boolean needsSync = false;
 
-				// OPTIMIZATION 1: Only check sky/light if not in obvious indoor/outdoor situations
-				// Check if there's a solid block directly above first (cheap check)
 				boolean hasBlockAbove = !world.getBlockState(abovePlayer).isAir();
 
 				if (hasBlockAbove) {
@@ -63,56 +59,51 @@ public class PlayerOffTickProcedure {
 					}
 				}
 
-				// OPTIMIZATION 2: Only check room size if player has claustrophobia/agoraphobia
 				if (playerVars.gPlayerIsClaustrophobic || playerVars.gPlayerIsAgoraphobic) {
-					int roomSizeX = 0;
-					int roomSizeY = 0;
+					int[] distances = new int[4];
+					int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}}; // +X, -X, +Z, -Z
 
-					// Check X direction - but break early if we hit the threshold
-					for (int i = 0; i < 8; i++) {
-						if (!world.getBlockState(BlockPos.containing(entityiterator.getX() + i, entityiterator.getY() + 1, entityiterator.getZ())).isAir()) {
-							break;
-						}
-						roomSizeX = i;
-						// OPTIMIZATION: Early exit if we know room is big enough for agoraphobia
-						if (playerVars.gPlayerIsAgoraphobic && i >= 5) {
-							roomSizeX = i;
-							break;
+					for (int i = 0; i < 4; i++) {
+						int dx = directions[i][0];
+						int dz = directions[i][1];
+
+						distances[i] = 8;
+
+						for (int distance = 1; distance <= 7; distance++) {
+							BlockPos checkPos = playerPos.offset(dx * distance, 0, dz * distance);
+
+							if (!world.getBlockState(checkPos).isAir()) {
+								distances[i] = distance;
+								break;
+							}
 						}
 					}
 
-					// Check Z direction - same optimization
-					for (int i = 0; i < 8; i++) {
-						if (!world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1, entityiterator.getZ() + i)).isAir()) {
-							break;
-						}
-						roomSizeY = i;
-						if (playerVars.gPlayerIsAgoraphobic && i >= 5) {
-							roomSizeY = i;
-							break;
-						}
+					int smallDistances = 0;
+					int largeDistances = 0;
+
+					for (int dist : distances) {
+						if (dist <= 3) smallDistances++;
+						if (dist >= 6) largeDistances++;
 					}
 
-					// Apply effects based on room size
-					if (playerVars.gPlayerIsClaustrophobic && roomSizeX < 5 && roomSizeY < 5) {
+					if (playerVars.gPlayerIsClaustrophobic && smallDistances >= 3) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0, false, false));
 					}
 
-					if (playerVars.gPlayerIsAgoraphobic && (roomSizeX > 5 || roomSizeY > 5)) {
+					if (playerVars.gPlayerIsAgoraphobic && largeDistances >= 3) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(LoikvyModMobEffects.PANIC, 60, 0, false, false));
 					}
 				}
 
-				// OPTIMIZATION 3: Only sync if something actually changed
+				//nly sync if something actually changed
 				if (needsSync) {
 					playerVars.syncPlayerVariables(entityiterator);
 				}
 			}
 
-			// OPTIMIZATION 4: Increase interval to 40 ticks (2 seconds) instead of 20
-			// This halves the frequency and still feels responsive
 			LoikvyMod.queueServerWork(40, () -> {
 				PlayerOffTickProcedure.execute(world);
 			});

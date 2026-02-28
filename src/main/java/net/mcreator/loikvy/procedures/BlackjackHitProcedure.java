@@ -1,5 +1,7 @@
 package net.mcreator.loikvy.procedures;
 
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
@@ -22,7 +24,17 @@ public class BlackjackHitProcedure {
 				}
 				return;
 			}
+
 			card = BlackjackDrawCardProcedure.execute();
+
+			//player is more likely to get high cards when close to 21
+			double currentTotal = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card");
+
+			if (currentTotal >= 15 && Mth.nextInt(RandomSource.create(), 1, 100) <= 20)
+			{
+				card = Mth.nextInt(RandomSource.create(), 8, 10);
+			}
+
 			AddCardToPlayerProcedure.execute(world, x, y, z, card);
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card") > 21) {
 				BlackjackEndGameProcedure.execute(world, x, y, z, 2);

@@ -8,52 +8,61 @@ import net.minecraft.core.BlockPos;
 
 public class AddCardToPlayerProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, double card) {
+		BlockPos pos = BlockPos.containing(x, y, z);
+
+		double currentTotal = getBlockNBTNumber(world, pos, "player_card");
+		double currentAces = getBlockNBTNumber(world, pos, "player_aces");
+
+		if (currentTotal < 0) currentTotal = 0;
+		if (currentAces < 0) currentAces = 0;
+
 		if (card == 1) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
+			currentAces += 1;
+			currentTotal += 11;
+
+			if (!world.isClientSide())
+			{
+				BlockPos _bp = pos;
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putDouble("player_aces", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_aces") + 1));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putDouble("player_card", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card") + 11));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putDouble("player_card", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card") + card));
+					_blockEntity.getPersistentData().putDouble("player_aces", currentAces);
+
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		while (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card") > 21 && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_aces") > 0) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
+		else
+		{
+			currentTotal += card;
+		}
+
+		//Update total
+		if (!world.isClientSide()) {
+			BlockPos _bp = pos;
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_blockEntity != null)
+				_blockEntity.getPersistentData().putDouble("player_card", currentTotal);
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		}
+
+		while (currentTotal > 21 && currentAces > 0) {
+			currentTotal -= 10;
+			currentAces -= 1;
+
+			if (!world.isClientSide())
+			{
+				BlockPos _bp = pos;
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putDouble("player_card", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_card") - 10));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putDouble("player_aces", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "player_aces") - 1));
+				{
+					_blockEntity.getPersistentData().putDouble("player_card", currentTotal);
+					_blockEntity.getPersistentData().putDouble("player_aces", currentAces);
+				}
+
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
