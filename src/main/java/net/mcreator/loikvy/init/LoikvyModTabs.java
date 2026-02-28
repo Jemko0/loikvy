@@ -40,6 +40,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());
 			tabData.accept(LoikvyModBlocks.SMOKE_DETECTOR.get().asItem());
 			tabData.accept(LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE.get().asItem());
+			tabData.accept(LoikvyModBlocks.CASH_REGISTER.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
 			tabData.accept(LoikvyModItems.BURGER.get());
 			tabData.accept(LoikvyModBlocks.CUTTING_BOARD.get().asItem());
@@ -69,7 +70,6 @@ public class LoikvyModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(LoikvyModItems.AA_BATTERY.get());
 			tabData.accept(LoikvyModBlocks.COAL_GENERATOR.get().asItem());
-			tabData.accept(LoikvyModItems.PHONE.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(LoikvyModItems.WHEAT_FLOUR.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {

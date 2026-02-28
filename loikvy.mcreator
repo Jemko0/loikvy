@@ -2682,96 +2682,6 @@
       "path": "~/CraftingRecipes"
     },
     {
-      "name": "PhonePropertyValueProvider",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "phone_property_value_provider",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/PhonePropertyValueProviderProcedure.java"
-        ]
-      },
-      "path": "~/Items/Electric"
-    },
-    {
-      "name": "Phone",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "phone",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/loikvy/item/inventory/PhoneInventoryCapability.java",
-          "src/main/java/net/mcreator/loikvy/item/PhoneItem.java",
-          "src/main/resources/assets/loikvy/models/item/phone.json",
-          "src/main/resources/assets/loikvy/models/item/phone_0.json"
-        ]
-      },
-      "path": "~/Items/Electric"
-    },
-    {
-      "name": "GetPhoneModelName",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_phone_model_name",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/GetPhoneModelNameProcedure.java"
-        ]
-      },
-      "path": "~/GUIs/Phone"
-    },
-    {
-      "name": "PhoneGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "phone_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/loikvy/client/gui/PhoneGUIScreen.java",
-          "src/main/java/net/mcreator/loikvy/world/inventory/PhoneGUIMenu.java"
-        ]
-      },
-      "path": "~/GUIs/Phone"
-    },
-    {
-      "name": "PhoneSpecialInformation",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "phone_special_information",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ],
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/PhoneSpecialInformationProcedure.java"
-        ]
-      },
-      "path": "~/Items/Electric"
-    },
-    {
       "name": "FlourBagRecipe",
       "type": "recipe",
       "compiles": true,
@@ -5909,137 +5819,6 @@
       "path": "~/GUIs/Overlay"
     },
     {
-      "name": "WifiRouter",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wifi_router",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/loikvy/loot_table/blocks/wifi_router.json",
-          "src/main/java/net/mcreator/loikvy/block/WifiRouterBlock.java",
-          "src/main/resources/assets/loikvy/models/block/wifi_router.json",
-          "src/main/resources/assets/loikvy/blockstates/wifi_router.json",
-          "src/main/java/net/mcreator/loikvy/block/entity/WifiRouterBlockEntity.java",
-          "src/main/resources/assets/loikvy/models/item/wifi_router.json"
-        ]
-      },
-      "path": "~/Blocks/Internet"
-    },
-    {
-      "name": "WifiRouterOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wifi_router_on_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/WifiRouterOnTickUpdateProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Internet"
-    },
-    {
-      "name": "GetWifiLevel",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_wifi_level",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/GetWifiLevelProcedure.java"
-        ]
-      },
-      "path": "~/GUIs/Phone"
-    },
-    {
-      "name": "WifiRouterBlockDestroyedByPlayer",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wifi_router_block_destroyed_by_player",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/WifiRouterBlockDestroyedByPlayerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Internet"
-    },
-    {
-      "name": "WifiRouterBlockAdded",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wifi_router_block_added",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/loikvy/procedures/WifiRouterBlockAddedProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Internet"
-    },
-    {
       "name": "CraftingTableOverride",
       "type": "recipe",
       "compiles": true,
@@ -6514,20 +6293,6 @@
         ]
       },
       "path": "~/GUIs/BankHistory"
-    },
-    {
-      "name": "AppWifiSettings",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "app_wifi_settings",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/loikvy/world/inventory/AppWifiSettingsMenu.java",
-          "src/main/java/net/mcreator/loikvy/client/gui/AppWifiSettingsScreen.java"
-        ]
-      },
-      "path": "~/GUIs/Phone/Apps"
     },
     {
       "name": "OakLogLoottable",
@@ -7157,7 +6922,8 @@
         "files": [
           "src/main/java/net/mcreator/loikvy/procedures/IDCardSpecialInformationProcedure.java"
         ]
-      }
+      },
+      "path": "~/Items/Registration"
     },
     {
       "name": "CreateIDProc",
@@ -7247,7 +7013,7 @@
     {
       "name": "BookEditApplyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "book_edit_apply_pressed",
       "metadata": {
@@ -7262,6 +7028,38 @@
         ]
       },
       "path": "~/GUIs/BookEdit"
+    },
+    {
+      "name": "CashRegister",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cash_register",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/loikvy/blockstates/cash_register.json",
+          "src/main/java/net/mcreator/loikvy/block/entity/CashRegisterBlockEntity.java",
+          "src/main/resources/assets/loikvy/models/item/cash_register.json",
+          "src/main/resources/data/loikvy/loot_table/blocks/cash_register.json",
+          "src/main/java/net/mcreator/loikvy/block/CashRegisterBlock.java",
+          "src/main/resources/assets/loikvy/models/block/cash_register.json"
+        ]
+      },
+      "path": "~/Blocks/Shop"
+    },
+    {
+      "name": "CashRegisterPOSGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cash_register_posgui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/client/gui/CashRegisterPOSGUIScreen.java",
+          "src/main/java/net/mcreator/loikvy/world/inventory/CashRegisterPOSGUIMenu.java"
+        ]
+      },
+      "path": "~/Blocks/Shop/GUI"
     }
   ],
   "variable_elements": [
@@ -7622,7 +7420,6 @@
       "~CUSTOM:Fridge"
     ],
     "ITEMS:minecraft:enchantable/durability": [
-      "~CUSTOM:Phone",
       "~CUSTOM:AABattery",
       "~CUSTOM:SunflowerOil",
       "~CUSTOM:Teaspoon",
@@ -7808,7 +7605,6 @@
       "gui.loikvy.coal_generator_gui.label_energy": "Energy:",
       "gui.loikvy.coal_generator_gui.label_fuel": "Fuel",
       "gui.loikvy.coal_generator_gui.label_capacity": "Capacity:",
-      "item.loikvy.phone": "Phone",
       "gui.loikvy.phone_gui.button_home": "Home",
       "block.loikvy.stove": "Stove",
       "gui.loikvy.stove_gui.label_stove": "Stove",
@@ -7917,9 +7713,6 @@
       "gui.loikvy.health_menu_gui.label_ss6bandage": "§4Bandaged",
       "key.loikvy.health_menu_key_bind": "Health Menu Key Bind",
       "gui.loikvy.health_menu_gui.tooltip_take_off": "Take Off",
-      "gui.loikvy.phone_gui.label_empty": "_________________",
-      "gui.loikvy.phone_gui.label_contacts": "Contacts",
-      "block.loikvy.wifi_router": "Wifi Router",
       "effect.loikvy.mining_efficiency": "Mining Efficiency",
       "item.loikvy.stone_axe": "Basic Axe",
       "entity.loikvy.ground_item": "Ground Item",
@@ -7937,10 +7730,6 @@
       "item.loikvy.uncooked_noodles": "Uncooked Noodles",
       "item.loikvy.cooked_noodles": "Cooked Noodles",
       "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.app_wifi_settings.label_strength": "Strength:",
-      "gui.loikvy.app_wifi_settings.label_wifi_settings": "Wifi Settings",
-      "gui.loikvy.app_wifi_settings.label_ipaddress": "IP-Address:",
-      "gui.loikvy.app_wifi_settings.label_name": "Name:",
       "item.loikvy.tree_bark": "Tree Bark",
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
@@ -7951,7 +7740,8 @@
       "block.loikvy.fluid_container": "Fluid Container",
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
-      "gui.loikvy.receipt_maker.itemname": "itemname"
+      "gui.loikvy.receipt_maker.itemname": "itemname",
+      "block.loikvy.cash_register": "Cash Register"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -8049,7 +7839,6 @@
       "gui.loikvy.coal_generator_gui.label_energy": "Energie:",
       "gui.loikvy.coal_generator_gui.label_fuel": "Brennstoff",
       "gui.loikvy.coal_generator_gui.label_capacity": "Kapazität:",
-      "item.loikvy.phone": "Handy",
       "gui.loikvy.phone_gui.button_home": "Home",
       "block.loikvy.stove": "Stove",
       "gui.loikvy.stove_gui.label_stove": "Stove",
@@ -8158,9 +7947,6 @@
       "gui.loikvy.health_menu_gui.label_ss6bandage": "§4Bandaged",
       "key.loikvy.health_menu_key_bind": "Health Menu Key Bind",
       "gui.loikvy.health_menu_gui.tooltip_take_off": "Take Off",
-      "gui.loikvy.phone_gui.label_empty": "________________",
-      "gui.loikvy.phone_gui.label_contacts": "Contacts",
-      "block.loikvy.wifi_router": "Wifi Router",
       "effect.loikvy.mining_efficiency": "Mining Efficiency",
       "item.loikvy.stone_axe": "Basic Axe",
       "entity.loikvy.ground_item": "Ground Item",
@@ -8178,10 +7964,6 @@
       "item.loikvy.uncooked_noodles": "Uncooked Noodles",
       "item.loikvy.cooked_noodles": "Cooked Noodles",
       "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.app_wifi_settings.label_strength": "Strength:",
-      "gui.loikvy.app_wifi_settings.label_wifi_settings": "Wifi Settings",
-      "gui.loikvy.app_wifi_settings.label_ipaddress": "IP-Address:",
-      "gui.loikvy.app_wifi_settings.label_name": "Name:",
       "item.loikvy.tree_bark": "Tree Bark",
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
@@ -8192,7 +7974,8 @@
       "block.loikvy.fluid_container": "Fluid Container",
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
-      "gui.loikvy.receipt_maker.itemname": "itemname"
+      "gui.loikvy.receipt_maker.itemname": "itemname",
+      "block.loikvy.cash_register": "Cash Register"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8290,7 +8073,6 @@
       "gui.loikvy.coal_generator_gui.label_energy": "Energie:",
       "gui.loikvy.coal_generator_gui.label_fuel": "Brennstoff",
       "gui.loikvy.coal_generator_gui.label_capacity": "Kapazität:",
-      "item.loikvy.phone": "Handy",
       "gui.loikvy.phone_gui.button_home": "Home",
       "block.loikvy.stove": "Stove",
       "gui.loikvy.stove_gui.label_stove": "Stove",
@@ -8399,9 +8181,6 @@
       "gui.loikvy.health_menu_gui.label_ss6bandage": "§4Bandaged",
       "key.loikvy.health_menu_key_bind": "Health Menu Key Bind",
       "gui.loikvy.health_menu_gui.tooltip_take_off": "Take Off",
-      "gui.loikvy.phone_gui.label_empty": "________________",
-      "gui.loikvy.phone_gui.label_contacts": "Contacts",
-      "block.loikvy.wifi_router": "Wifi Router",
       "effect.loikvy.mining_efficiency": "Mining Efficiency",
       "item.loikvy.stone_axe": "Basic Axe",
       "entity.loikvy.ground_item": "Ground Item",
@@ -8419,10 +8198,6 @@
       "item.loikvy.uncooked_noodles": "Uncooked Noodles",
       "item.loikvy.cooked_noodles": "Cooked Noodles",
       "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-      "gui.loikvy.app_wifi_settings.label_strength": "Strength:",
-      "gui.loikvy.app_wifi_settings.label_wifi_settings": "Wifi Settings",
-      "gui.loikvy.app_wifi_settings.label_ipaddress": "IP-Address:",
-      "gui.loikvy.app_wifi_settings.label_name": "Name:",
       "item.loikvy.tree_bark": "Tree Bark",
       "item.loikvy.sharp_stick": "Sharp Stick",
       "item.loikvy.plant_fiber": "Plant Fiber",
@@ -8433,7 +8208,8 @@
       "block.loikvy.fluid_container": "Fluid Container",
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
-      "gui.loikvy.receipt_maker.itemname": "itemname"
+      "gui.loikvy.receipt_maker.itemname": "itemname",
+      "block.loikvy.cash_register": "Cash Register"
     }
   },
   "metadata": {
@@ -8677,15 +8453,6 @@
             "children": []
           },
           {
-            "name": "Phone",
-            "children": [
-              {
-                "name": "Apps",
-                "children": []
-              }
-            ]
-          },
-          {
             "name": "Stove",
             "children": []
           },
@@ -8807,6 +8574,15 @@
           {
             "name": "FluidStuff",
             "children": []
+          },
+          {
+            "name": "Shop",
+            "children": [
+              {
+                "name": "GUI",
+                "children": []
+              }
+            ]
           }
         ]
       },

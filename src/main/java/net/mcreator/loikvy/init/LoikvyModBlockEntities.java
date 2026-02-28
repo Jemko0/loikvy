@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.BuiltInRegistries;
 
-import net.mcreator.loikvy.block.entity.WifiRouterBlockEntity;
 import net.mcreator.loikvy.block.entity.StoveBlockEntity;
 import net.mcreator.loikvy.block.entity.SmokeDetectorBlockEntity;
 import net.mcreator.loikvy.block.entity.SinkBlockBlockEntity;
@@ -27,6 +26,7 @@ import net.mcreator.loikvy.block.entity.FreezerBlockEntity;
 import net.mcreator.loikvy.block.entity.FluidContainerBlockEntity;
 import net.mcreator.loikvy.block.entity.CookingPanBlockEntity;
 import net.mcreator.loikvy.block.entity.CoalGeneratorBlockEntity;
+import net.mcreator.loikvy.block.entity.CashRegisterBlockEntity;
 import net.mcreator.loikvy.LoikvyMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -42,8 +42,8 @@ public class LoikvyModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GamblingSlotsMachineBlockEntity>> GAMBLING_SLOTS_MACHINE = register("gambling_slots_machine", LoikvyModBlocks.GAMBLING_SLOTS_MACHINE, GamblingSlotsMachineBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GamblingBlackJackTableBlockEntity>> GAMBLING_BLACK_JACK_TABLE = register("gambling_black_jack_table", LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE,
 			GamblingBlackJackTableBlockEntity::new);
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WifiRouterBlockEntity>> WIFI_ROUTER = register("wifi_router", LoikvyModBlocks.WIFI_ROUTER, WifiRouterBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FluidContainerBlockEntity>> FLUID_CONTAINER = register("fluid_container", LoikvyModBlocks.FLUID_CONTAINER, FluidContainerBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CashRegisterBlockEntity>> CASH_REGISTER = register("cash_register", LoikvyModBlocks.CASH_REGISTER, CashRegisterBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -63,8 +63,8 @@ public class LoikvyModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SINK_BLOCK.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GAMBLING_SLOTS_MACHINE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GAMBLING_BLACK_JACK_TABLE.get(), SidedInvWrapper::new);
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WIFI_ROUTER.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FLUID_CONTAINER.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, FLUID_CONTAINER.get(), (blockEntity, side) -> blockEntity.getFluidTank());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CASH_REGISTER.get(), SidedInvWrapper::new);
 	}
 }

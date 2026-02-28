@@ -7,8 +7,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -23,10 +21,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.mcreator.loikvy.procedures.RippedSheetPropertyValueProviderProcedure;
-import net.mcreator.loikvy.procedures.PhonePropertyValueProviderProcedure;
 import net.mcreator.loikvy.procedures.EmptyCanPropertyValueProviderProcedure;
 import net.mcreator.loikvy.procedures.BasicClockPropertyValueProviderProcedure;
-import net.mcreator.loikvy.item.inventory.PhoneInventoryCapability;
 import net.mcreator.loikvy.item.WheatFlourItem;
 import net.mcreator.loikvy.item.WeightSmallOneHandedItem;
 import net.mcreator.loikvy.item.UncookedNoodlesItem;
@@ -47,7 +43,6 @@ import net.mcreator.loikvy.item.RippedSheetItem;
 import net.mcreator.loikvy.item.PlantFiberItem;
 import net.mcreator.loikvy.item.PizzaSliceItem;
 import net.mcreator.loikvy.item.PizzaItem;
-import net.mcreator.loikvy.item.PhoneItem;
 import net.mcreator.loikvy.item.PepperoniSliceItem;
 import net.mcreator.loikvy.item.PepperoniChunkItem;
 import net.mcreator.loikvy.item.LockRemoverItem;
@@ -80,7 +75,6 @@ import net.mcreator.loikvy.item.AntidepressantsItem;
 import net.mcreator.loikvy.item.AABatteryItem;
 import net.mcreator.loikvy.LoikvyMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class LoikvyModItems {
 	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(LoikvyMod.MODID);
 	public static final DeferredItem<Item> CALENDAR = REGISTRY.register("calendar", CalendarItem::new);
@@ -122,7 +116,6 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> PEPPERONI_CHUNK = REGISTRY.register("pepperoni_chunk", PepperoniChunkItem::new);
 	public static final DeferredItem<Item> PEPPERONI_SLICE = REGISTRY.register("pepperoni_slice", PepperoniSliceItem::new);
 	public static final DeferredItem<Item> COAL_GENERATOR = block(LoikvyModBlocks.COAL_GENERATOR, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
-	public static final DeferredItem<Item> PHONE = REGISTRY.register("phone", PhoneItem::new);
 	public static final DeferredItem<Item> STOVE = block(LoikvyModBlocks.STOVE);
 	public static final DeferredItem<Item> LETTUCE_CROP = block(LoikvyModBlocks.LETTUCE_CROP);
 	public static final DeferredItem<Item> LETTUCE_SEED = REGISTRY.register("lettuce_seed", LettuceSeedItem::new);
@@ -136,7 +129,6 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> GAMBLING_BLACK_JACK_TABLE = block(LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE);
 	public static final DeferredItem<Item> RIPPED_SHEET = REGISTRY.register("ripped_sheet", RippedSheetItem::new);
 	public static final DeferredItem<Item> WHEELCHAIR_SPAWN_EGG = REGISTRY.register("wheelchair_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.WHEELCHAIR, -16724788, -1, new Item.Properties()));
-	public static final DeferredItem<Item> WIFI_ROUTER = block(LoikvyModBlocks.WIFI_ROUTER);
 	public static final DeferredItem<Item> STONE_AXE = REGISTRY.register("stone_axe", StoneAxeItem::new);
 	public static final DeferredItem<Item> GROUND_ITEM_SPAWN_EGG = REGISTRY.register("ground_item_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.GROUND_ITEM, -16777216, -256, new Item.Properties()));
 	public static final DeferredItem<Item> CHISEL = REGISTRY.register("chisel", ChiselItem::new);
@@ -152,14 +144,10 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> PLAYER_CORPSE_SPAWN_EGG = REGISTRY.register("player_corpse_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.PLAYER_CORPSE, -6750208, -1, new Item.Properties()));
 	public static final DeferredItem<Item> ID_CARD = REGISTRY.register("id_card", IDCardItem::new);
 	public static final DeferredItem<Item> FLUID_CONTAINER = block(LoikvyModBlocks.FLUID_CONTAINER);
+	public static final DeferredItem<Item> CASH_REGISTER = block(LoikvyModBlocks.CASH_REGISTER, new Item.Properties().stacksTo(1));
 
 	// Start of user code block custom items
 	// End of user code block custom items
-	@SubscribeEvent
-	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-		event.registerItem(Capabilities.ItemHandler.ITEM, (stack, context) -> new PhoneInventoryCapability(stack), PHONE.get());
-	}
-
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block) {
 		return block(block, new Item.Properties());
 	}
@@ -175,7 +163,6 @@ public class LoikvyModItems {
 		public static void clientLoad(FMLClientSetupEvent event) {
 			event.enqueueWork(() -> {
 				ItemProperties.register(BASIC_CLOCK.get(), ResourceLocation.parse("loikvy:basic_clock_time"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BasicClockPropertyValueProviderProcedure.execute());
-				ItemProperties.register(PHONE.get(), ResourceLocation.parse("loikvy:phone_turned_on"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) PhonePropertyValueProviderProcedure.execute(itemStackToRender));
 				ItemProperties.register(RIPPED_SHEET.get(), ResourceLocation.parse("loikvy:ripped_sheet_dirty"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) RippedSheetPropertyValueProviderProcedure.execute(itemStackToRender));
 				ItemProperties.register(EMPTY_CAN.get(), ResourceLocation.parse("loikvy:empty_can_type"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EmptyCanPropertyValueProviderProcedure.execute(itemStackToRender));
 			});

@@ -22,7 +22,6 @@
     "minecraft:repeating_command_block",
     "minecraft:comparator",
     "minecraft:piston",
-    "minecraft:lava_bucket",
-    "loikvy:phone"
+    "minecraft:lava_bucket"
   ]
 }

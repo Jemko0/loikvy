@@ -3,7 +3,7 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Sick",
-    "icon": "mood_nauseous",
+    "icon": "mood_ill",
     "color": {
       "value": -16735737,
       "falpha": 0.0

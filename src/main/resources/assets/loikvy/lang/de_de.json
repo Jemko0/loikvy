@@ -94,7 +94,6 @@
   "gui.loikvy.coal_generator_gui.label_energy": "Energie:",
   "gui.loikvy.coal_generator_gui.label_fuel": "Brennstoff",
   "gui.loikvy.coal_generator_gui.label_capacity": "Kapazität:",
-  "item.loikvy.phone": "Handy",
   "gui.loikvy.phone_gui.button_home": "Home",
   "block.loikvy.stove": "Stove",
   "gui.loikvy.stove_gui.label_stove": "Stove",
@@ -203,9 +202,6 @@
   "gui.loikvy.health_menu_gui.label_ss6bandage": "§4Bandaged",
   "key.loikvy.health_menu_key_bind": "Health Menu Key Bind",
   "gui.loikvy.health_menu_gui.tooltip_take_off": "Take Off",
-  "gui.loikvy.phone_gui.label_empty": "________________",
-  "gui.loikvy.phone_gui.label_contacts": "Contacts",
-  "block.loikvy.wifi_router": "Wifi Router",
   "effect.loikvy.mining_efficiency": "Mining Efficiency",
   "item.loikvy.stone_axe": "Basic Axe",
   "entity.loikvy.ground_item": "Ground Item",
@@ -223,10 +219,6 @@
   "item.loikvy.uncooked_noodles": "Uncooked Noodles",
   "item.loikvy.cooked_noodles": "Cooked Noodles",
   "gui.loikvy.bank_history_gui.label_bank_history": "Bank History",
-  "gui.loikvy.app_wifi_settings.label_strength": "Strength:",
-  "gui.loikvy.app_wifi_settings.label_wifi_settings": "Wifi Settings",
-  "gui.loikvy.app_wifi_settings.label_ipaddress": "IP-Address:",
-  "gui.loikvy.app_wifi_settings.label_name": "Name:",
   "item.loikvy.tree_bark": "Tree Bark",
   "item.loikvy.sharp_stick": "Sharp Stick",
   "item.loikvy.plant_fiber": "Plant Fiber",
@@ -237,5 +229,6 @@
   "block.loikvy.fluid_container": "Fluid Container",
   "gui.loikvy.receipt_maker.itemprice": "Price",
   "gui.loikvy.receipt_maker.itemamt": "Item Amount",
-  "gui.loikvy.receipt_maker.itemname": "itemname"
+  "gui.loikvy.receipt_maker.itemname": "itemname",
+  "block.loikvy.cash_register": "Cash Register"
 }

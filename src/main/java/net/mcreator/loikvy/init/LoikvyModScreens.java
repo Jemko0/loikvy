@@ -21,7 +21,6 @@ import net.mcreator.loikvy.client.gui.SmokeDetectorGUIScreen;
 import net.mcreator.loikvy.client.gui.SlotsGUIScreen;
 import net.mcreator.loikvy.client.gui.ReceiptMakerScreen;
 import net.mcreator.loikvy.client.gui.PlayerStatGUIScreen;
-import net.mcreator.loikvy.client.gui.PhoneGUIScreen;
 import net.mcreator.loikvy.client.gui.KeyCreationGUIScreen;
 import net.mcreator.loikvy.client.gui.HealthMenuGUIScreen;
 import net.mcreator.loikvy.client.gui.FridgeGUIScreen;
@@ -36,7 +35,6 @@ import net.mcreator.loikvy.client.gui.BookEditGUIScreen;
 import net.mcreator.loikvy.client.gui.BlackJackGUIScreen;
 import net.mcreator.loikvy.client.gui.BasicClockGUIScreen;
 import net.mcreator.loikvy.client.gui.BankHistoryGUIScreen;
-import net.mcreator.loikvy.client.gui.AppWifiSettingsScreen;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class LoikvyModScreens {
@@ -53,7 +51,6 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.COOKING_PAN_GUI.get(), CookingPanGUIScreen::new);
 		event.register(LoikvyModMenus.SMOKE_DETECTOR_GUI.get(), SmokeDetectorGUIScreen::new);
 		event.register(LoikvyModMenus.COAL_GENERATOR_GUI.get(), CoalGeneratorGUIScreen::new);
-		event.register(LoikvyModMenus.PHONE_GUI.get(), PhoneGUIScreen::new);
 		event.register(LoikvyModMenus.STOVE_GUI.get(), StoveGUIScreen::new);
 		event.register(LoikvyModMenus.STORE_GUI.get(), StoreGUIScreen::new);
 		event.register(LoikvyModMenus.BOOK_EDIT_GUI.get(), BookEditGUIScreen::new);
@@ -62,8 +59,8 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.BLACK_JACK_GUI.get(), BlackJackGUIScreen::new);
 		event.register(LoikvyModMenus.HEALTH_MENU_GUI.get(), HealthMenuGUIScreen::new);
 		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
-		event.register(LoikvyModMenus.APP_WIFI_SETTINGS.get(), AppWifiSettingsScreen::new);
 		event.register(LoikvyModMenus.CORPSE_INVENTORY_GUI.get(), CorpseInventoryGUIScreen::new);
+		event.register(LoikvyModMenus.CASH_REGISTER_POSGUI.get(), CashRegisterPOSGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {

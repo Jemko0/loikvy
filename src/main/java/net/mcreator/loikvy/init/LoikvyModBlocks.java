@@ -12,7 +12,6 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
-import net.mcreator.loikvy.block.WifiRouterBlock;
 import net.mcreator.loikvy.block.StoveBlock;
 import net.mcreator.loikvy.block.SmokeDetectorBlock;
 import net.mcreator.loikvy.block.SinkBlockBlock;
@@ -26,6 +25,7 @@ import net.mcreator.loikvy.block.FluidContainerBlock;
 import net.mcreator.loikvy.block.CuttingBoardBlock;
 import net.mcreator.loikvy.block.CookingPanBlock;
 import net.mcreator.loikvy.block.CoalGeneratorBlock;
+import net.mcreator.loikvy.block.CashRegisterBlock;
 import net.mcreator.loikvy.block.BrighterTorchBlock;
 import net.mcreator.loikvy.LoikvyMod;
 
@@ -44,8 +44,8 @@ public class LoikvyModBlocks {
 	public static final DeferredBlock<Block> GAMBLING_SLOTS_MACHINE = REGISTRY.register("gambling_slots_machine", GamblingSlotsMachineBlock::new);
 	public static final DeferredBlock<Block> BRIGHTER_TORCH = REGISTRY.register("brighter_torch", BrighterTorchBlock::new);
 	public static final DeferredBlock<Block> GAMBLING_BLACK_JACK_TABLE = REGISTRY.register("gambling_black_jack_table", GamblingBlackJackTableBlock::new);
-	public static final DeferredBlock<Block> WIFI_ROUTER = REGISTRY.register("wifi_router", WifiRouterBlock::new);
 	public static final DeferredBlock<Block> FLUID_CONTAINER = REGISTRY.register("fluid_container", FluidContainerBlock::new);
+	public static final DeferredBlock<Block> CASH_REGISTER = REGISTRY.register("cash_register", CashRegisterBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
