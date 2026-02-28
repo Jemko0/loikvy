@@ -127,6 +127,12 @@ public class BookEditGUIScreen extends AbstractContainerScreen<BookEditGUIMenu> 
 		}).bounds(this.leftPos + 6, this.topPos + 140, 56, 20).build();
 		this.addRenderableWidget(button_cancel);
 		button_apply = Button.builder(Component.translatable("gui.loikvy.book_edit_gui.button_apply"), e -> {
+			int x = BookEditGUIScreen.this.x;
+			int y = BookEditGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new BookEditGUIButtonMessage(1, x, y, z));
+				BookEditGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
 		}).bounds(this.leftPos + 239, this.topPos + 140, 51, 20).build();
 		this.addRenderableWidget(button_apply);
 	}

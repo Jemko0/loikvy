@@ -24,9 +24,11 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 	private final int x, y, z;
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
-	EditBox content;
+	EditBox itemname;
 	EditBox store;
 	EditBox color;
+	EditBox itemamt;
+	EditBox itemprice;
 	Button button_make;
 	Button button_empty1;
 
@@ -45,12 +47,16 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 	public void updateMenuState(int elementType, String name, Object elementState) {
 		menuStateUpdateActive = true;
 		if (elementType == 0 && elementState instanceof String stringState) {
-			if (name.equals("content"))
-				content.setValue(stringState);
+			if (name.equals("itemname"))
+				itemname.setValue(stringState);
 			else if (name.equals("store"))
 				store.setValue(stringState);
 			else if (name.equals("color"))
 				color.setValue(stringState);
+			else if (name.equals("itemamt"))
+				itemamt.setValue(stringState);
+			else if (name.equals("itemprice"))
+				itemprice.setValue(stringState);
 		}
 		menuStateUpdateActive = false;
 	}
@@ -60,9 +66,11 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		content.render(guiGraphics, mouseX, mouseY, partialTicks);
+		itemname.render(guiGraphics, mouseX, mouseY, partialTicks);
 		store.render(guiGraphics, mouseX, mouseY, partialTicks);
 		color.render(guiGraphics, mouseX, mouseY, partialTicks);
+		itemamt.render(guiGraphics, mouseX, mouseY, partialTicks);
+		itemprice.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
@@ -81,43 +89,51 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		if (content.isFocused())
-			return content.keyPressed(key, b, c);
+		if (itemname.isFocused())
+			return itemname.keyPressed(key, b, c);
 		if (store.isFocused())
 			return store.keyPressed(key, b, c);
 		if (color.isFocused())
 			return color.keyPressed(key, b, c);
+		if (itemamt.isFocused())
+			return itemamt.keyPressed(key, b, c);
+		if (itemprice.isFocused())
+			return itemprice.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void resize(Minecraft minecraft, int width, int height) {
-		String contentValue = content.getValue();
+		String itemnameValue = itemname.getValue();
 		String storeValue = store.getValue();
 		String colorValue = color.getValue();
+		String itemamtValue = itemamt.getValue();
+		String itempriceValue = itemprice.getValue();
 		super.resize(minecraft, width, height);
-		content.setValue(contentValue);
+		itemname.setValue(itemnameValue);
 		store.setValue(storeValue);
 		color.setValue(colorValue);
+		itemamt.setValue(itemamtValue);
+		itemprice.setValue(itempriceValue);
 	}
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.receipt_maker.label_receipt_maker"), 5, 5, -12829636, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.receipt_maker.label_ss"), 5, 45, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.receipt_maker.label_ss"), 5, 47, -12829636, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		content = new EditBox(this.font, this.leftPos + 37, this.topPos + 42, 118, 18, Component.translatable("gui.loikvy.receipt_maker.content"));
-		content.setMaxLength(8192);
-		content.setResponder(content -> {
+		itemname = new EditBox(this.font, this.leftPos + 65, this.topPos + 42, 118, 18, Component.translatable("gui.loikvy.receipt_maker.itemname"));
+		itemname.setMaxLength(8192);
+		itemname.setResponder(content -> {
 			if (!menuStateUpdateActive)
-				menu.sendMenuStateUpdate(entity, 0, "content", content, false);
+				menu.sendMenuStateUpdate(entity, 0, "itemname", content, false);
 		});
-		content.setHint(Component.translatable("gui.loikvy.receipt_maker.content"));
-		this.addWidget(this.content);
+		itemname.setHint(Component.translatable("gui.loikvy.receipt_maker.itemname"));
+		this.addWidget(this.itemname);
 		store = new EditBox(this.font, this.leftPos + 12, this.topPos + 18, 118, 18, Component.translatable("gui.loikvy.receipt_maker.store"));
 		store.setMaxLength(8192);
 		store.setResponder(content -> {
@@ -134,6 +150,22 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 		});
 		color.setHint(Component.translatable("gui.loikvy.receipt_maker.color"));
 		this.addWidget(this.color);
+		itemamt = new EditBox(this.font, this.leftPos + 37, this.topPos + 42, 24, 18, Component.translatable("gui.loikvy.receipt_maker.itemamt"));
+		itemamt.setMaxLength(8192);
+		itemamt.setResponder(content -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 0, "itemamt", content, false);
+		});
+		itemamt.setHint(Component.translatable("gui.loikvy.receipt_maker.itemamt"));
+		this.addWidget(this.itemamt);
+		itemprice = new EditBox(this.font, this.leftPos + 187, this.topPos + 42, 26, 18, Component.translatable("gui.loikvy.receipt_maker.itemprice"));
+		itemprice.setMaxLength(8192);
+		itemprice.setResponder(content -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 0, "itemprice", content, false);
+		});
+		itemprice.setHint(Component.translatable("gui.loikvy.receipt_maker.itemprice"));
+		this.addWidget(this.itemprice);
 		button_make = Button.builder(Component.translatable("gui.loikvy.receipt_maker.button_make"), e -> {
 			int x = ReceiptMakerScreen.this.x;
 			int y = ReceiptMakerScreen.this.y;
@@ -150,7 +182,7 @@ public class ReceiptMakerScreen extends AbstractContainerScreen<ReceiptMakerMenu
 				PacketDistributor.sendToServer(new ReceiptMakerButtonMessage(1, x, y, z));
 				ReceiptMakerButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + 158, this.topPos + 41, 19, 20).build();
+		}).bounds(this.leftPos + 224, this.topPos + 41, 19, 20).build();
 		this.addRenderableWidget(button_empty1);
 	}
 }

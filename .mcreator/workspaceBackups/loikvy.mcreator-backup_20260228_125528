@@ -3682,7 +3682,7 @@
       "name": "PlayerOffTick",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "player_off_tick",
       "metadata": {
         "dependencies": [
@@ -7243,6 +7243,25 @@
         ]
       },
       "path": "~/Blocks/FluidStuff"
+    },
+    {
+      "name": "BookEditApplyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_edit_apply_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/BookEditApplyPressedProcedure.java"
+        ]
+      },
+      "path": "~/GUIs/BookEdit"
     }
   ],
   "variable_elements": [

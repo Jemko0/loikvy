@@ -16,6 +16,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.loikvy.procedures.CloseGUIProcedure;
+import net.mcreator.loikvy.procedures.BookEditApplyPressedProcedure;
 import net.mcreator.loikvy.LoikvyMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -50,6 +51,10 @@ public record BookEditGUIButtonMessage(int buttonID, int x, int y, int z) implem
 		if (buttonID == 0) {
 
 			CloseGUIProcedure.execute(entity);
+		}
+		if (buttonID == 1) {
+
+			BookEditApplyPressedProcedure.execute(entity);
 		}
 	}
 

@@ -92,7 +92,7 @@
           "text": "Apply",
           "isUndecorated": false,
           "onClick": {
-            "name": "BookEditApply"
+            "name": "BookEditApplyPressed"
           },
           "width": 51,
           "height": 20,

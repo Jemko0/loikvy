@@ -3682,7 +3682,7 @@
       "name": "PlayerOffTick",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "player_off_tick",
       "metadata": {
         "dependencies": [
@@ -3985,9 +3985,9 @@
       "registry_name": "receipt_maker",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/loikvy/client/gui/ReceiptMakerScreen.java",
+          "src/main/java/net/mcreator/loikvy/world/inventory/ReceiptMakerMenu.java",
           "src/main/java/net/mcreator/loikvy/network/ReceiptMakerButtonMessage.java",
-          "src/main/java/net/mcreator/loikvy/world/inventory/ReceiptMakerMenu.java"
+          "src/main/java/net/mcreator/loikvy/client/gui/ReceiptMakerScreen.java"
         ]
       },
       "path": "~/GUIs/receipts"
@@ -7243,6 +7243,25 @@
         ]
       },
       "path": "~/Blocks/FluidStuff"
+    },
+    {
+      "name": "BookEditApplyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "book_edit_apply_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/loikvy/procedures/BookEditApplyPressedProcedure.java"
+        ]
+      },
+      "path": "~/GUIs/BookEdit"
     }
   ],
   "variable_elements": [
@@ -7849,8 +7868,8 @@
       "gui.loikvy.receipt_maker.button_make": "Create",
       "gui.loikvy.receipt_maker.button_empty": "+",
       "gui.loikvy.receipt_maker.label_receipt_maker": "Receipt Making tool device object ok",
-      "gui.loikvy.receipt_maker.store": "StoreName",
-      "gui.loikvy.receipt_maker.color": "C",
+      "gui.loikvy.receipt_maker.store": "store",
+      "gui.loikvy.receipt_maker.color": "Color",
       "gui.loikvy.receipt_maker.label_ss": "§",
       "gui.loikvy.receipt_maker.button_empty1": "+",
       "gui.loikvy.door_lock_idgui.button_master_lock": "master_lock",
@@ -7929,7 +7948,10 @@
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
       "item.loikvy.id_card": "ID Card",
-      "block.loikvy.fluid_container": "Fluid Container"
+      "block.loikvy.fluid_container": "Fluid Container",
+      "gui.loikvy.receipt_maker.itemprice": "Price",
+      "gui.loikvy.receipt_maker.itemamt": "Item Amount",
+      "gui.loikvy.receipt_maker.itemname": "itemname"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -8167,7 +8189,10 @@
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
       "item.loikvy.id_card": "ID Card",
-      "block.loikvy.fluid_container": "Fluid Container"
+      "block.loikvy.fluid_container": "Fluid Container",
+      "gui.loikvy.receipt_maker.itemprice": "Price",
+      "gui.loikvy.receipt_maker.itemamt": "Item Amount",
+      "gui.loikvy.receipt_maker.itemname": "itemname"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8405,7 +8430,10 @@
       "entity.loikvy.player_corpse": "Player Corpse",
       "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
       "item.loikvy.id_card": "ID Card",
-      "block.loikvy.fluid_container": "Fluid Container"
+      "block.loikvy.fluid_container": "Fluid Container",
+      "gui.loikvy.receipt_maker.itemprice": "Price",
+      "gui.loikvy.receipt_maker.itemamt": "Item Amount",
+      "gui.loikvy.receipt_maker.itemname": "itemname"
     }
   },
   "metadata": {

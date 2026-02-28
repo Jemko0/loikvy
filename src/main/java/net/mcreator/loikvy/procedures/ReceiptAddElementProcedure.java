@@ -19,8 +19,10 @@ public class ReceiptAddElementProcedure {
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal((executeCommandGetResult(world, new Vec3(x, y, z),
 					("data modify storage minecraft:temp_receipt temp append value \"\u00A7" + ""
-							+ ((entity instanceof Player _entity0 && _entity0.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "color", "") : "")
-							+ ((entity instanceof Player _entity1 && _entity1.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(0, "content", "") : "") + "\"")))),
+							+ ((entity instanceof Player _entity0 && _entity0.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "color", "") : "") + "x"
+							+ ((entity instanceof Player _entity1 && _entity1.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(0, "itemamt", "") : "") + " "
+							+ ((entity instanceof Player _entity2 && _entity2.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(0, "itemname", "") : "") + " "
+							+ ((entity instanceof Player _entity3 && _entity3.containerMenu instanceof LoikvyModMenus.MenuAccessor _menu3) ? _menu3.getMenuState(0, "itemprice", "") : "") + "L\u20AC" + "\"")))),
 					false);
 	}
 

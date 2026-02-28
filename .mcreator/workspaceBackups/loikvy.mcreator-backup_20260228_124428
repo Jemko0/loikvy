@@ -3682,7 +3682,7 @@
       "name": "PlayerOffTick",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "player_off_tick",
       "metadata": {
         "dependencies": [

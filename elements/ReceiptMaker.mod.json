@@ -45,11 +45,11 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "Content",
-          "name": "content",
+          "placeholder": "itemname",
+          "name": "itemname",
           "width": 120,
           "height": 20,
-          "x": 125,
+          "x": 153,
           "y": 116,
           "locked": false
         }
@@ -57,7 +57,7 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "StoreName",
+          "placeholder": "store",
           "name": "store",
           "width": 120,
           "height": 20,
@@ -69,7 +69,7 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "C",
+          "placeholder": "Color",
           "name": "color",
           "width": 23,
           "height": 20,
@@ -90,7 +90,7 @@
             "falpha": 0.0
           },
           "x": 94,
-          "y": 120,
+          "y": 122,
           "locked": false
         }
       },
@@ -105,7 +105,31 @@
           },
           "width": 19,
           "height": 20,
-          "x": 247,
+          "x": 313,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Item Amount",
+          "name": "itemamt",
+          "width": 26,
+          "height": 20,
+          "x": 125,
+          "y": 116,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Price",
+          "name": "itemprice",
+          "width": 28,
+          "height": 20,
+          "x": 275,
           "y": 116,
           "locked": false
         }
