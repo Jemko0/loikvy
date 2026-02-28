@@ -35,6 +35,7 @@ import net.mcreator.loikvy.client.gui.BookEditGUIScreen;
 import net.mcreator.loikvy.client.gui.BlackJackGUIScreen;
 import net.mcreator.loikvy.client.gui.BasicClockGUIScreen;
 import net.mcreator.loikvy.client.gui.BankHistoryGUIScreen;
+import net.mcreator.loikvy.client.gui.CashRegisterPOSGUIScreen;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class LoikvyModScreens {
@@ -67,7 +68,8 @@ public class LoikvyModScreens {
 		void updateMenuState(int elementType, String name, Object elementState);
 	}
 
-	public static void renderEntityInInventoryFollowsAngle(GuiGraphics guiGraphics, int x, int y, int scale, float angleXComponent, float angleYComponent, LivingEntity entity) {
+	public static void renderEntityInInventoryFollowsAngle(GuiGraphics guiGraphics, int x, int y, int scale,
+			float angleXComponent, float angleYComponent, LivingEntity entity) {
 		Quaternionf pose = new Quaternionf().rotateZ((float) Math.PI);
 		Quaternionf cameraOrientation = new Quaternionf().rotateX(angleYComponent * 20 * ((float) Math.PI / 180F));
 		pose.mul(cameraOrientation);
@@ -81,7 +83,8 @@ public class LoikvyModScreens {
 		entity.setXRot(-angleYComponent * 20.0F);
 		entity.yHeadRot = entity.getYRot();
 		entity.yHeadRotO = entity.getYRot();
-		InventoryScreen.renderEntityInInventory(guiGraphics, x, y, scale, new Vector3f(0, 0, 0), pose, cameraOrientation, entity);
+		InventoryScreen.renderEntityInInventory(guiGraphics, x, y, scale, new Vector3f(0, 0, 0), pose,
+				cameraOrientation, entity);
 		entity.yBodyRot = f2;
 		entity.setYRot(f3);
 		entity.setXRot(f4);

@@ -65,6 +65,10 @@ public class LoikvyMod {
 		LoikvyModAttributes.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		LoikvyModDataAttachments.register(modEventBus);
+		net.mcreator.loikvy.computer.LoikvyComputerRegistry.register(modEventBus);
+		addNetworkMessage(net.mcreator.loikvy.computer.network.SyncComputerDataPayload.TYPE,
+				net.mcreator.loikvy.computer.network.SyncComputerDataPayload.STREAM_CODEC,
+				net.mcreator.loikvy.computer.network.SyncComputerDataPayload::handle);
 		// End of user code block mod init
 	}
 
@@ -73,19 +77,23 @@ public class LoikvyMod {
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
 
-	private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+	private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader,
+			IPayloadHandler<T> handler) {
 	}
 
-	public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id, StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+	public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id,
+			StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
 		if (networkingRegistered)
-			throw new IllegalStateException("Cannot register new network messages after networking has been registered");
+			throw new IllegalStateException(
+					"Cannot register new network messages after networking has been registered");
 		MESSAGES.put(id, new NetworkMessage<>(reader, handler));
 	}
 
-	@SuppressWarnings({"rawtypes", "unchecked"})
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void registerNetworking(final RegisterPayloadHandlersEvent event) {
 		final PayloadRegistrar registrar = event.registrar(MODID);
-		MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
+		MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id,
+				((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
 		networkingRegistered = true;
 	}
 

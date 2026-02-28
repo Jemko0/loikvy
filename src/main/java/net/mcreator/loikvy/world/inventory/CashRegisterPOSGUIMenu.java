@@ -46,7 +46,7 @@ public class CashRegisterPOSGUIMenu extends AbstractContainerMenu implements Loi
 		super(LoikvyModMenus.CASH_REGISTER_POSGUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(0);
+		this.internal = new ItemStackHandler(4);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -54,6 +54,24 @@ public class CashRegisterPOSGUIMenu extends AbstractContainerMenu implements Loi
 			this.y = pos.getY();
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
+		}
+
+		this.customSlots.put(0,
+				this.addSlot(new net.neoforged.neoforge.items.SlotItemHandler((ItemStackHandler) internal, 0, 20, 20)));
+		this.customSlots.put(1,
+				this.addSlot(new net.neoforged.neoforge.items.SlotItemHandler((ItemStackHandler) internal, 1, 38, 20)));
+		this.customSlots.put(2,
+				this.addSlot(new net.neoforged.neoforge.items.SlotItemHandler((ItemStackHandler) internal, 2, 20, 38)));
+		this.customSlots.put(3,
+				this.addSlot(new net.neoforged.neoforge.items.SlotItemHandler((ItemStackHandler) internal, 3, 38, 38)));
+
+		for (int row = 0; row < 3; ++row) {
+			for (int col = 0; col < 9; ++col) {
+				this.addSlot(new Slot(inv, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+			}
+		}
+		for (int col = 0; col < 9; ++col) {
+			this.addSlot(new Slot(inv, col, 8 + col * 18, 142));
 		}
 	}
 

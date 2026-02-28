@@ -42,18 +42,46 @@ public class CashRegisterPOSGUIScreen extends AbstractContainerScreen<CashRegist
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
 	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
-		RenderSystem.setShaderColor(1, 1, 1, 1);
-		RenderSystem.enableBlend();
-		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth,
-				this.imageHeight);
-		RenderSystem.disableBlend();
+		int x = this.leftPos;
+		int y = this.topPos;
+
+		// Main background
+		guiGraphics.fill(x, y, x + this.imageWidth, y + this.imageHeight, 0xFF1E2024);
+
+		// Header bar
+		guiGraphics.fill(x, y, x + this.imageWidth, y + 16, 0xFF00ADB5);
+		guiGraphics.drawString(this.font, "Loikvy Checkout", x + 5, y + 4, 0xFFFFFFFF, false);
+
+		// "Scanned Items" container background
+		guiGraphics.fill(x + 18, y + 18, x + 56, y + 56, 0xFF2A2D34);
+		guiGraphics.renderOutline(x + 18, y + 18, 38, 38, 0xFF393E46);
+
+		// Specific slot backgrounds
+		guiGraphics.fill(x + 19, y + 19, x + 37, y + 37, 0xFF111111);
+		guiGraphics.fill(x + 37, y + 19, x + 55, y + 37, 0xFF111111);
+		guiGraphics.fill(x + 19, y + 37, x + 37, y + 55, 0xFF111111);
+		guiGraphics.fill(x + 37, y + 37, x + 55, y + 55, 0xFF111111);
+
+		// Receipt Area
+		int receiptX = x + 70;
+		int receiptY = y + 22;
+		guiGraphics.fill(receiptX, receiptY, receiptX + 96, receiptY + 50, 0xFFEEEEEE);
+		guiGraphics.drawString(this.font, "RECEIPT", receiptX + 30, receiptY + 5, 0xFF000000, false);
+		guiGraphics.fill(receiptX + 5, receiptY + 16, receiptX + 91, receiptY + 17, 0xFFBBBBBB);
+
+		guiGraphics.drawString(this.font, "TOTAL:", receiptX + 10, receiptY + 22, 0xFF333333, false);
+		guiGraphics.drawString(this.font, "$???", receiptX + 10, receiptY + 35, 0xFF00AA00, false);
+
+		// Player Inventory label background
+		guiGraphics.fill(x + 8, y + 74, x + 168, y + 160, 0xFF393E46);
+		guiGraphics.drawString(this.font, "Your Inventory", x + 10, y + 76, 0xFFAAAAAA, false);
 	}
 
 	@Override
@@ -67,6 +95,16 @@ public class CashRegisterPOSGUIScreen extends AbstractContainerScreen<CashRegist
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		// Disable default labels
+	}
+
+	@Override
+	public boolean mouseClicked(double mouseX, double mouseY, int button) {
+		int px = this.leftPos + 70;
+		int py = this.topPos + 22;
+		// Clicking the receipt or a "pay" button could trigger network.
+		// For now we just mock hitting enter checking out soon.
+		return super.mouseClicked(mouseX, mouseY, button);
 	}
 
 	@Override

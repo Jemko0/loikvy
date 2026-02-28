@@ -35,46 +35,72 @@ import net.mcreator.loikvy.world.inventory.BookEditGUIMenu;
 import net.mcreator.loikvy.world.inventory.BlackJackGUIMenu;
 import net.mcreator.loikvy.world.inventory.BasicClockGUIMenu;
 import net.mcreator.loikvy.world.inventory.BankHistoryGUIMenu;
+import net.mcreator.loikvy.world.inventory.CashRegisterPOSGUIMenu;
 import net.mcreator.loikvy.network.MenuStateUpdateMessage;
 import net.mcreator.loikvy.LoikvyMod;
 
 import java.util.Map;
 
 public class LoikvyModMenus {
-	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, LoikvyMod.MODID);
-	public static final DeferredHolder<MenuType<?>, MenuType<CalendarGUIMenu>> CALENDAR_GUI = REGISTRY.register("calendar_gui", () -> IMenuTypeExtension.create(CalendarGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<BasicClockGUIMenu>> BASIC_CLOCK_GUI = REGISTRY.register("basic_clock_gui", () -> IMenuTypeExtension.create(BasicClockGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<PlayerStatGUIMenu>> PLAYER_STAT_GUI = REGISTRY.register("player_stat_gui", () -> IMenuTypeExtension.create(PlayerStatGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<DeathGUIMenu>> DEATH_GUI = REGISTRY.register("death_gui", () -> IMenuTypeExtension.create(DeathGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<FridgeGUIMenu>> FRIDGE_GUI = REGISTRY.register("fridge_gui", () -> IMenuTypeExtension.create(FridgeGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<FreezerGUIMenu>> FREEZER_GUI = REGISTRY.register("freezer_gui", () -> IMenuTypeExtension.create(FreezerGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<KeyCreationGUIMenu>> KEY_CREATION_GUI = REGISTRY.register("key_creation_gui", () -> IMenuTypeExtension.create(KeyCreationGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<DoorLockIDGUIMenu>> DOOR_LOCK_IDGUI = REGISTRY.register("door_lock_idgui", () -> IMenuTypeExtension.create(DoorLockIDGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CookingPanGUIMenu>> COOKING_PAN_GUI = REGISTRY.register("cooking_pan_gui", () -> IMenuTypeExtension.create(CookingPanGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<SmokeDetectorGUIMenu>> SMOKE_DETECTOR_GUI = REGISTRY.register("smoke_detector_gui", () -> IMenuTypeExtension.create(SmokeDetectorGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CoalGeneratorGUIMenu>> COAL_GENERATOR_GUI = REGISTRY.register("coal_generator_gui", () -> IMenuTypeExtension.create(CoalGeneratorGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<StoveGUIMenu>> STOVE_GUI = REGISTRY.register("stove_gui", () -> IMenuTypeExtension.create(StoveGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<StoreGUIMenu>> STORE_GUI = REGISTRY.register("store_gui", () -> IMenuTypeExtension.create(StoreGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<BookEditGUIMenu>> BOOK_EDIT_GUI = REGISTRY.register("book_edit_gui", () -> IMenuTypeExtension.create(BookEditGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<ReceiptMakerMenu>> RECEIPT_MAKER = REGISTRY.register("receipt_maker", () -> IMenuTypeExtension.create(ReceiptMakerMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<SlotsGUIMenu>> SLOTS_GUI = REGISTRY.register("slots_gui", () -> IMenuTypeExtension.create(SlotsGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<BlackJackGUIMenu>> BLACK_JACK_GUI = REGISTRY.register("black_jack_gui", () -> IMenuTypeExtension.create(BlackJackGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CashRegisterPOSGUIMenu>> CASH_REGISTER_POSGUI = REGISTRY.register("cash_register_posgui", () -> IMenuTypeExtension.create(CashRegisterPOSGUIMenu::new));
+	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU,
+			LoikvyMod.MODID);
+	public static final DeferredHolder<MenuType<?>, MenuType<CalendarGUIMenu>> CALENDAR_GUI = REGISTRY
+			.register("calendar_gui", () -> IMenuTypeExtension.create(CalendarGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<BasicClockGUIMenu>> BASIC_CLOCK_GUI = REGISTRY
+			.register("basic_clock_gui", () -> IMenuTypeExtension.create(BasicClockGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<PlayerStatGUIMenu>> PLAYER_STAT_GUI = REGISTRY
+			.register("player_stat_gui", () -> IMenuTypeExtension.create(PlayerStatGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<DeathGUIMenu>> DEATH_GUI = REGISTRY.register("death_gui",
+			() -> IMenuTypeExtension.create(DeathGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<FridgeGUIMenu>> FRIDGE_GUI = REGISTRY
+			.register("fridge_gui", () -> IMenuTypeExtension.create(FridgeGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<FreezerGUIMenu>> FREEZER_GUI = REGISTRY
+			.register("freezer_gui", () -> IMenuTypeExtension.create(FreezerGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<KeyCreationGUIMenu>> KEY_CREATION_GUI = REGISTRY
+			.register("key_creation_gui", () -> IMenuTypeExtension.create(KeyCreationGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<DoorLockIDGUIMenu>> DOOR_LOCK_IDGUI = REGISTRY
+			.register("door_lock_idgui", () -> IMenuTypeExtension.create(DoorLockIDGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CookingPanGUIMenu>> COOKING_PAN_GUI = REGISTRY
+			.register("cooking_pan_gui", () -> IMenuTypeExtension.create(CookingPanGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<SmokeDetectorGUIMenu>> SMOKE_DETECTOR_GUI = REGISTRY
+			.register("smoke_detector_gui", () -> IMenuTypeExtension.create(SmokeDetectorGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CoalGeneratorGUIMenu>> COAL_GENERATOR_GUI = REGISTRY
+			.register("coal_generator_gui", () -> IMenuTypeExtension.create(CoalGeneratorGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<StoveGUIMenu>> STOVE_GUI = REGISTRY.register("stove_gui",
+			() -> IMenuTypeExtension.create(StoveGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<StoreGUIMenu>> STORE_GUI = REGISTRY.register("store_gui",
+			() -> IMenuTypeExtension.create(StoreGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<BookEditGUIMenu>> BOOK_EDIT_GUI = REGISTRY
+			.register("book_edit_gui", () -> IMenuTypeExtension.create(BookEditGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<ReceiptMakerMenu>> RECEIPT_MAKER = REGISTRY
+			.register("receipt_maker", () -> IMenuTypeExtension.create(ReceiptMakerMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<SlotsGUIMenu>> SLOTS_GUI = REGISTRY.register("slots_gui",
+			() -> IMenuTypeExtension.create(SlotsGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<BlackJackGUIMenu>> BLACK_JACK_GUI = REGISTRY
+			.register("black_jack_gui", () -> IMenuTypeExtension.create(BlackJackGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY
+			.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY
+			.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY
+			.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CashRegisterPOSGUIMenu>> CASH_REGISTER_POSGUI = REGISTRY
+			.register("cash_register_posgui", () -> IMenuTypeExtension.create(CashRegisterPOSGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
 
 		Map<Integer, Slot> getSlots();
 
-		default void sendMenuStateUpdate(Player player, int elementType, String name, Object elementState, boolean needClientUpdate) {
+		default void sendMenuStateUpdate(Player player, int elementType, String name, Object elementState,
+				boolean needClientUpdate) {
 			getMenuState().put(elementType + ":" + name, elementState);
 			if (player instanceof ServerPlayer serverPlayer) {
-				PacketDistributor.sendToPlayer(serverPlayer, new MenuStateUpdateMessage(elementType, name, elementState));
+				PacketDistributor.sendToPlayer(serverPlayer,
+						new MenuStateUpdateMessage(elementType, name, elementState));
 			} else if (player.level().isClientSide) {
-				if (Minecraft.getInstance().screen instanceof LoikvyModScreens.ScreenAccessor accessor && needClientUpdate)
+				if (Minecraft.getInstance().screen instanceof LoikvyModScreens.ScreenAccessor accessor
+						&& needClientUpdate)
 					accessor.updateMenuState(elementType, name, elementState);
 				PacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
 			}

@@ -1,6 +1,3 @@
-/kill @e[type=minecraft:chicken]
-/give Dev light
-/pay Dev 3000
 /tick rate 100
 /tick rate 20
 /give Dev loikvy:door_locker
@@ -48,3 +45,6 @@
 /fog
 /neoforge day length set 24
 /rc
+/give Dev loikvy:computer
+/give Dev loikvy:cash_register
+/give Dev loikvy:computer

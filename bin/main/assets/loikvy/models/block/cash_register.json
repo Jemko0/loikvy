@@ -1,0 +1,9 @@
+{
+  "parent": "loikvy:custom/cashregister",
+  "textures": {
+    "all": "loikvy:block/cashregistertexture",
+    "particle": "loikvy:block/cashregistertexture",
+    "0": "loikvy:block/cashregistertexture"
+  },
+  "render_type": "solid"
+}

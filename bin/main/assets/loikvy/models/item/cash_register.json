@@ -1,5 +1,5 @@
 {
-  "parent": "loikvy:block/wifi_router",
+  "parent": "loikvy:block/cash_register",
   "display": {
     "thirdperson": {
       "rotation": [
