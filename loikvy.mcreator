@@ -7247,7 +7247,7 @@
     {
       "name": "BookEditApplyPressed",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "book_edit_apply_pressed",
       "metadata": {

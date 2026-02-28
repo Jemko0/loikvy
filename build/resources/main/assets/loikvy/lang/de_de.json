@@ -234,5 +234,8 @@
   "entity.loikvy.player_corpse": "Player Corpse",
   "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
   "item.loikvy.id_card": "ID Card",
-  "block.loikvy.fluid_container": "Fluid Container"
+  "block.loikvy.fluid_container": "Fluid Container",
+  "gui.loikvy.receipt_maker.itemprice": "Price",
+  "gui.loikvy.receipt_maker.itemamt": "Item Amount",
+  "gui.loikvy.receipt_maker.itemname": "itemname"
 }

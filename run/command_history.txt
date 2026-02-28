@@ -1,26 +1,3 @@
-/data get storage minecraft:registry citizens
-/data get storage minecraft:registry citizens.dasddas
-/give Dev loikvy:ripped_sheet
-/give Dev loikvy:antidepressants
-/time add 30000
-/pauseplayerstats Dev
-/setplayerstat Dev hygene 100
-/setplayerstat Dev sickness 0
-/setplayerstat Dev energy 100
-/give Dev loikvy:antidepressants 23
-/gamerule keepInventory
-/gamerule keepInventory true
-/pauseplayerstats Dev
-/data get storage minecraft:registry citizens.dasddas
-/bookeditcommand
-/time add 12000
-/fog
-/tp 03e62adb-8c58-41f1-89f4-2a6e6ee455ff
-/tp 03e62adb-8c58-41f1-89f4-2a6e6ee455ff Dev
-/effect give 03e62adb-8c58-41f1-89f4-2a6e6ee455ff minecraft:fire_resistance 60 1 true
-/neoforge data_components list
-/time add 12000
-/kill 1d41cf7f-f19b-46f8-bbed-1864f183f55c
 /kill @e[type=minecraft:chicken,nbt={isBaby:1b}]
 /kill @e[type=minecraft:chicken]
 /give Dev light
@@ -48,3 +25,26 @@
 /data modify block 645 65 1711 NeoForgeData.dealer_hide_cards set value 0b
 /pay Dev 30
 /scoreboard players set Dev Money 5000
+/bookeditcommand
+/pauseplayerstats Dev
+/enchant Dev minecraft:sharpness 6
+/enchant Dev minecraft:sharpness 5
+/neoforge data_components list
+/time add 100
+/time set 23000
+/time set 20000
+/time set 24000
+/time set 23000
+/neoforge day length set 1
+/gamerule randomTickSpeed
+/time set 5000
+/time set 23000
+/time set 20000
+/time set 11000
+/time set 15000
+/time set 000
+/time set 0
+/time set 10000
+/neoforge day length set default
+/fog
+/neoforge day length set 24

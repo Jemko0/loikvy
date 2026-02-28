@@ -154,8 +154,8 @@
   "gui.loikvy.receipt_maker.button_make": "Create",
   "gui.loikvy.receipt_maker.button_empty": "+",
   "gui.loikvy.receipt_maker.label_receipt_maker": "Receipt Making tool device object ok",
-  "gui.loikvy.receipt_maker.store": "StoreName",
-  "gui.loikvy.receipt_maker.color": "C",
+  "gui.loikvy.receipt_maker.store": "store",
+  "gui.loikvy.receipt_maker.color": "Color",
   "gui.loikvy.receipt_maker.label_ss": "§",
   "gui.loikvy.receipt_maker.button_empty1": "+",
   "gui.loikvy.door_lock_idgui.button_master_lock": "master_lock",
@@ -234,5 +234,8 @@
   "entity.loikvy.player_corpse": "Player Corpse",
   "gui.loikvy.corpse_inventory_gui.label_corpse": "Corpse",
   "item.loikvy.id_card": "ID Card",
-  "block.loikvy.fluid_container": "Fluid Container"
+  "block.loikvy.fluid_container": "Fluid Container",
+  "gui.loikvy.receipt_maker.itemprice": "Price",
+  "gui.loikvy.receipt_maker.itemamt": "Item Amount",
+  "gui.loikvy.receipt_maker.itemname": "itemname"
 }
