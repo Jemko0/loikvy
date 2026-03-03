@@ -229,5 +229,6 @@
   "block.loikvy.fluid_container": "Fluid Container",
   "gui.loikvy.receipt_maker.itemprice": "Price",
   "gui.loikvy.receipt_maker.itemamt": "Item Amount",
-  "gui.loikvy.receipt_maker.itemname": "itemname"
+  "gui.loikvy.receipt_maker.itemname": "itemname",
+  "block.loikvy.cash_register": "Cash Register"
 }

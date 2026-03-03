@@ -62,7 +62,7 @@ public class LoikvyModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CashRegisterPOSGUIMenu>> CASH_REGISTER_POSGUI = REGISTRY.register("cash_register_posgui", () -> IMenuTypeExtension.create(CashRegisterPOSGUIMenu::new));
+	//public static final DeferredHolder<MenuType<?>, MenuType<CashRegisterPOSGUIMenu>> CASH_REGISTER_POSGUI = REGISTRY.register("cash_register_posgui", () -> IMenuTypeExtension.create(CashRegisterPOSGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

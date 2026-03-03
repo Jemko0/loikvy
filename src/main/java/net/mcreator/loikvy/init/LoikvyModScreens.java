@@ -60,7 +60,7 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.HEALTH_MENU_GUI.get(), HealthMenuGUIScreen::new);
 		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
 		event.register(LoikvyModMenus.CORPSE_INVENTORY_GUI.get(), CorpseInventoryGUIScreen::new);
-		event.register(LoikvyModMenus.CASH_REGISTER_POSGUI.get(), CashRegisterPOSGUIScreen::new);
+		//event.register(LoikvyModMenus.CASH_REGISTER_POSGUI.get(), CashRegisterPOSGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {
