@@ -1,5 +1,10 @@
 package net.mcreator.loikvy.client.gui;
 
+import net.mcreator.loikvy.utility.networking.client.StorageDataReceivedEvent;
+import net.mcreator.loikvy.utility.networking.interfaces.IStorageReceiver;
+import net.mcreator.loikvy.utility.networking.packets.RequestStoragePacket;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -12,6 +17,8 @@ import net.mcreator.loikvy.world.inventory.BankHistoryGUIMenu;
 import net.mcreator.loikvy.init.LoikvyModScreens;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class BankHistoryGUIScreen extends AbstractContainerScreen<BankHistoryGUIMenu> implements LoikvyModScreens.ScreenAccessor {
 	private final Level world;
@@ -67,8 +74,41 @@ public class BankHistoryGUIScreen extends AbstractContainerScreen<BankHistoryGUI
 		guiGraphics.drawString(this.font, Component.translatable("gui.loikvy.bank_history_gui.label_bank_history"), 58, 6, -12829636, false);
 	}
 
+	public void getBankHistory()
+	{
+		NeoForge.EVENT_BUS.addListener(this::onStorageDataReceived);
+
+		PacketDistributor.sendToServer(new RequestStoragePacket(
+				ResourceLocation.fromNamespaceAndPath("minecraft", "bank_history")
+		));
+	}
+
+	public CompoundTag storageData;
+
+	private void onStorageDataReceived(StorageDataReceivedEvent event) {
+		if (event.getStorageId().equals(ResourceLocation.fromNamespaceAndPath("minecraft", "bank_history"))) {
+			this.storageData = event.getData();
+			postDataGet();
+		}
+	}
+
+	@Override
+	public void removed() {
+		super.removed();
+
+		NeoForge.EVENT_BUS.unregister(this);
+	}
+
 	@Override
 	public void init() {
 		super.init();
+
+		getBankHistory();
+	}
+
+	public void postDataGet()
+	{
+		System.out.println("Received storage data: " + storageData);
+		System.out.println("Received storage data: " + storageData.getAsString());
 	}
 }

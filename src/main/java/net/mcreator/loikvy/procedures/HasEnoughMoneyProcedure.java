@@ -9,7 +9,7 @@ public class HasEnoughMoneyProcedure {
 	public static boolean execute(Entity entity, double target) {
 		if (entity == null)
 			return false;
-		return getEntityScore("Currency", entity) >= target;
+		return getEntityScore("Money", entity) >= target;
 	}
 
 	private static int getEntityScore(String score, Entity entity) {
