@@ -46,7 +46,7 @@ public class BlackjackEndGameProcedure {
 			}
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						("takemoney " + getBlockNBTString(world, BlockPos.containing(x, y, z), "player") + " " + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "bet") * (-2) + " \"Black Jack Game\""));
+						("takemoney " + getBlockNBTString(world, BlockPos.containing(x, y, z), "player") + " " + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "bet") * (-1) + " \"Black Jack Game\""));
 		}
 		if (state == 1) {
 			if (world instanceof Level _level) {
