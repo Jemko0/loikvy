@@ -22,6 +22,7 @@ import net.mcreator.loikvy.client.gui.SlotsGUIScreen;
 import net.mcreator.loikvy.client.gui.ReceiptMakerScreen;
 import net.mcreator.loikvy.client.gui.PlayerStatGUIScreen;
 import net.mcreator.loikvy.client.gui.KeyCreationGUIScreen;
+import net.mcreator.loikvy.client.gui.HorseRaceGUIScreen;
 import net.mcreator.loikvy.client.gui.HealthMenuGUIScreen;
 import net.mcreator.loikvy.client.gui.FridgeGUIScreen;
 import net.mcreator.loikvy.client.gui.FreezerGUIScreen;
@@ -60,7 +61,7 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.HEALTH_MENU_GUI.get(), HealthMenuGUIScreen::new);
 		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
 		event.register(LoikvyModMenus.CORPSE_INVENTORY_GUI.get(), CorpseInventoryGUIScreen::new);
-		//event.register(LoikvyModMenus.CASH_REGISTER_POSGUI.get(), CashRegisterPOSGUIScreen::new);
+		event.register(LoikvyModMenus.HORSE_RACE_GUI.get(), HorseRaceGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {

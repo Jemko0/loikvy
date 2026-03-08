@@ -40,7 +40,6 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());
 			tabData.accept(LoikvyModBlocks.SMOKE_DETECTOR.get().asItem());
 			tabData.accept(LoikvyModBlocks.GAMBLING_BLACK_JACK_TABLE.get().asItem());
-			tabData.accept(LoikvyModBlocks.CASH_REGISTER.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
 			tabData.accept(LoikvyModItems.BURGER.get());
 			tabData.accept(LoikvyModBlocks.CUTTING_BOARD.get().asItem());

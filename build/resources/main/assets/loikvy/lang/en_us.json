@@ -230,5 +230,8 @@
   "gui.loikvy.receipt_maker.itemprice": "Price",
   "gui.loikvy.receipt_maker.itemamt": "Item Amount",
   "gui.loikvy.receipt_maker.itemname": "itemname",
-  "block.loikvy.cash_register": "Cash Register"
+  "gui.loikvy.horse_race_gui.button_2": "/2",
+  "gui.loikvy.horse_race_gui.label_bet": "BET:",
+  "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+  "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
 }

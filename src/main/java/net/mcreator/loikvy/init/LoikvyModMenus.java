@@ -22,6 +22,7 @@ import net.mcreator.loikvy.world.inventory.SlotsGUIMenu;
 import net.mcreator.loikvy.world.inventory.ReceiptMakerMenu;
 import net.mcreator.loikvy.world.inventory.PlayerStatGUIMenu;
 import net.mcreator.loikvy.world.inventory.KeyCreationGUIMenu;
+import net.mcreator.loikvy.world.inventory.HorseRaceGUIMenu;
 import net.mcreator.loikvy.world.inventory.HealthMenuGUIMenu;
 import net.mcreator.loikvy.world.inventory.FridgeGUIMenu;
 import net.mcreator.loikvy.world.inventory.FreezerGUIMenu;
@@ -62,7 +63,7 @@ public class LoikvyModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<HealthMenuGUIMenu>> HEALTH_MENU_GUI = REGISTRY.register("health_menu_gui", () -> IMenuTypeExtension.create(HealthMenuGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
-	//public static final DeferredHolder<MenuType<?>, MenuType<CashRegisterPOSGUIMenu>> CASH_REGISTER_POSGUI = REGISTRY.register("cash_register_posgui", () -> IMenuTypeExtension.create(CashRegisterPOSGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<HorseRaceGUIMenu>> HORSE_RACE_GUI = REGISTRY.register("horse_race_gui", () -> IMenuTypeExtension.create(HorseRaceGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
