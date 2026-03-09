@@ -121,8 +121,9 @@ key_key.hotbar.6:key.keyboard.6
 key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
+key_key.uilib.open_test_menu:key.keyboard.unknown
 key_key.loikvy.health_menu_key_bind:key.keyboard.h
-soundCategory_master:1.0
+soundCategory_master:0.11920529801324503
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

@@ -144,6 +144,7 @@ public class LoikvyModItems {
 	public static final DeferredItem<Item> PLAYER_CORPSE_SPAWN_EGG = REGISTRY.register("player_corpse_spawn_egg", () -> new DeferredSpawnEggItem(LoikvyModEntities.PLAYER_CORPSE, -6750208, -1, new Item.Properties()));
 	public static final DeferredItem<Item> ID_CARD = REGISTRY.register("id_card", IDCardItem::new);
 	public static final DeferredItem<Item> FLUID_CONTAINER = block(LoikvyModBlocks.FLUID_CONTAINER);
+	public static final DeferredItem<Item> COMPUTER_BLOCK = block(LoikvyModBlocks.COMPUTER_BLOCK, new Item.Properties().stacksTo(1));
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -35,6 +35,7 @@ public class LoikvyModTabs {
 			tabData.accept(LoikvyModItems.SHARP_ROCK.get());
 			tabData.accept(LoikvyModItems.SHARP_STICK.get());
 			tabData.accept(LoikvyModItems.ID_CARD.get());
+			tabData.accept(LoikvyModBlocks.COMPUTER_BLOCK.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(LoikvyModBlocks.FRIDGE.get().asItem());
 			tabData.accept(LoikvyModBlocks.FREEZER.get().asItem());

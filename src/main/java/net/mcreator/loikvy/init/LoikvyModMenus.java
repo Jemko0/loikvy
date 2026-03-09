@@ -30,6 +30,7 @@ import net.mcreator.loikvy.world.inventory.DoorLockIDGUIMenu;
 import net.mcreator.loikvy.world.inventory.DeathGUIMenu;
 import net.mcreator.loikvy.world.inventory.CorpseInventoryGUIMenu;
 import net.mcreator.loikvy.world.inventory.CookingPanGUIMenu;
+import net.mcreator.loikvy.world.inventory.ComputerAssemblyGUIMenu;
 import net.mcreator.loikvy.world.inventory.CoalGeneratorGUIMenu;
 import net.mcreator.loikvy.world.inventory.CalendarGUIMenu;
 import net.mcreator.loikvy.world.inventory.BookEditGUIMenu;
@@ -64,6 +65,7 @@ public class LoikvyModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<BankHistoryGUIMenu>> BANK_HISTORY_GUI = REGISTRY.register("bank_history_gui", () -> IMenuTypeExtension.create(BankHistoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<CorpseInventoryGUIMenu>> CORPSE_INVENTORY_GUI = REGISTRY.register("corpse_inventory_gui", () -> IMenuTypeExtension.create(CorpseInventoryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<HorseRaceGUIMenu>> HORSE_RACE_GUI = REGISTRY.register("horse_race_gui", () -> IMenuTypeExtension.create(HorseRaceGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<ComputerAssemblyGUIMenu>> COMPUTER_ASSEMBLY_GUI = REGISTRY.register("computer_assembly_gui", () -> IMenuTypeExtension.create(ComputerAssemblyGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

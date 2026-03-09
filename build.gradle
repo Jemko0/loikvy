@@ -8,6 +8,11 @@ base.archivesName = "loikvy"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+dependencies {
+	implementation files('libs/architectury-13.0.6-neoforge.jar')
+    implementation files('libs/uilib-1.0.1-1.21.1-neoforge.jar')
+}
+
 tasks.register('restoreProtectedFiles', Copy) {
     from('protected_files/resources/') {
         into('.')

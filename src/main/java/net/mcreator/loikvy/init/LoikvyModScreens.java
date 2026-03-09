@@ -30,6 +30,7 @@ import net.mcreator.loikvy.client.gui.DoorLockIDGUIScreen;
 import net.mcreator.loikvy.client.gui.DeathGUIScreen;
 import net.mcreator.loikvy.client.gui.CorpseInventoryGUIScreen;
 import net.mcreator.loikvy.client.gui.CookingPanGUIScreen;
+import net.mcreator.loikvy.client.gui.ComputerAssemblyGUIScreen;
 import net.mcreator.loikvy.client.gui.CoalGeneratorGUIScreen;
 import net.mcreator.loikvy.client.gui.CalendarGUIScreen;
 import net.mcreator.loikvy.client.gui.BookEditGUIScreen;
@@ -62,6 +63,7 @@ public class LoikvyModScreens {
 		event.register(LoikvyModMenus.BANK_HISTORY_GUI.get(), BankHistoryGUIScreen::new);
 		event.register(LoikvyModMenus.CORPSE_INVENTORY_GUI.get(), CorpseInventoryGUIScreen::new);
 		event.register(LoikvyModMenus.HORSE_RACE_GUI.get(), HorseRaceGUIScreen::new);
+		event.register(LoikvyModMenus.COMPUTER_ASSEMBLY_GUI.get(), ComputerAssemblyGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {

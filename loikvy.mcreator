@@ -7055,6 +7055,38 @@
         ]
       },
       "path": "~/Paintings"
+    },
+    {
+      "name": "ComputerBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "computer_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/loikvy/loot_table/blocks/computer_block.json",
+          "src/main/resources/assets/loikvy/models/item/computer_block.json",
+          "src/main/resources/assets/loikvy/blockstates/computer_block.json",
+          "src/main/resources/assets/loikvy/models/block/computer_block.json",
+          "src/main/java/net/mcreator/loikvy/block/ComputerBlockBlock.java",
+          "src/main/java/net/mcreator/loikvy/block/entity/ComputerBlockBlockEntity.java"
+        ]
+      },
+      "path": "~/Computer"
+    },
+    {
+      "name": "ComputerAssemblyGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "computer_assembly_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/world/inventory/ComputerAssemblyGUIMenu.java",
+          "src/main/java/net/mcreator/loikvy/client/gui/ComputerAssemblyGUIScreen.java"
+        ]
+      },
+      "path": "~/Computer/GUI"
     }
   ],
   "variable_elements": [
@@ -7404,12 +7436,14 @@
       "~CUSTOM:Gasoline"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:ComputerBlock",
       "~CUSTOM:Stove",
       "~CUSTOM:SmokeDetector",
       "~CUSTOM:Freezer",
       "~CUSTOM:Fridge"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:ComputerBlock",
       "~CUSTOM:Stove",
       "~CUSTOM:Freezer",
       "~CUSTOM:Fridge"
@@ -7739,7 +7773,11 @@
       "gui.loikvy.horse_race_gui.button_2": "/2",
       "gui.loikvy.horse_race_gui.label_bet": "BET:",
       "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
-      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7976,7 +8014,11 @@
       "gui.loikvy.horse_race_gui.button_2": "/2",
       "gui.loikvy.horse_race_gui.label_bet": "BET:",
       "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
-      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8213,7 +8255,11 @@
       "gui.loikvy.horse_race_gui.button_2": "/2",
       "gui.loikvy.horse_race_gui.label_bet": "BET:",
       "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
-      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     }
   },
   "metadata": {
@@ -8668,13 +8714,22 @@
       {
         "name": "Paintings",
         "children": []
+      },
+      {
+        "name": "Computer",
+        "children": [
+          {
+            "name": "GUI",
+            "children": []
+          }
+        ]
       }
     ]
   },
   "workspaceSettings": {
     "modid": "loikvy",
     "modName": "Loikvy Roleplay",
-    "version": "1.8.0",
+    "version": "1.9.2",
     "author": "Jemko",
     "websiteURL": "https://github.com/Jemko0",
     "license": "Not specified",

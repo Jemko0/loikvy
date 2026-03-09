@@ -7030,22 +7030,63 @@
       "path": "~/GUIs/BookEdit"
     },
     {
-      "name": "CashRegister",
+      "name": "HorseRaceGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "horse_race_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/client/gui/HorseRaceGUIScreen.java",
+          "src/main/java/net/mcreator/loikvy/world/inventory/HorseRaceGUIMenu.java"
+        ]
+      },
+      "path": "~/GUIs/Gambling/HorseRace"
+    },
+    {
+      "name": "DTCampaign0005",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dt_campaign_0005",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/loikvy/painting_variant/dt_campaign_0005.json"
+        ]
+      },
+      "path": "~/Paintings"
+    },
+    {
+      "name": "ComputerBlock",
       "type": "block",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "cash_register",
+      "registry_name": "computer_block",
       "metadata": {
         "files": [
-          "src/main/resources/assets/loikvy/blockstates/cash_register.json",
-          "src/main/java/net/mcreator/loikvy/block/entity/CashRegisterBlockEntity.java",
-          "src/main/resources/assets/loikvy/models/item/cash_register.json",
-          "src/main/resources/data/loikvy/loot_table/blocks/cash_register.json",
-          "src/main/java/net/mcreator/loikvy/block/CashRegisterBlock.java",
-          "src/main/resources/assets/loikvy/models/block/cash_register.json"
+          "src/main/resources/data/loikvy/loot_table/blocks/computer_block.json",
+          "src/main/resources/assets/loikvy/models/item/computer_block.json",
+          "src/main/resources/assets/loikvy/blockstates/computer_block.json",
+          "src/main/resources/assets/loikvy/models/block/computer_block.json",
+          "src/main/java/net/mcreator/loikvy/block/ComputerBlockBlock.java",
+          "src/main/java/net/mcreator/loikvy/block/entity/ComputerBlockBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Shop"
+      "path": "~/Computer"
+    },
+    {
+      "name": "ComputerAssemblyGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "computer_assembly_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/loikvy/world/inventory/ComputerAssemblyGUIMenu.java",
+          "src/main/java/net/mcreator/loikvy/client/gui/ComputerAssemblyGUIScreen.java"
+        ]
+      },
+      "path": "~/Computer/GUI"
     }
   ],
   "variable_elements": [
@@ -7395,12 +7436,14 @@
       "~CUSTOM:Gasoline"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:ComputerBlock",
       "~CUSTOM:Stove",
       "~CUSTOM:SmokeDetector",
       "~CUSTOM:Freezer",
       "~CUSTOM:Fridge"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:ComputerBlock",
       "~CUSTOM:Stove",
       "~CUSTOM:Freezer",
       "~CUSTOM:Fridge"
@@ -7727,7 +7770,14 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7961,7 +8011,14 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8195,7 +8252,14 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005",
+      "block.loikvy.computer_block": "Computer Block",
+      "gui.loikvy.computer_assembly_gui.label_computer": "Computer",
+      "gui.loikvy.computer_assembly_gui.label_cpu": "CPU",
+      "gui.loikvy.computer_assembly_gui.label_gpu": "GPU"
     }
   },
   "metadata": {
@@ -8217,6 +8281,7 @@
       "src/main/java/net/mcreator/loikvy/init/LoikvyModGameRules.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFuels.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModKeyMappings.java",
+      "src/main/resources/data/minecraft/tags/painting_variant/placeable.json",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModParticleTypes.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModParticles.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModMobEffects.java",
@@ -8464,6 +8529,14 @@
               {
                 "name": "Blackjack",
                 "children": []
+              },
+              {
+                "name": "Roulette",
+                "children": []
+              },
+              {
+                "name": "HorseRace",
+                "children": []
               }
             ]
           },
@@ -8637,13 +8710,26 @@
       {
         "name": "Events",
         "children": []
+      },
+      {
+        "name": "Paintings",
+        "children": []
+      },
+      {
+        "name": "Computer",
+        "children": [
+          {
+            "name": "GUI",
+            "children": []
+          }
+        ]
       }
     ]
   },
   "workspaceSettings": {
     "modid": "loikvy",
     "modName": "Loikvy Roleplay",
-    "version": "1.8.0",
+    "version": "1.9.2",
     "author": "Jemko",
     "websiteURL": "https://github.com/Jemko0",
     "license": "Not specified",

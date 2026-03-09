@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "loikvy:computer_block",
     "loikvy:smoke_detector",
     "loikvy:stove",
     "loikvy:fridge",

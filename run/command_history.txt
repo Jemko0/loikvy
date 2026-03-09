@@ -1,7 +1,3 @@
-/pauseplayerstats Dev
-/setplayerstat Dev sickness 0
-/setplayerstat Dev happiness 100
-/setplayerstat Dev energy 100
 /setplayerstat Dev fitness 0
 /setplayerstat Dev fitness 100
 /setplayerstat Dev hygene 0
@@ -48,3 +44,7 @@
 /bankhistory
 /time add 6000
 /takemoney Dev -4750 "generous donation"
+/time add 6000
+/tp 1700 64 600
+/tp 600 64 1700
+/gamerule spectatorsGenerateChunks true

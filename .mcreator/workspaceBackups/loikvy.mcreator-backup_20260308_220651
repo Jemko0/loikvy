@@ -7030,21 +7030,31 @@
       "path": "~/GUIs/BookEdit"
     },
     {
-      "name": "CashRegister",
-      "type": "block",
+      "name": "HorseRaceGUI",
+      "type": "gui",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "cash_register",
+      "registry_name": "horse_race_gui",
       "metadata": {
         "files": [
-          "src/main/resources/assets/loikvy/blockstates/cash_register.json",
-          "src/main/resources/assets/loikvy/models/item/cash_register.json",
-          "src/main/resources/data/loikvy/loot_table/blocks/cash_register.json",
-          "src/main/java/net/mcreator/loikvy/block/CashRegisterBlock.java",
-          "src/main/resources/assets/loikvy/models/block/cash_register.json"
+          "src/main/java/net/mcreator/loikvy/client/gui/HorseRaceGUIScreen.java",
+          "src/main/java/net/mcreator/loikvy/world/inventory/HorseRaceGUIMenu.java"
         ]
       },
-      "path": "~/Blocks/Shop"
+      "path": "~/GUIs/Gambling/HorseRace"
+    },
+    {
+      "name": "DTCampaign0005",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dt_campaign_0005",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/loikvy/painting_variant/dt_campaign_0005.json"
+        ]
+      },
+      "path": "~/Paintings"
     }
   ],
   "variable_elements": [
@@ -7726,7 +7736,10 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
     },
     "de_at": {
       "effect.loikvy.sick": "Krank",
@@ -7960,7 +7973,10 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
     },
     "de_de": {
       "effect.loikvy.sick": "Krank",
@@ -8194,7 +8210,10 @@
       "gui.loikvy.receipt_maker.itemprice": "Price",
       "gui.loikvy.receipt_maker.itemamt": "Item Amount",
       "gui.loikvy.receipt_maker.itemname": "itemname",
-      "block.loikvy.cash_register": "Cash Register"
+      "gui.loikvy.horse_race_gui.button_2": "/2",
+      "gui.loikvy.horse_race_gui.label_bet": "BET:",
+      "painting.loikvy.dt_campaign_0005.author": "Donald Trump",
+      "painting.loikvy.dt_campaign_0005.title": "Donald Trump Campaign 0005"
     }
   },
   "metadata": {
@@ -8216,6 +8235,7 @@
       "src/main/java/net/mcreator/loikvy/init/LoikvyModGameRules.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModFuels.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModKeyMappings.java",
+      "src/main/resources/data/minecraft/tags/painting_variant/placeable.json",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModParticleTypes.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModParticles.java",
       "src/main/java/net/mcreator/loikvy/init/LoikvyModMobEffects.java",
@@ -8463,6 +8483,14 @@
               {
                 "name": "Blackjack",
                 "children": []
+              },
+              {
+                "name": "Roulette",
+                "children": []
+              },
+              {
+                "name": "HorseRace",
+                "children": []
               }
             ]
           },
@@ -8562,7 +8590,12 @@
           },
           {
             "name": "Shop",
-            "children": []
+            "children": [
+              {
+                "name": "GUI",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -8630,6 +8663,14 @@
       },
       {
         "name": "Events",
+        "children": []
+      },
+      {
+        "name": "Paintings",
+        "children": []
+      },
+      {
+        "name": "Computer",
         "children": []
       }
     ]
