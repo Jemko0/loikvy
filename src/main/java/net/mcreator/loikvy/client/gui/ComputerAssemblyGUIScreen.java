@@ -5,7 +5,9 @@ import com.daqem.uilib.client.gui.component.AbstractSpriteComponent;
 import com.daqem.uilib.client.gui.component.ButtonComponent;
 import com.daqem.uilib.client.gui.component.texture.NineSlicedTextureComponent;
 import com.daqem.uilib.client.gui.texture.NineSlicedTexture;
+import net.mcreator.loikvy.client.gui.lylib.SlotBackgroundComponent;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -40,7 +42,6 @@ public class ComputerAssemblyGUIScreen extends com.daqem.uilib.client.gui.Abstra
 	{
 		NineSlicedTexture nct = new NineSlicedTexture(ResourceLocation.fromNamespaceAndPath("loikvy", "textures/screens/pc_background_nineslice.png"), 0, 0, 8, 8, 2, 2);
 
-
 		NineSlicedTextureComponent bg = new NineSlicedTextureComponent(
 				nct,
 				leftPos,
@@ -50,6 +51,15 @@ public class ComputerAssemblyGUIScreen extends com.daqem.uilib.client.gui.Abstra
 		);
 
 		this.addComponent(bg);
+
+		SlotBackgroundComponent slotBg = new SlotBackgroundComponent(
+				this.menu.slots,
+				leftPos,
+				topPos,
+				imageWidth,
+				imageHeight
+		);
+		this.addComponent(slotBg);
 	}
 
 	@Override
@@ -61,23 +71,5 @@ public class ComputerAssemblyGUIScreen extends com.daqem.uilib.client.gui.Abstra
 	public void updateMenuState(int elementType, String name, Object elementState) {
 		menuStateUpdateActive = true;
 		menuStateUpdateActive = false;
-	}
-
-	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float delta, int mouseX, int mouseY) {
-		super.renderBg(guiGraphics, delta, mouseX, mouseY);
-		renderSlotBackgrounds(guiGraphics);
-	}
-
-	private void renderSlotBackgrounds(GuiGraphics guiGraphics) {
-		for (Slot slot : this.menu.slots) {
-			// Render as a simple textured rect - gray slot background
-			int x = this.leftPos + slot.x - 1;
-			int y = this.topPos + slot.y - 1;
-
-			// Draw slot background (light gray with dark border)
-			guiGraphics.fill(x, y, x + 18, y + 18, 0xFF8B8B8B);  // Border
-			guiGraphics.fill(x + 1, y + 1, x + 17, y + 17, 0xFF373737);  // Inner
-		}
 	}
 }
